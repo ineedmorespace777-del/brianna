@@ -1,0 +1,15 @@
+# keep deploy slim — exclude dev-only artifacts
+node_modules
+verify-output
+New folder
+.claude
+.git
+.vscode
+.idea
+package.json
+package-lock.json
+preview.bat
+scripts/verify.mjs
+*.log
+.env
+.env.local

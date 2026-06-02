@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f0e8"/>
+  <text x="600" y="320" text-anchor="middle"
+        font-family="Cormorant Garamond, Georgia, serif"
+        font-size="120" font-weight="300" fill="#2d2622" letter-spacing="-3">mei skin</text>
+  <text x="600" y="400" text-anchor="middle"
+        font-family="Cormorant Garamond, Georgia, serif" font-style="italic"
+        font-size="32" font-weight="300" fill="#4f5e44">considered skin care</text>
+  <text x="600" y="500" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif"
+        font-size="14" font-weight="600" fill="#8a7e74" letter-spacing="6">KITSILANO · VANCOUVER</text>
+</svg>

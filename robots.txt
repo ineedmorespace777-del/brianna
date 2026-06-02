@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /verify-output/
+Disallow: /scripts/verify.mjs
+
+Sitemap: /sitemap.xml

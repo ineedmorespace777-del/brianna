@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+.vercel
+.vscode
+.idea
+node_modules
+*.log
+.env
+.env.local
+
+# verification artifacts — not for deploy
+verify-output/
+package.json
+package-lock.json
