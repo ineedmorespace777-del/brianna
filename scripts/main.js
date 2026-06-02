@@ -34,15 +34,14 @@
     if (!toggle || !drawer) return;
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'close menu' : 'open menu');
+    document.body.classList.toggle('nav-open', open);
     if (open) {
       drawer.hidden = false;
-      requestAnimationFrame(() => drawer.classList.add('open'));
-      document.body.classList.add('nav-open');
+      drawer.classList.add('open');
     } else {
       drawer.classList.remove('open');
-      document.body.classList.remove('nav-open');
-      // delay hidden until transition finishes so it's animatable
-      setTimeout(() => { if (!drawer.classList.contains('open')) drawer.hidden = true; }, 500);
+      // hide after the transform finishes so it's still focus-trappable mid-animation
+      setTimeout(() => { if (!drawer.classList.contains('open')) drawer.hidden = true; }, 600);
     }
   };
 
