@@ -281,12 +281,12 @@ body {
 /* nav toggle — three dots stacked vertically (no inline nav, this is the primary trigger) */
 .nav-toggle {
   display: flex;
-  width: 36px; height: 36px;
+  width: 40px; height: 40px;
   padding: 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 7px;
   position: relative;
   z-index: 110;
   transition: transform .3s var(--ease);
@@ -304,14 +304,33 @@ body {
 .nav-toggle:hover span { background: var(--accent-deep); }
 /* dots morph into an X when the overlay opens */
 .nav-toggle[aria-expanded="true"] span {
-  width: 22px;
-  height: 1.5px;
+  width: 24px;
+  height: 2px;
   border-radius: 1px;
   background: var(--fg);
 }
-.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+/* subtle hint label that appears under the X when the menu is open */
+.nav-toggle::after {
+  content: "close";
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s var(--ease) .2s;
+  white-space: nowrap;
+}
+.nav-toggle[aria-expanded="true"]::after { opacity: 1; }
 
 /* glass overlay nav — three-dots toggle opens this on every viewport */
 .overlay-nav {
@@ -1080,3 +1099,16 @@ html.js .reveal.in {
 @media (min-width: 1600px) { :root { --pad: 80px; } }
 
 body.nav-open { overflow: hidden; }
+
+/* when the overlay is open, raise the header above it so the X (and logo) stay visible.
+   the header itself goes transparent so the overlay's cream-glass shows through. */
+body.nav-open .site-header {
+  z-index: 106;
+  background: transparent;
+  border-bottom-color: transparent;
+}
+body.nav-open .book-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s var(--ease);
+}

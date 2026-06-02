@@ -55,6 +55,10 @@
     drawer.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => setOpen(false));
     });
+    // close on click anywhere outside the menu items (the cream-glass background)
+    drawer.addEventListener('click', (e) => {
+      if (!e.target.closest('a, button')) setOpen(false);
+    });
     // close on escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setOpen(false);
