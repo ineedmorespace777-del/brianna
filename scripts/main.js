@@ -26,9 +26,9 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* mobile nav drawer */
+  /* overlay nav (three-dots menu — used on all viewports) */
   const toggle = document.getElementById('nav-toggle');
-  const drawer = document.getElementById('mobile-nav');
+  const drawer = document.getElementById('overlay-nav');
 
   const setOpen = (open) => {
     if (!toggle || !drawer) return;

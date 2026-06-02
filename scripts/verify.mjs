@@ -24,12 +24,16 @@ const measureScript = `
     const c = getComputedStyle(e);
     return { h: Math.round(r.height), w: Math.round(r.width), display: c.display };
   };
+  const displayOf = sel => {
+    const el = document.querySelector(sel);
+    return el ? getComputedStyle(el).display : 'missing';
+  };
   ({
     viewport: { w: window.innerWidth, h: window.innerHeight, dpr: window.devicePixelRatio },
     nav: {
-      primaryNav: getComputedStyle(document.querySelector('.primary-nav')).display,
-      navToggle: getComputedStyle(document.querySelector('.nav-toggle')).display,
-      bookBtn: getComputedStyle(document.querySelector('.book-btn')).display,
+      navToggle: displayOf('.nav-toggle'),
+      bookBtn: displayOf('.book-btn'),
+      overlayHidden: !!document.querySelector('.overlay-nav[hidden]'),
     },
     grids: {
       triad: getComputedStyle(document.querySelector('.triad')).gridTemplateColumns,
@@ -94,16 +98,14 @@ async function run(name, contextOpts) {
     await page.screenshot({ path: join(outDir, `${name}-section-${s.cls}.png`), fullPage: false });
   }
 
-  // test mobile nav open if mobile
-  if (name === 'iphone14') {
-    await page.evaluate(() => window.scrollTo(0, 0));
-    await page.waitForTimeout(200);
-    const toggle = await page.$('#nav-toggle');
-    if (toggle) {
-      await toggle.click();
-      await page.waitForTimeout(600);
-      await page.screenshot({ path: join(outDir, `${name}-nav-open.png`), fullPage: false });
-    }
+  // test overlay nav open on every viewport now (dots menu is universal)
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(200);
+  const toggle = await page.$('#nav-toggle');
+  if (toggle) {
+    await toggle.click();
+    await page.waitForTimeout(1800);
+    await page.screenshot({ path: join(outDir, `${name}-nav-open.png`), fullPage: false });
   }
 
   await browser.close();
