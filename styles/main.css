@@ -687,7 +687,8 @@ body {
 .loc-grid {
   margin-top: clamp(50px, 7vh, 80px);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 720px);
+  justify-content: center;
   gap: 32px;
 }
 .loc-card {

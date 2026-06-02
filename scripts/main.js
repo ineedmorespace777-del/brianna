@@ -97,7 +97,6 @@
       e.preventDefault();
       const name = form.querySelector('#nl-name').value.trim();
       const email = form.querySelector('#nl-email').value.trim();
-      const loc = form.querySelector('input[name="loc"]:checked')?.value;
       const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
       if (!name || !emailOk) {
@@ -109,8 +108,7 @@
 
       msg.hidden = false;
       msg.style.color = '';
-      const lookup = { studio: 'studio visits', bridal: 'bridal & editorial', both: 'studio + bridal' };
-      msg.textContent = `thanks, ${name.toLowerCase()}. we'll write when there's news on ${lookup[loc] || 'mei skin'}.`;
+      msg.textContent = `thanks, ${name.toLowerCase()}. we'll write when there's news from the studio.`;
       form.reset();
     });
   }
