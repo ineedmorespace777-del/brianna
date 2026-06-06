@@ -12,6 +12,44 @@
   /* mark js available so reveal styles activate (no-js users see all content) */
   document.documentElement.classList.add('js');
 
+  /* ─── coming-soon soft gate ─────────────────────────────────────────
+     password is "meiskin" — case-insensitive, spaces allowed.
+     this is a SOFT gate — anyone who view-sources the JS can find the
+     password. it's enough to keep casual visitors out, not real security.
+     once a visitor enters the password, we set localStorage so they
+     don't see the splash again on return visits. */
+  const gate = document.getElementById('coming-soon-gate');
+  const csForm = document.getElementById('cs-form');
+  if (gate && csForm) {
+    const input = csForm.querySelector('input');
+    const msg = csForm.querySelector('.cs-msg');
+
+    // focus the input when the gate is visible
+    if (!document.documentElement.classList.contains('unlocked')) {
+      setTimeout(() => input.focus(), 120);
+    }
+
+    csForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = input.value.trim().toLowerCase().replace(/\s+/g, '');
+      if (val === 'meiskin') {
+        try { localStorage.setItem('mei-unlocked', 'true'); } catch (_) {}
+        msg.hidden = true;
+        gate.classList.add('unlocking');
+        setTimeout(() => {
+          document.documentElement.classList.add('unlocked');
+        }, 600);
+      } else {
+        csForm.classList.add('shake');
+        msg.hidden = false;
+        msg.textContent = "that's not it. try again?";
+        setTimeout(() => csForm.classList.remove('shake'), 450);
+        input.value = '';
+        input.focus();
+      }
+    });
+  }
+
   /* year stamp in the footer */
   const yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();

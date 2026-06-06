@@ -66,6 +66,21 @@ async function run(name, contextOpts) {
   // small wait so fonts settle
   await page.waitForTimeout(400);
 
+  // capture the coming-soon gate first if it's present
+  const gateVisible = await page.evaluate(() => {
+    const g = document.getElementById('coming-soon-gate');
+    return g && !document.documentElement.classList.contains('unlocked');
+  });
+  if (gateVisible) {
+    await page.screenshot({ path: join(outDir, `${name}-gate.png`), fullPage: false });
+    // unlock so the rest of the screenshots can capture the site
+    await page.evaluate(() => {
+      localStorage.setItem('mei-unlocked', 'true');
+      document.documentElement.classList.add('unlocked');
+    });
+    await page.waitForTimeout(200);
+  }
+
   const measurements = await page.evaluate(measureScript);
 
   // top-of-page screenshot first (clean hero)

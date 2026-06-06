@@ -4,6 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#f5f0e8" />
+
+  <!-- soft-gate: if this browser has already unlocked once, skip the splash before any paint happens -->
+  <script>
+    try {
+      if (localStorage.getItem('mei-unlocked') === 'true') {
+        document.documentElement.classList.add('unlocked');
+      }
+    } catch (e) { /* private mode etc. — show the gate */ }
+  </script>
   <meta name="description" content="mei skin studio — boutique restorative facials in kitsilano, vancouver. microcurrent, peels, LED therapy. by appointment." />
   <title>mei skin studio — boutique restorative facials · vancouver</title>
 
@@ -24,11 +33,35 @@
 
   <link rel="icon" type="image/jpeg" href="assets/mei-logo.jpg" />
   <link rel="apple-touch-icon" href="assets/mei-logo.jpg" />
-  <link rel="stylesheet" href="styles/main.css?v=overlay-slide" />
+  <link rel="stylesheet" href="styles/main.css?v=cs-gate" />
 </head>
 <body>
 
   <a class="skip-link" href="#main">skip to content</a>
+
+  <!-- coming-soon soft gate. password is "meiskin" (case-insensitive). client-side only. -->
+  <aside class="coming-soon-gate" id="coming-soon-gate" aria-label="coming soon">
+    <div class="cs-inner">
+      <img class="cs-logo" src="assets/mei-logo.jpg" alt="mei skin studio" />
+      <p class="cs-eyebrow">a small skin studio · kitsilano, vancouver</p>
+      <h1 class="cs-title"><em>coming</em> soon.</h1>
+      <p class="cs-sub">we're opening the doors shortly. if you have the password, step inside.</p>
+
+      <form class="cs-form" id="cs-form" novalidate>
+        <label for="cs-pwd" class="visually-hidden">password</label>
+        <input id="cs-pwd" type="password"
+               placeholder="enter password"
+               autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+               required />
+        <button type="submit" class="btn btn-primary">enter</button>
+        <p class="cs-msg" role="status" aria-live="polite" hidden></p>
+      </form>
+
+      <a class="cs-ig" href="https://www.instagram.com/meiskinstudio/" target="_blank" rel="noopener">
+        follow @meiskinstudio
+      </a>
+    </div>
+  </aside>
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
@@ -377,6 +410,6 @@
     </div>
   </footer>
 
-  <script src="scripts/main.js?v=overlay-slide" defer></script>
+  <script src="scripts/main.js?v=cs-gate" defer></script>
 </body>
 </html>

@@ -1101,6 +1101,124 @@ html.js .reveal.in {
 
 body.nav-open { overflow: hidden; }
 
+/* ─── coming-soon soft gate ─────────────────────────────────────────── */
+.coming-soon-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 22px;
+  transition: opacity .55s var(--ease-out);
+  overflow-y: auto;
+}
+.coming-soon-gate.unlocking { opacity: 0; pointer-events: none; }
+html.unlocked .coming-soon-gate { display: none; }
+/* lock the underlying site scroll while the gate is showing */
+html:not(.unlocked) body { overflow: hidden; }
+
+.cs-inner {
+  text-align: center;
+  max-width: 460px;
+  width: 100%;
+}
+.cs-logo {
+  height: 140px;
+  width: auto;
+  margin: 0 auto 32px;
+  mix-blend-mode: darken;
+  display: block;
+}
+.cs-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.cs-title {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(48px, 9vw, 80px);
+  line-height: 1.02;
+  letter-spacing: -.025em;
+  color: var(--fg);
+  margin-bottom: 20px;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+.cs-title em { font-style: italic; color: var(--accent-deep); }
+.cs-sub {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--fg-2);
+  margin-bottom: 38px;
+  max-width: 34ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cs-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: stretch;
+}
+.cs-form input {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 14px 4px;
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: .04em;
+  transition: border-color .25s var(--ease);
+}
+.cs-form input:focus { border-color: var(--accent-deep); outline: none; }
+.cs-form input::placeholder { color: var(--fg-3); }
+.cs-form button { margin-top: 6px; justify-content: center; }
+.cs-msg {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: #b04a4a;
+  margin-top: 2px;
+}
+.cs-form.shake input {
+  animation: cs-shake .4s;
+  border-bottom-color: #b04a4a;
+}
+@keyframes cs-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+.cs-ig {
+  display: inline-block;
+  margin-top: 38px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--fg-3);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 3px;
+  transition: color .25s var(--ease), border-color .25s var(--ease);
+}
+.cs-ig:hover { color: var(--accent-deep); border-color: var(--accent-deep); }
+
+@media (max-width: 480px) {
+  .cs-logo { height: 110px; margin-bottom: 24px; }
+  .cs-title { margin-bottom: 14px; }
+  .cs-sub { margin-bottom: 28px; }
+  .cs-ig { margin-top: 30px; }
+}
+
 /* when the overlay is open, raise the header above it so the X (and logo) stay visible.
    the header itself goes transparent so the overlay's cream-glass shows through. */
 body.nav-open .site-header {
