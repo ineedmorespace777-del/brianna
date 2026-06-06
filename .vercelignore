@@ -1,15 +1,18 @@
-# keep deploy slim — exclude dev-only artifacts
+# Keep deploy slim — exclude dev-only artifacts
 node_modules
 verify-output
-New folder
 .claude
 .git
 .vscode
 .idea
-package.json
-package-lock.json
+.astro
+dist
 preview.bat
-scripts/verify.mjs
+tools
 *.log
 .env
 .env.local
+SETUP.md
+
+# NOTE: package.json + package-lock.json + astro.config.mjs + src/ + public/ + api/ + vercel.json
+# MUST be deployed so Vercel can run npm install and astro build.
