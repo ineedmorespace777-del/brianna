@@ -3,7 +3,7 @@
 
 backend:
   name: github
-  repo: REPLACE_WITH_OWNER/REPLACE_WITH_REPO   # e.g. ineedmorespace777-del/brianna
+  repo: ineedmorespace777-del/brianna
   branch: master
   base_url: https://brianna.philipngo.ca
   auth_endpoint: /api/auth
