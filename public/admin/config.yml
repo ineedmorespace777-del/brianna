@@ -8,6 +8,11 @@ backend:
   base_url: https://brianna.philipngo.ca
   auth_endpoint: /api/auth
 
+# clickable "View site" link in the CMS header that takes you back to the public site
+display_url: https://brianna.philipngo.ca
+site_url: https://brianna.philipngo.ca
+logo_url: https://brianna.philipngo.ca/assets/mei-logo.jpg
+
 media_folder: "public/assets/uploads"
 public_folder: "/assets/uploads"
 
