@@ -1,0 +1,330 @@
+---
+import site from '../content/site.json';
+
+// inline-markdown helpers: *x* → <em>x</em>, newlines split to <span> lines
+const em = (s) => (s || '').replace(/\*([^*]+)\*/g, '<em>$1</em>');
+const titleLines = (s) => (s || '').split('\n').map(l => `<span>${em(l)}</span>`).join('');
+const inline = (s) => em(s);
+const nl2br = (s) => (s || '').replace(/\n/g, '<br/>');
+
+const cssVer = 'astro-1';
+const jsVer  = 'astro-1';
+
+const gate = site.comingSoon || {};
+const showGate = gate.enabled !== false;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content={site.meta.theme_color} />
+
+  {showGate && (
+    <script is:inline>
+      try {
+        if (localStorage.getItem('mei-unlocked') === 'true') {
+          document.documentElement.classList.add('unlocked');
+        }
+      } catch (e) { /* private mode etc. */ }
+    </script>
+  )}
+  {!showGate && (
+    <script is:inline>
+      document.documentElement.classList.add('unlocked');
+    </script>
+  )}
+
+  <meta name="description" content={site.meta.description} />
+  <title>{site.meta.title}</title>
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={site.meta.og_title} />
+  <meta property="og:description" content={site.meta.og_description} />
+  <meta property="og:image" content="/assets/mei-logo.jpg" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={site.meta.twitter_title} />
+  <meta name="twitter:description" content={site.meta.twitter_description} />
+  <meta name="twitter:image" content="/assets/mei-logo.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/jpeg" href="/assets/mei-logo.jpg" />
+  <link rel="apple-touch-icon" href="/assets/mei-logo.jpg" />
+  <link rel="stylesheet" href={`/styles/main.css?v=${cssVer}`} />
+
+  <!-- expose the gate password to the inline gate script — kept here so editors can change it via cms -->
+  {showGate && (
+    <script is:inline set:html={`window.__MEI_PWD=${JSON.stringify((gate.password || 'meiskin').toLowerCase())};`} />
+  )}
+</head>
+<body>
+
+  <a class="skip-link" href="#main">skip to content</a>
+
+  {showGate && (
+    <aside class="coming-soon-gate" id="coming-soon-gate" aria-label="coming soon">
+      <div class="cs-inner">
+        <img class="cs-logo" src="/assets/mei-logo.jpg" alt="mei skin studio" />
+        <p class="cs-eyebrow">{gate.eyebrow}</p>
+        <h1 class="cs-title" set:html={inline(gate.title)}></h1>
+        <p class="cs-sub">{gate.sub}</p>
+
+        <form class="cs-form" id="cs-form" novalidate>
+          <label for="cs-pwd" class="visually-hidden">password</label>
+          <input id="cs-pwd" type="password"
+                 placeholder="enter password"
+                 autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+                 required />
+          <button type="submit" class="btn btn-primary">enter</button>
+          <p class="cs-msg" role="status" aria-live="polite" hidden></p>
+        </form>
+
+        <a class="cs-ig" href={site.brand.ig_url} target="_blank" rel="noopener">
+          {gate.ig_label}
+        </a>
+      </div>
+    </aside>
+  )}
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label={`${site.brand.name} — home`}>
+        <img src="/assets/mei-logo.jpg" alt={site.brand.name} />
+        <span class="brand-word">{site.brand.name}</span>
+      </a>
+
+      <a class="book-btn" href="#book">book</a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-controls="overlay-nav" aria-expanded="false" aria-label="open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="overlay-nav" id="overlay-nav" hidden>
+    <div class="overlay-nav-inner">
+      <ul>
+        {site.overlayNav.items.map(item => (
+          <li><a href={item.anchor}><span>{item.label}</span></a></li>
+        ))}
+        <li><a class="overlay-book" href="#book"><em>{site.overlayNav.book_label}</em></a></li>
+      </ul>
+      <div class="overlay-foot">
+        <span>{site.overlayNav.foot_left}</span>
+        <span>{site.overlayNav.foot_right}</span>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <section class="hero" id="top">
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-img"></div>
+        <div class="hero-vignette"></div>
+      </div>
+      <div class="hero-inner">
+        <p class="eyebrow reveal">{site.hero.eyebrow}</p>
+        <h1 class="hero-title reveal" set:html={titleLines(site.hero.title)}></h1>
+        <p class="hero-sub reveal">{site.hero.sub}</p>
+        <div class="hero-ctas reveal">
+          <a class="btn btn-primary" href="#book">{site.hero.cta_primary_label}</a>
+          <a class="btn btn-pill" href="#experience">{site.hero.cta_secondary_label}</a>
+        </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <section class="philosophy" id="experience">
+      <div class="container">
+        <p class="eyebrow reveal">{site.philosophy.eyebrow}</p>
+        <h2 class="section-title reveal" set:html={titleLines(site.philosophy.title).replace('</span><span>', '</span><br/><span>')}></h2>
+        <p class="section-lede reveal">{site.philosophy.lede}</p>
+        <div class="triad">
+          {site.philosophy.triad.map(card => (
+            <article class="triad-card reveal">
+              <div class="triad-num">{card.num}</div>
+              <h3 set:html={inline(card.title)}></h3>
+              <p>{card.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="experience-split" aria-labelledby="exp-h">
+      <div class="exp-img" role="img" aria-label="single treatment room with soft window light"></div>
+      <div class="exp-text">
+        <p class="eyebrow reveal">{site.studioSplit.eyebrow}</p>
+        <h2 class="section-title" id="exp-h" set:html={inline(site.studioSplit.title)}></h2>
+        <p class="reveal">
+          {site.studioSplit.body_p1_before_link}<a class="link" href={site.studioSplit.body_p1_link_url} target="_blank" rel="noopener">{site.studioSplit.body_p1_link_text}</a>{site.studioSplit.body_p1_after_link}
+        </p>
+        <p class="reveal">{site.studioSplit.body_p2}</p>
+        <a class="btn btn-pill reveal" href="#book">{site.studioSplit.cta_label}</a>
+      </div>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="container">
+        <p class="eyebrow reveal">{site.services.eyebrow}</p>
+        <h2 class="section-title reveal">{site.services.title}</h2>
+
+        <div class="menu-grid">
+          {site.services.items.map(s => (
+            <article class="menu-card reveal">
+              <div class="menu-card-img" data-img={s.img_key}></div>
+              <div class="menu-card-body">
+                <div class="menu-card-head">
+                  <h3>{s.name}</h3>
+                  <span class="menu-card-meta">{s.duration}</span>
+                </div>
+                <p>{s.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="menu-footnote reveal">
+          <p>{site.services.footnote}</p>
+          <a class="btn btn-primary" href="#book">{site.services.footnote_cta_label}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="atmosphere">
+      <div class="atmosphere-img" aria-hidden="true"></div>
+      <div class="atmosphere-overlay"></div>
+      <div class="container atmosphere-inner">
+        <h2 class="atmosphere-title reveal" set:html={inline(site.atmosphere.title)}></h2>
+        <p class="reveal">{site.atmosphere.body}</p>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <p class="eyebrow reveal">{site.testimonials.eyebrow}</p>
+        <h2 class="section-title reveal">{site.testimonials.title}</h2>
+        <div class="reflections">
+          {site.testimonials.items.map(t => (
+            <figure class="reflection reveal">
+              <blockquote>{t.quote}</blockquote>
+              <figcaption>— {t.name}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="locations" id="locations">
+      <div class="container">
+        <p class="eyebrow reveal">{site.locations.eyebrow}</p>
+        <h2 class="section-title reveal" set:html={inline(site.locations.title)}></h2>
+
+        <div class="loc-grid">
+          {site.locations.items.map(loc => (
+            <article class="loc-card reveal">
+              <div class="loc-img" data-img={loc.city_tag.replace(/\s+/g, '-').toLowerCase()}></div>
+              <div class="loc-body">
+                <span class="loc-city-tag">{loc.city_tag}</span>
+                <h3 set:html={inline(loc.name)}></h3>
+                <p class="loc-address" set:html={nl2br(loc.address)}></p>
+                <dl class="loc-hours">
+                  {loc.hours.map(h => (
+                    <>
+                      <dt>{h.label}</dt><dd>{h.value}</dd>
+                    </>
+                  ))}
+                </dl>
+                <div class="loc-ctas">
+                  <a class="btn btn-primary" href={loc.cta_primary_url}>{loc.cta_primary_label}</a>
+                  <a class="btn btn-pill" href={loc.cta_secondary_url}>{loc.cta_secondary_label}</a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <p class="hours-line reveal">
+          {site.locations.contact_line_label} · <a href={`mailto:${site.locations.contact_email}`}>{site.locations.contact_email}</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="newsletter" id="book">
+      <div class="container">
+        <div class="newsletter-grid">
+          <div class="newsletter-text">
+            <p class="eyebrow reveal">{site.newsletter.eyebrow}</p>
+            <h2 class="section-title reveal" set:html={inline(site.newsletter.title)}></h2>
+            <p class="reveal">{site.newsletter.body}</p>
+          </div>
+          <form class="newsletter-form reveal" id="newsletter-form" novalidate>
+            <label for="nl-name" class="visually-hidden">first name</label>
+            <input id="nl-name" name="name" type="text" placeholder={site.newsletter.name_placeholder} autocomplete="given-name" required />
+
+            <label for="nl-email" class="visually-hidden">email</label>
+            <input id="nl-email" name="email" type="email" placeholder={site.newsletter.email_placeholder} autocomplete="email" required />
+
+            <button type="submit" class="btn btn-primary btn-block">{site.newsletter.submit_label}</button>
+            <p class="form-msg" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="memberships">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label={site.brand.name}>
+          <img src="/assets/mei-logo.jpg" alt={site.brand.name} />
+        </a>
+        <p>{site.footer.tagline}</p>
+      </div>
+
+      {site.footer.columns.map(col => (
+        <nav class="footer-nav" aria-label={col.heading}>
+          <h4>{col.heading}</h4>
+          <ul>
+            {col.items.map(item => (
+              <li><a href={item.url}>{item.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      ))}
+
+      <div class="footer-social">
+        <h4>follow</h4>
+        <ul>
+          <li><a href={site.brand.ig_url} target="_blank" rel="noopener" aria-label="instagram">ig</a></li>
+          <li><a href={site.brand.tiktok_url} aria-label="tiktok">tt</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-base">
+      <div class="container footer-base-inner">
+        <small>© <span id="yr"></span> {site.footer.copyright_name}. all rights reserved.</small>
+        <small>
+          {site.footer.legal_links.map((l, i) => (
+            <>{i > 0 && ' · '}<a href={l.url}>{l.label}</a></>
+          ))}
+          <span class="admin-sep"> · </span><a class="admin-link" href="/admin/">admin</a>
+        </small>
+      </div>
+    </div>
+  </footer>
+
+  <script src={`/scripts/main.js?v=${jsVer}`} defer></script>
+</body>
+</html>

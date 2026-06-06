@@ -1,83 +1,74 @@
-# mei skin studio — site mock
+# mei skin studio
 
-A static HTML/CSS/JS site mock for **mei skin studio** — a boutique restorative skin care practice in Kitsilano, Vancouver. Built from scratch, no framework, no build step.
+Static site for [mei skin studio](https://brianna.philipngo.ca) — a boutique restorative skin studio in Kitsilano, Vancouver. Built with Astro + a small JSON content file that's edited via Decap CMS at `/admin/`.
 
-## What's here
+## Project layout
 
 ```
 brianna/
-├── index.html           single-page, scroll-driven layout
-├── 404.html             themed not-found page
-├── styles/main.css      tokens, typography, layout, responsive
-├── scripts/main.js      header scroll state, mobile drawer, scroll reveals, form
-├── assets/
-│   ├── mei-logo.jpg     the brand mark
-│   ├── logo.svg         (legacy circle mark — unused)
-│   └── og.svg           social preview placeholder
-├── vercel.json          security headers + static caching
-├── preview.bat          double-click to preview locally
-└── verify-output/       playwright screenshots (gitignored)
+├── src/
+│   ├── pages/
+│   │   ├── index.astro      ← main page template
+│   │   └── 404.astro
+│   └── content/
+│       └── site.json        ← all editable text (THE file Decap commits to)
+├── public/
+│   ├── assets/              ← logo + uploaded images
+│   ├── styles/main.css      ← all styling
+│   ├── scripts/main.js      ← header, overlay menu, scroll reveals, gate
+│   ├── admin/
+│   │   ├── index.html       ← Decap CMS loader
+│   │   └── config.yml       ← schema (what shows up as editable fields)
+│   ├── robots.txt
+│   └── sitemap.xml
+├── api/                     ← Vercel serverless functions
+│   ├── auth.js              ← starts GitHub OAuth flow
+│   └── callback.js          ← receives token, hands back to CMS
+├── tools/
+│   └── verify.mjs           ← Playwright screenshot tests (dev only)
+├── astro.config.mjs
+├── package.json
+├── vercel.json
+└── SETUP.md                 ← one-time setup steps (read this first)
 ```
 
-## Local preview
+## First-time setup
 
-**Easiest:** double-click `preview.bat`. It kills any stale server on port 5500, opens `http://127.0.0.1:5500` in your browser, and serves the project folder.
+See **[SETUP.md](./SETUP.md)** — covers creating the GitHub repo, the OAuth App, the Vercel env vars, and connecting auto-deploy.
 
-Manual alternative:
+## Local development
 
 ```powershell
-cd E:\claude\brianna
-python -m http.server 5500 --bind 127.0.0.1
+npm install
+npm run dev        # → http://localhost:4321 (Astro dev server, hot reload)
+npm run build      # → builds to dist/
+npm run preview    # → serves the built dist/
+npm run verify     # → Playwright screenshots, desktop + iPhone
 ```
 
-Then open `http://127.0.0.1:5500`.
+Or for the quick local preview (without npm), the old `preview.bat` still works — it just serves `dist/` after you've run `npm run build` once.
 
-## Design language
+## Editing content
 
-- **Palette:** cream `#f5f0e8` + dark warm brown `#2d2622` + soft sage `#7a8a6e` (echoes the botanical line illustration in the logo)
-- **Type:** Cormorant Garamond for display, Inter for body — high-contrast serif paired with a clean modern sans
-- **Voice:** lowercase, restrained, considered. No marketing buzzwords.
+**Via the CMS (recommended for content people):**
+Go to `https://brianna.philipngo.ca/admin/` → Login with GitHub → edit → publish.
 
-## Sections (in scroll order)
+**Via direct JSON edit (recommended for devs):**
+Edit `src/content/site.json` → `git commit` → `git push` → Vercel auto-deploys.
 
-1. **hero** — serif headline, two CTAs, cream right-side image slot
-2. **philosophy** — read / treat / tend triad
-3. **studio split** — image + editorial about the practice
-4. **services menu** — six service cards with duration metadata
-5. **atmosphere** — center-aligned editorial pull
-6. **testimonials** — eight guest words (4×2 grid)
-7. **visit** — studio + traveling service cards with hours
-8. **newsletter** — split form with interest radio
-9. **footer** — brand, three nav columns, social, legal
+## Where to edit what
 
-## Swapping in real images
+- **Text content** → `src/content/site.json`
+- **Design / layout** → `public/styles/main.css`
+- **Interactions (menu, gate, forms)** → `public/scripts/main.js`
+- **Page structure** → `src/pages/index.astro`
+- **CMS field labels & hints** → `public/admin/config.yml`
 
-Every image slot is a blank cream block (`#ebe3d6`). To use real photos, set `background-image: url(...)` on:
+## Deploy
 
-| element                                | css selector                          |
-|----------------------------------------|---------------------------------------|
-| Hero right-side photo                  | `.hero-img`                           |
-| Studio split photo                     | `.exp-img`                            |
-| Service card photo (per service)       | `.menu-card-img[data-img="signature"]` etc. |
-| Atmosphere full-bleed                  | `.atmosphere-img`                     |
-| Visit card photo (per card)            | `.loc-img[data-img="studio"]` etc.    |
+Connected to Vercel via GitHub. Push to `master` → auto-deploys. CMS saves are commits, so they auto-deploy too.
 
-## Deploy to Vercel
-
-No build step. Plain static.
-
-1. `git init && git add . && git commit -m "mei skin mock"`
-2. Push to GitHub.
-3. Vercel → Add New → Import the repo.
-4. **Framework:** Other. **Build:** empty. **Output:** `./`.
-5. Deploy. URL in ~10 seconds.
-
-The included `vercel.json` ships security headers (HSTS, X-Frame-Options, Referrer-Policy) and a one-year immutable cache on CSS/JS/SVG.
-
-## Adding Supabase later
-
-Same pattern as the `homebase` project — install `@supabase/supabase-js`, set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` in Vercel env vars, wire the newsletter form (`#newsletter-form`) to insert a row in a `subscribers` table. The form already validates client-side.
-
-## License
-
-Code: MIT. Copy and imagery placeholders: replace with your real content before launch.
+For manual deploys:
+```powershell
+npx vercel deploy --prod --yes
+```

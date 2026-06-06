@@ -32,7 +32,8 @@
     csForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const val = input.value.trim().toLowerCase().replace(/\s+/g, '');
-      if (val === 'meiskin') {
+      const expected = (window.__MEI_PWD || 'meiskin').toLowerCase();
+      if (val === expected) {
         try { localStorage.setItem('mei-unlocked', 'true'); } catch (_) {}
         msg.hidden = true;
         gate.classList.add('unlocking');

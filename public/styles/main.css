@@ -1022,6 +1022,9 @@ body {
 }
 .footer-base small a { color: var(--fg-3); }
 .footer-base small a:hover { color: var(--accent-deep); }
+.admin-sep { color: var(--fg-3); opacity: .55; }
+.admin-link { font-style: italic; opacity: .7; }
+.admin-link:hover { opacity: 1; }
 .mock-tag {
   color: var(--fg-3);
   font-style: italic;

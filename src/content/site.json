@@ -1,0 +1,175 @@
+{
+  "meta": {
+    "title": "mei skin studio — boutique restorative facials · vancouver",
+    "description": "mei skin studio — boutique restorative facials in kitsilano, vancouver. microcurrent, peels, LED therapy. by appointment.",
+    "og_title": "mei skin studio — boutique restorative facials",
+    "og_description": "a boutique restorative skin studio in kitsilano, vancouver. one face at a time, by appointment.",
+    "twitter_title": "mei skin studio",
+    "twitter_description": "considered skin care. by appointment.",
+    "theme_color": "#f5f0e8"
+  },
+  "comingSoon": {
+    "enabled": true,
+    "password": "meiskin",
+    "eyebrow": "a small skin studio · kitsilano, vancouver",
+    "title": "*coming* soon.",
+    "sub": "we're opening the doors shortly. if you have the password, step inside.",
+    "ig_label": "follow @meiskinstudio"
+  },
+  "brand": {
+    "name": "mei skin",
+    "ig_url": "https://www.instagram.com/meiskinstudio/",
+    "tiktok_url": "#"
+  },
+  "overlayNav": {
+    "items": [
+      { "label": "studio", "anchor": "#experience" },
+      { "label": "services", "anchor": "#menu" },
+      { "label": "visit", "anchor": "#locations" },
+      { "label": "members", "anchor": "#memberships" },
+      { "label": "gift cards", "anchor": "#gift" },
+      { "label": "faq", "anchor": "#faq" }
+    ],
+    "book_label": "book a visit",
+    "foot_left": "by appointment · kitsilano, vancouver",
+    "foot_right": "tue — sat · 10–7"
+  },
+  "hero": {
+    "eyebrow": "boutique restorative facials · kitsilano, vancouver",
+    "title": "your skin,\n*considered.*",
+    "sub": "a small skin studio on west broadway. each visit begins with a slow read of your skin and ends with a plan that fits your week, your budget, and your patience.",
+    "cta_primary_label": "book a visit",
+    "cta_secondary_label": "about the studio"
+  },
+  "philosophy": {
+    "eyebrow": "the practice",
+    "title": "slow skin care.\n*honest* results.",
+    "lede": "we don't sell quick fixes. each appointment is a full hour at minimum, set aside for one person at a time. the work is unhurried, the conversation is private, and the products are chosen for what your skin actually needs — not what we have in stock.",
+    "triad": [
+      {
+        "num": "01",
+        "title": "*read*",
+        "body": "every first visit begins with a careful skin reading — under good light, without a clock running. we ask about your routine, your history, and what brought you in."
+      },
+      {
+        "num": "02",
+        "title": "*treat*",
+        "body": "a treatment chosen for today's skin, not last month's plan. cleanse, exfoliation, modalities matched to your needs, and a soft lymphatic finish."
+      },
+      {
+        "num": "03",
+        "title": "*tend*",
+        "body": "you leave with a written plan and a small kit of samples. nothing is upsold. if you don't need a serum, we won't sell you a serum."
+      }
+    ]
+  },
+  "studioSplit": {
+    "eyebrow": "the studio",
+    "title": "a single room. *one face* at a time.",
+    "body_p1_before_link": "mei skin is a one-practitioner boutique built around the belief that good skin care is unhurried. set inside ",
+    "body_p1_link_text": "we do beauty studio",
+    "body_p1_link_url": "https://www.instagram.com/wedobeautystudio/",
+    "body_p1_after_link": " on west broadway, there's a single treatment room, a single appointment slot per hour, and a single person caring for your skin from start to finish.",
+    "body_p2": "we work with plant-based and pharmaceutical-grade actives — no marketing buzzwords, no surprise add-ons, no upselling at the front desk. the prices on the menu are the prices you pay.",
+    "cta_label": "request an appointment"
+  },
+  "services": {
+    "eyebrow": "services",
+    "title": "the menu.",
+    "items": [
+      { "img_key": "signature", "name": "signature facial", "duration": "90 min", "description": "a full skin reading, double cleanse, custom exfoliation, masque, lymphatic massage, and a tailored finish. the visit to start with." },
+      { "img_key": "deep-clean", "name": "deep cleanse", "duration": "60 min", "description": "for congestion, breakouts, and texture. enzyme exfoliation, extractions handled with care, blue-light, and a calming masque." },
+      { "img_key": "microcurrent", "name": "microcurrent lift", "duration": "75 min", "description": "low-level electrical current that re-educates facial muscles. immediate lift in the cheekbone and jaw, cumulative over a series." },
+      { "img_key": "peel", "name": "chemical peel", "duration": "45 min", "description": "medical-grade aha/bha or jessner peels for tone, texture, and pigmentation. depth chosen with you after a thorough consult." },
+      { "img_key": "led", "name": "led light therapy", "duration": "30 min", "description": "red light for repair and inflammation, blue light for breakouts, near-infrared for deeper recovery. ideal as a single-session add-on." },
+      { "img_key": "microneedling", "name": "microneedling", "duration": "75 min", "description": "collagen induction therapy for fine lines, acne scarring, and overall skin density. numbing, a precise pen depth, and gentle aftercare." }
+    ],
+    "footnote": "full menu including brow shaping, lash tinting, and body services available on request. members receive priority booking and pricing.",
+    "footnote_cta_label": "see availability"
+  },
+  "atmosphere": {
+    "title": "an hour that's *actually* yours.",
+    "body": "no rotating staff, no shared waiting room, no other faces in the building during your treatment. just one practitioner, one room, and the time to do the work properly."
+  },
+  "testimonials": {
+    "eyebrow": "guest words",
+    "title": "in their own words.",
+    "items": [
+      { "quote": "i'd been to four other facialists this year before i found mei. the first visit changed how i think about my skin.", "name": "natalia" },
+      { "quote": "my skin barrier was wrecked from over-exfoliating. she fixed in three visits what i'd been chasing for two years.", "name": "marcus" },
+      { "quote": "i came in for a peel. she talked me out of it and recommended led + a different home routine instead. that kind of honesty is rare.", "name": "rosa" },
+      { "quote": "microcurrent + her hands. i'm forty-one and people keep asking what i've done. i tell them.", "name": "jun" },
+      { "quote": "i've been a member for two years. my skin has never looked more like itself.", "name": "elena" },
+      { "quote": "my partner gifted me a series for our anniversary. now we both go.", "name": "davis" },
+      { "quote": "the consultation alone is worth the price of admission. i took notes.", "name": "priya" },
+      { "quote": "i drive in from the north shore for every appointment. there's nowhere else in town i'd rather sit on a table.", "name": "theo" }
+    ]
+  },
+  "locations": {
+    "eyebrow": "visit",
+    "title": "the *studio*.",
+    "items": [
+      {
+        "city_tag": "kitsilano",
+        "name": "the *studio*",
+        "address": "inside we do beauty studio\nwest broadway · kitsilano\nvancouver, bc",
+        "hours": [
+          { "label": "tue — fri", "value": "10:00a — 7:00p" },
+          { "label": "saturday", "value": "9:00a — 4:00p" },
+          { "label": "sun — mon", "value": "closed" }
+        ],
+        "cta_primary_label": "request appointment",
+        "cta_primary_url": "#book",
+        "cta_secondary_label": "get directions",
+        "cta_secondary_url": "#"
+      }
+    ],
+    "contact_line_label": "questions before booking",
+    "contact_email": "hello@meiskinstudio.example"
+  },
+  "newsletter": {
+    "eyebrow": "stay close",
+    "title": "a quiet *note,* now and then.",
+    "body": "openings, new services, and the occasional skin care thought from mei. once a month, never more. unsubscribe whenever — we won't be offended.",
+    "name_placeholder": "first name",
+    "email_placeholder": "email address",
+    "submit_label": "subscribe"
+  },
+  "footer": {
+    "tagline": "a boutique restorative skin studio. by appointment, kitsilano, vancouver.",
+    "columns": [
+      {
+        "heading": "visit",
+        "items": [
+          { "label": "the studio", "url": "#locations" },
+          { "label": "book a visit", "url": "#book" },
+          { "label": "gift cards", "url": "#" }
+        ]
+      },
+      {
+        "heading": "services",
+        "items": [
+          { "label": "signature facial", "url": "#menu" },
+          { "label": "microcurrent", "url": "#menu" },
+          { "label": "peels", "url": "#menu" },
+          { "label": "microneedling", "url": "#menu" }
+        ]
+      },
+      {
+        "heading": "about",
+        "items": [
+          { "label": "our story", "url": "#" },
+          { "label": "faq", "url": "#" },
+          { "label": "press", "url": "#" },
+          { "label": "contact", "url": "#" }
+        ]
+      }
+    ],
+    "copyright_name": "mei skin studio",
+    "legal_links": [
+      { "label": "privacy", "url": "#" },
+      { "label": "terms", "url": "#" },
+      { "label": "accessibility", "url": "#" }
+    ]
+  }
+}

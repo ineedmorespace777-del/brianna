@@ -1,16 +1,23 @@
+---
+import site from '../content/site.json';
+const cssVer = 'astro-1';
+---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f5f0e8" />
+  <meta name="theme-color" content={site.meta.theme_color} />
   <meta name="robots" content="noindex" />
-  <title>not here — mei skin studio</title>
-  <link rel="icon" type="image/jpeg" href="assets/mei-logo.jpg" />
+  <title>not here — {site.brand.name} studio</title>
+  <link rel="icon" type="image/jpeg" href="/assets/mei-logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/main.css?v=overlay-slide" />
+  <link rel="stylesheet" href={`/styles/main.css?v=${cssVer}`} />
+  <script is:inline>
+    document.documentElement.classList.add('unlocked');
+  </script>
   <style>
     .nf {
       min-height: 100vh;
