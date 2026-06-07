@@ -4,14 +4,20 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "tinacms dev -c \"astro dev\"",
+    "dev:astro": "astro dev",
+    "tina:build": "tinacms build --content=local",
+    "tina:build:local": "tinacms build --local --skip-cloud-checks",
+    "build": "tinacms build --content=local && astro build",
+    "build:local": "tinacms build --local --skip-cloud-checks && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "verify": "node tools/verify.mjs"
   },
   "dependencies": {
-    "astro": "^5.0.0"
+    "@tinacms/cli": "^2.4.4",
+    "astro": "^5.0.0",
+    "tinacms": "^3.9.1"
   },
   "devDependencies": {
     "playwright": "^1.60.0"

@@ -1,157 +1,142 @@
-# mei skin studio — admin CMS setup
+# mei skin studio — admin (Tina CMS) setup
 
-This site uses **Astro** (static site generator) + **Decap CMS** (browser-based content editor at `/admin/`) + **GitHub OAuth** (real authentication, no passwords stored anywhere on the site).
+This site uses **Astro** (static site generator) + **Tina CMS** (browser-based content editor at `/admin/`) + **Tina Cloud** (free hosted backend, email login — no GitHub account needed for the editor).
 
-When Brianna edits text in `/admin/` → it commits to GitHub → Vercel rebuilds → live in ~30 seconds.
+Edit text in `/admin/` → Save → it commits to GitHub → Vercel rebuilds → live in ~30 seconds.
 
-You have to do the four steps below **once** to wire it up. After that, the workflow is just "edit in the browser, save, done."
+You do the five steps below **once** to wire it up. After that the workflow for Brianna is just "open /admin/, edit, save, done."
 
 ---
 
-## 1 — Create the GitHub repo
+## 0 — What's already done
 
-In a browser, go to **https://github.com/new** and create a repo:
+- ✅ GitHub repo wired (`ineedmorespace777-del/brianna`)
+- ✅ Vercel project deployed to `brianna.philipngo.ca`
+- ✅ Tina schema written (`tina/config.ts`) — every field on the site is editable
+- ✅ Build pipeline updated (`npm run build` runs Tina + Astro together)
+- ✅ Old Decap CMS + GitHub OAuth removed (silent-save bug)
 
-- **Repository name:** `brianna` (or `mei-skin-studio`, whatever)
-- **Owner:** your GitHub account (or an org you control)
-- **Public or Private:** Private is fine — Decap doesn't need it public
-- **Don't** add a README / .gitignore / license (we already have files locally)
+What you still need to do: register the project on Tina Cloud and add two env vars to Vercel.
 
-After creating, GitHub shows the remote URL. Copy it. Should look like:
-`https://github.com/YOURNAME/brianna.git`
+---
 
-Then in PowerShell:
+## 1 — Sign up for Tina Cloud
+
+In a browser, go to **https://app.tina.io/register** and create an account.
+
+- Use the email you want to administer with (e.g. `ineedmorespace777@gmail.com`)
+- Verify the email
+- No credit card needed — the free tier covers solo editors
+
+Brianna does **not** need to do this step. When you're ready to hand off, you'll invite her to the project from inside Tina Cloud (Settings → Collaborators → add her email).
+
+---
+
+## 2 — Register the project on Tina Cloud
+
+After login, click **"Create new project"** and fill in:
+
+| Field | Value |
+| --- | --- |
+| **Project name** | `mei skin studio` |
+| **Git provider** | GitHub |
+| **Repository** | `ineedmorespace777-del/brianna` |
+| **Branch** | `master` |
+| **Working directory** | *(leave blank — repo root)* |
+
+Tina Cloud will redirect you to GitHub to authorize the Tina Cloud app on this repo. Approve it. That's how Save → Commit works under the hood — no OAuth proxy needed.
+
+After approval you land on the project dashboard.
+
+---
+
+## 3 — Grab the Client ID + Token
+
+On the project dashboard, click **"Overview"** then **"Configuration"**.
+
+You'll see two values to copy:
+
+1. **Client ID** — looks like `00000000-aaaa-bbbb-cccc-111111111111`
+   This goes in the env var `PUBLIC_TINA_CLIENT_ID` (note the `PUBLIC_` prefix — Astro exposes it to the client).
+
+2. **Token** — click **"Tokens"** → **"Generate token"** → name it `vercel-prod`, scope `Content` (read), click create.
+   This goes in the env var `TINA_TOKEN`.
+
+Keep the token tab open — you can only view it once.
+
+---
+
+## 4 — Add the env vars to Vercel
+
+In PowerShell from `E:\claude\brianna`:
 
 ```powershell
-cd E:\claude\brianna
-git remote add origin https://github.com/YOURNAME/brianna.git
-git branch -M master   # or 'main' if you prefer
-git push -u origin master
+vercel env add PUBLIC_TINA_CLIENT_ID production --value "PASTE_CLIENT_ID_HERE"
+vercel env add PUBLIC_TINA_CLIENT_ID preview    --value "PASTE_CLIENT_ID_HERE"
+vercel env add PUBLIC_TINA_CLIENT_ID development --value "PASTE_CLIENT_ID_HERE"
+
+vercel env add TINA_TOKEN production --value "PASTE_TOKEN_HERE"
+vercel env add TINA_TOKEN preview    --value "PASTE_TOKEN_HERE"
 ```
 
-That pushes the whole codebase to GitHub.
+(Or paste them into the Vercel dashboard → project Settings → Environment Variables. Same result.)
+
+Use `--value "..."` not piping — piping adds a UTF-8 BOM on Windows PowerShell.
 
 ---
 
-## 2 — Update `public/admin/config.yml` with your repo path
+## 5 — Redeploy
 
-Open `public/admin/config.yml` and find:
-
-```yaml
-backend:
-  name: github
-  repo: REPLACE_WITH_OWNER/REPLACE_WITH_REPO
+```powershell
+vercel --prod
 ```
 
-Change `REPLACE_WITH_OWNER/REPLACE_WITH_REPO` to your actual repo, like:
-`ineedmorespace777-del/brianna`
-
-Save, commit, push.
-
----
-
-## 3 — Create a GitHub OAuth App
-
-This is what makes "Login with GitHub" work in `/admin/`.
-
-1. Go to **https://github.com/settings/developers**
-2. Click **OAuth Apps** → **New OAuth App**
-3. Fill in:
-   - **Application name:** `mei skin admin`
-   - **Homepage URL:** `https://brianna.philipngo.ca`
-   - **Authorization callback URL:** `https://brianna.philipngo.ca/api/callback`
-4. Click **Register application**
-5. On the next page:
-   - Copy the **Client ID** (visible)
-   - Click **Generate a new client secret**, copy that too (only shown once — save it)
+After deploy:
+1. Open `https://brianna.philipngo.ca/admin/`
+2. Click "Log in with Tina Cloud"
+3. Authorize with your tina.io account
+4. You land in the editor — sidebar shows every section of the site
+5. Tweak a string, click **"Save"** (top right)
+6. Tina commits to GitHub → Vercel rebuilds → live in ~30 seconds
 
 ---
 
-## 4 — Add the OAuth credentials to Vercel
+## Daily workflow (Brianna)
 
-In Vercel, project → **Settings → Environment Variables**:
+After you invite her as a collaborator in Tina Cloud:
 
-| Name                   | Value                          | Environments               |
-| ---------------------- | ------------------------------ | -------------------------- |
-| `GITHUB_CLIENT_ID`     | (paste Client ID from step 3)  | Production + Preview + Dev |
-| `GITHUB_CLIENT_SECRET` | (paste secret from step 3)     | Production + Preview + Dev |
+1. She visits `brianna.philipngo.ca/admin/`
+2. Logs in with her email (Tina Cloud sends a magic-link code — no password)
+3. Edits any text on the site
+4. Hits Save
+5. Done — change is live in ~30 seconds
 
-Save. **Then redeploy** so the env vars take effect (Deployments → ⋯ → Redeploy on the latest deploy).
-
----
-
-## 5 — Connect Vercel to the GitHub repo (auto-deploy on commit)
-
-So that Decap saves trigger redeploys:
-
-1. Vercel project → **Settings → Git**
-2. Click **Connect Git Repository**
-3. Pick the GitHub repo you created in step 1
-4. Confirm
-
-Now every push to `master` (including saves from Decap) auto-deploys in ~30s.
+No git, no GitHub, no terminal, no markdown. The form sidebar mirrors the site structure 1:1.
 
 ---
 
-## Adding Brianna later (when she's ready)
+## Local development
 
-1. She makes a free GitHub account: https://github.com/signup
-2. Send her username to you
-3. In your repo on GitHub: **Settings → Collaborators → Add people** → enter her username
-4. She accepts the email invite
-5. She bookmarks `brianna.philipngo.ca/admin/` and logs in with GitHub from there
+```powershell
+npm run dev
+```
 
-Done. She has edit access to all the text without touching code.
+This runs Tina's local backend + Astro dev server together. Open `http://localhost:4321/` for the site, `http://localhost:4321/admin/` for the editor. Changes save to the local JSON file — no cloud round-trip while you're developing.
 
----
+If you want to validate the Tina schema without cloud auth:
 
-## Testing the flow yourself
-
-After steps 1–5 above:
-
-1. Visit `brianna.philipngo.ca/admin/`
-2. Click **Login with GitHub**
-3. Authorize the app (one-time popup)
-4. You'll see the editor — all editable fields organized by section
-5. Make a tiny change (e.g., the hero subtitle), hit **Publish**
-6. Wait ~30s, refresh `brianna.philipngo.ca` — change is live
+```powershell
+npm run build:local
+```
 
 ---
 
 ## Troubleshooting
 
-**"401 Unauthorized" after clicking Login with GitHub:**
-- Check that `GITHUB_CLIENT_ID` is set in Vercel env vars and the project was redeployed after adding them
+**Admin shows "Client not configured"** → env vars missing or wrong. Re-check Vercel.
 
-**"Configuration error" in the CMS:**
-- `public/admin/config.yml` still has the placeholder `REPLACE_WITH_OWNER/REPLACE_WITH_REPO` — update it
+**Save button does nothing** → Tina Cloud doesn't have GitHub permission on the repo. Go to GitHub → Settings → Applications → Tina Cloud → grant access to `ineedmorespace777-del/brianna`.
 
-**"Invalid OAuth state":**
-- Cookies were blocked or the callback URL in the OAuth App doesn't match `/api/callback` exactly
+**Build fails on Vercel with cloud error** → token expired (rare). Regenerate in Tina Cloud, update `TINA_TOKEN` in Vercel, redeploy.
 
-**Login works but "Saving failed":**
-- The logged-in GitHub user isn't a collaborator on the repo. Add them in repo Settings → Collaborators.
-
-**The site builds locally with `npm run build` but Vercel fails:**
-- Make sure Vercel detects `astro` as the framework and runs `npm install` then `npm run build`. The `vercel.json` in this repo handles that.
-
----
-
-## File map for editors
-
-When Brianna asks "where does X live?":
-
-| Section on the site | Field in CMS                |
-| ------------------- | --------------------------- |
-| Coming Soon splash  | "Coming Soon Splash"        |
-| Hero (big "your skin, considered") | "Hero"          |
-| Three pillars (read/treat/tend)    | "Philosophy"    |
-| About the studio                   | "Studio Split"  |
-| Services menu (facials etc.)       | "Services Menu" |
-| "an hour that's actually yours"    | "Atmosphere"    |
-| Guest quotes                       | "Testimonials"  |
-| Location card + hours              | "Visit / Location card" |
-| Newsletter form copy               | "Newsletter signup" |
-| Footer links + copyright           | "Footer"        |
-
-Everything else (logo, colors, fonts, layout, animations) is hand-coded and stays put.
+**Changes don't show on the live site** → check Vercel Deployments tab. Tina commits to `master`, Vercel auto-deploys. If the deploy is queued but not built, give it 30s.
