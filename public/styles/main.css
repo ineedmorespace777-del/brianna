@@ -232,28 +232,60 @@ body::after {
 .link:hover { color: var(--accent-deep); }
 .link:hover::after { background: var(--accent-deep); }
 
-/* ─── elegant empty image frame ──────────────────────────────
-   warm tonal gradient + grain + faint single-line leaf motif. */
+/* ─── elegant empty image placeholder ────────────────────────
+   warm tonal gradient + soft diagonal stripe texture + corner brackets.
+   reads as an intentional editorial placeholder — not a missing photo,
+   not a dead block. real photos drop straight in later by setting
+   background-image on the .frame and the stripes/brackets fade. */
 .frame {
   position: relative;
   overflow: hidden;
+  /* base: gradient + diagonal stripe overlay in the same tonal family */
   background:
+    repeating-linear-gradient(135deg, transparent 0 14px, rgba(42,35,32,.045) 14px 15px),
     radial-gradient(120% 90% at 30% 15%, rgba(255,255,255,.5), transparent 55%),
     linear-gradient(150deg, var(--blush), var(--bg-2) 55%, var(--bg-3));
   isolation: isolate;
 }
 .frame.tint-sage {
   background:
+    repeating-linear-gradient(135deg, transparent 0 14px, rgba(33,45,28,.05) 14px 15px),
     radial-gradient(120% 90% at 25% 12%, rgba(255,255,255,.4), transparent 55%),
     linear-gradient(150deg, #dfe2d4, #cdd3c0 60%, #bcc4ad);
 }
 .frame.tint-clay {
   background:
+    repeating-linear-gradient(135deg, transparent 0 14px, rgba(70,38,18,.05) 14px 15px),
     radial-gradient(120% 90% at 25% 12%, rgba(255,255,255,.45), transparent 55%),
     linear-gradient(150deg, #f0ddcd, #e7cdb8 60%, #ddc0a8);
 }
-/* keep image frames truly blank — no leaf icon, no captions, no inner grain.
-   the tint gradient + paper-grain body overlay is enough. */
+/* corner brackets — top-left and bottom-right, very subtle */
+.frame::before,
+.frame::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: .35;
+}
+.frame::before {
+  top: 14px; left: 14px;
+  border-top: 1.5px solid var(--fg);
+  border-left: 1.5px solid var(--fg);
+}
+.frame::after {
+  bottom: 14px; right: 14px;
+  border-bottom: 1.5px solid var(--fg);
+  border-right: 1.5px solid var(--fg);
+}
+/* on smaller frames (service cards) tighten brackets in */
+.menu-card-img .frame::before,
+.menu-card-img .frame::after { width: 12px; height: 12px; opacity: .28; }
+.menu-card-img .frame::before { top: 12px; left: 12px; }
+.menu-card-img .frame::after  { bottom: 12px; right: 12px; }
+/* keep image frames truly blank — no leaf icon, no captions, no inner grain. */
 .frame > .frame-label { display: none; }
 
 /* header ────────────────────────────────────────────────── */
