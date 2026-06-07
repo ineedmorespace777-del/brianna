@@ -102,6 +102,8 @@ collections:
                 name: "frame_tint"
                 widget: "select"
                 default: ""
+                required: false
+                hint: "(currently neutralized — all placeholders share the same color regardless of this)"
                 options:
                   - { label: "Blush (default)", value: "" }
                   - { label: "Sage", value: "tint-sage" }
@@ -164,6 +166,8 @@ collections:
                 name: "frame_tint"
                 widget: "select"
                 default: "tint-sage"
+                required: false
+                hint: "(currently neutralized — all placeholders share the same color regardless of this)"
                 options:
                   - { label: "Blush (default)", value: "" }
                   - { label: "Sage", value: "tint-sage" }
@@ -191,6 +195,8 @@ collections:
                     name: "tint"
                     widget: "select"
                     default: ""
+                    required: false
+                    hint: "(currently neutralized — all placeholders share the same warm sand color, regardless of this setting)"
                     options:
                       - { label: "Blush (default)", value: "" }
                       - { label: "Sage", value: "tint-sage" }
@@ -211,6 +217,8 @@ collections:
                 name: "frame_tint"
                 widget: "select"
                 default: "tint-sage"
+                required: false
+                hint: "(currently neutralized — all placeholders share the same color regardless of this)"
                 options:
                   - { label: "Blush", value: "" }
                   - { label: "Sage (default)", value: "tint-sage" }
@@ -253,6 +261,8 @@ collections:
                     name: "frame_tint"
                     widget: "select"
                     default: "tint-clay"
+                    required: false
+                    hint: "(currently neutralized — all placeholders share the same color regardless of this)"
                     options:
                       - { label: "Blush", value: "" }
                       - { label: "Sage", value: "tint-sage" }
