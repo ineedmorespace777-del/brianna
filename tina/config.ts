@@ -210,6 +210,30 @@ export default defineConfig({
             ],
           },
 
+          // ───────────────── about / meet mei ─────────────────
+          {
+            type: "object", name: "aboutMei", label: "About / Meet Mei",
+            description: "The 'meet the practitioner' section — bio, credentials, pull quote.",
+            fields: [
+              { type: "boolean", name: "enabled", label: "Show this section?", description: "Untick to hide the whole section without losing your edits." },
+              { type: "string", name: "eyebrow", label: "Eyebrow" },
+              { type: "string", name: "title", label: "Title", description: "*italic* allowed (e.g. 'meet *mei.*')" },
+              { type: "string", name: "lede", label: "Opening paragraph", ui: { component: "textarea" } },
+              { type: "string", name: "body", label: "Second paragraph", ui: { component: "textarea" } },
+              {
+                type: "object", name: "credentials", label: "Credentials list", list: true,
+                ui: { itemProps: (item) => ({ label: item?.label || "—" }) },
+                fields: [
+                  { type: "string", name: "label", label: "Credential" },
+                  { type: "string", name: "org", label: "Organization / school" },
+                ],
+              },
+              { type: "string", name: "pull_quote", label: "Pull quote", ui: { component: "textarea" } },
+              { type: "string", name: "frame_label", label: "Image caption (optional)" },
+              { type: "string", name: "cta_label", label: "Button label" },
+            ],
+          },
+
           // ───────────────── atmosphere ─────────────────
           {
             type: "object", name: "atmosphere", label: "Atmosphere (the editorial pull)",
@@ -266,6 +290,41 @@ export default defineConfig({
               },
               { type: "string", name: "contact_line_label", label: "Contact line label" },
               { type: "string", name: "contact_email", label: "Contact email" },
+            ],
+          },
+
+          // ───────────────── faq ─────────────────
+          {
+            type: "object", name: "faq", label: "FAQ accordion",
+            description: "Questions visitors commonly ask. Tap a question on the site to reveal the answer.",
+            fields: [
+              { type: "boolean", name: "enabled", label: "Show this section?" },
+              { type: "string", name: "eyebrow", label: "Eyebrow" },
+              { type: "string", name: "title", label: "Title", description: "*italic* allowed" },
+              {
+                type: "object", name: "items", label: "Q&A pairs", list: true,
+                ui: { itemProps: (item) => ({ label: item?.q || "—" }) },
+                fields: [
+                  { type: "string", name: "q", label: "Question" },
+                  { type: "string", name: "a", label: "Answer", ui: { component: "textarea" } },
+                ],
+              },
+            ],
+          },
+
+          // ───────────────── SEO (structured data) ─────────────────
+          {
+            type: "object", name: "seo", label: "SEO / structured data",
+            description: "Used for Google's knowledge panel. Most fields are one-time setup.",
+            fields: [
+              { type: "string", name: "price_range", label: "Price range symbol", description: "$, $$, $$$ — shown on Google" },
+              { type: "string", name: "street_address", label: "Street address (1 line)" },
+              { type: "string", name: "locality", label: "City" },
+              { type: "string", name: "region", label: "Province / state code", description: "e.g. BC, CA, NY" },
+              { type: "string", name: "country", label: "Country code", description: "e.g. CA, US" },
+              { type: "string", name: "latitude", label: "Latitude" },
+              { type: "string", name: "longitude", label: "Longitude" },
+              { type: "string", name: "site_url", label: "Public site URL", description: "e.g. https://brianna.philipngo.ca" },
             ],
           },
 

@@ -24,11 +24,11 @@
   "overlayNav": {
     "items": [
       { "label": "studio", "anchor": "#experience" },
+      { "label": "about mei", "anchor": "#meet-mei" },
       { "label": "services", "anchor": "#menu" },
       { "label": "visit", "anchor": "#locations" },
-      { "label": "members", "anchor": "#memberships" },
-      { "label": "gift cards", "anchor": "#gift" },
-      { "label": "faq", "anchor": "#faq" }
+      { "label": "faq", "anchor": "#faq" },
+      { "label": "gift cards", "anchor": "#gift" }
     ],
     "book_label": "book a visit",
     "foot_left": "by appointment · kitsilano, vancouver",
@@ -108,6 +108,23 @@
     "footnote": "full menu including brow shaping, lash tinting, and body services available on request. members receive priority booking and pricing.",
     "footnote_cta_label": "see availability"
   },
+  "aboutMei": {
+    "enabled": true,
+    "eyebrow": "the practitioner",
+    "title": "meet *mei.*",
+    "lede": "skin care, for me, started with my own. a long stretch of trial and error, a handful of mentors, and the slow realization that the work i wanted to do wasn't in a chain spa — it was in a small room, with one person, taking the time.",
+    "body": "i trained in clinical aesthetics in vancouver and spent six years on treatment-room floors at studios across the city before opening mei skin. i still see every visit the same way: it's an hour for you, and the only job is to leave your skin (and you) a little more at home in itself.",
+    "credentials": [
+      { "label": "certified aesthetician", "org": "blanche macdonald · vancouver" },
+      { "label": "advanced peel certification", "org": "image skincare" },
+      { "label": "microneedling certification", "org": "skinpen · crown aesthetics" },
+      { "label": "led light therapy", "org": "celluma pro" },
+      { "label": "microcurrent specialist", "org": "nuface trinity pro" }
+    ],
+    "pull_quote": "i won't sell you something you don't need. if your skin's doing well, i'll tell you to come back in eight weeks, not six.",
+    "frame_label": "mei, in studio",
+    "cta_label": "book a visit"
+  },
   "atmosphere": {
     "title": "an hour that's *actually* yours.",
     "body": "no rotating staff, no shared waiting room, no other faces in the building during your treatment. just one practitioner, one room, and the time to do the work properly.",
@@ -150,6 +167,55 @@
     ],
     "contact_line_label": "questions before booking",
     "contact_email": "hello@meiskinstudio.example"
+  },
+  "faq": {
+    "enabled": true,
+    "eyebrow": "questions",
+    "title": "commonly *asked.*",
+    "items": [
+      {
+        "q": "what should i expect on my first visit?",
+        "a": "we start with a careful skin reading — under good light, with no clock running. i ask about your routine, your history, and what brought you in. the treatment is chosen for what i see, not a pre-set menu. you'll leave with a written plan and a small kit of samples."
+      },
+      {
+        "q": "how long are appointments, and how often should i come?",
+        "a": "first visits run 90 minutes; follow-ups are usually 60 or 75 depending on the treatment. cadence depends on your skin — most clients land somewhere between every four and eight weeks. i won't book you in more often than your skin needs."
+      },
+      {
+        "q": "do you sell products?",
+        "a": "i carry a small, curated shelf of skin care that i actually use on clients. i won't push it. if a drugstore product would work better for your case, i'll tell you which one and why."
+      },
+      {
+        "q": "i have sensitive or reactive skin. is this for me?",
+        "a": "yes — and especially yes. a lot of clients arrive after their barrier has been worked over by harsh routines or rushed appointments elsewhere. we start gently, with calming modalities and a slow rebuild. patch tests are standard."
+      },
+      {
+        "q": "can i bring products i'm already using?",
+        "a": "please. bring everything — including the things you're embarrassed about. we go through it together and figure out what stays, what goes, and what's missing. no judgment, ever."
+      },
+      {
+        "q": "what's your cancellation policy?",
+        "a": "24-hour notice for full credit. cancellations inside 24 hours are charged 50% of the booked service. i hold one slot per hour, so a late cancel means an empty room — i appreciate your help keeping it fair."
+      },
+      {
+        "q": "do you offer gift cards?",
+        "a": "yes, in any amount. delivered electronically or as a small printed card. they don't expire."
+      },
+      {
+        "q": "where do i park?",
+        "a": "street parking on west broadway and the side streets, free after 6pm. the studio is a short walk from broadway-city hall (10–12 min) or any bus along the broadway corridor."
+      }
+    ]
+  },
+  "seo": {
+    "price_range": "$$",
+    "street_address": "inside we do beauty studio, west broadway",
+    "locality": "Vancouver",
+    "region": "BC",
+    "country": "CA",
+    "latitude": "49.2638",
+    "longitude": "-123.1547",
+    "site_url": "https://brianna.philipngo.ca"
   },
   "newsletter": {
     "eyebrow": "stay close",

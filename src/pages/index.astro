@@ -7,14 +7,109 @@ const titleLines = (s) => (s || '').split('\n').map(l => `<span>${em(l)}</span>`
 const inline = (s) => em(s);
 const nl2br = (s) => (s || '').replace(/\n/g, '<br/>');
 
-const cssVer = 'redesign-2';
-const jsVer  = 'redesign-1';
+const cssVer = 'redesign-3';
+const jsVer  = 'redesign-2';
 
 const gate = site.comingSoon || {};
 const showGate = gate.enabled !== false;
 
 // double-up marquee items so the css translateX(-50%) animation loops seamlessly
 const marqueeItems = [...site.marquee.items, ...site.marquee.items];
+
+const showAboutMei = site.aboutMei && site.aboutMei.enabled !== false;
+const showFaq      = site.faq && site.faq.enabled !== false && (site.faq.items || []).length > 0;
+
+// ─────────────────────────── JSON-LD structured data ────────────────────────────
+// Schema.org BeautySalon — gives Google a knowledge-panel-ready understanding of
+// what this place is, where, when, how to reach it. Derives from site.json so
+// Brianna's edits flow through without us touching code.
+const seo = site.seo || {};
+const loc0 = (site.locations && site.locations.items && site.locations.items[0]) || {};
+
+// Map "tue — fri"-style day labels to schema.org day enums.
+const DAY_MAP = {
+  mon: 'Monday', tue: 'Tuesday', wed: 'Wednesday', thu: 'Thursday',
+  fri: 'Friday', sat: 'Saturday', sun: 'Sunday',
+};
+function expandDayRange(label) {
+  // accept things like "tue — fri", "saturday", "sun — mon"
+  const norm = (label || '').toLowerCase().replace(/[—–-]/g, '-').replace(/\s+/g, '');
+  const parts = norm.split('-');
+  const lookup = (s) => DAY_MAP[s.slice(0, 3)];
+  if (parts.length === 1) {
+    const d = lookup(parts[0]);
+    return d ? [d] : [];
+  }
+  const order = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+  const start = order.indexOf(parts[0].slice(0, 3));
+  const end   = order.indexOf(parts[1].slice(0, 3));
+  if (start < 0 || end < 0) return [];
+  const out = [];
+  for (let i = start; i !== (end + 1) % 7; i = (i + 1) % 7) {
+    out.push(DAY_MAP[order[i]]);
+    if (i === end) break;
+  }
+  return out;
+}
+function parseHourValue(value) {
+  // "10:00a — 7:00p" → { opens: "10:00", closes: "19:00" }
+  if (!value || /closed/i.test(value)) return null;
+  const segs = value.toLowerCase().replace(/[—–]/g, '-').split('-').map(s => s.trim());
+  const toHHMM = (s) => {
+    const m = s.match(/(\d{1,2})(?::(\d{2}))?\s*([ap])?/);
+    if (!m) return null;
+    let h = parseInt(m[1], 10);
+    const mm = m[2] || '00';
+    const ap = m[3];
+    if (ap === 'p' && h < 12) h += 12;
+    if (ap === 'a' && h === 12) h = 0;
+    return String(h).padStart(2, '0') + ':' + mm;
+  };
+  const opens = toHHMM(segs[0]);
+  const closes = toHHMM(segs[1] || '');
+  if (!opens || !closes) return null;
+  return { opens, closes };
+}
+const openingHours = (loc0.hours || []).flatMap(h => {
+  const t = parseHourValue(h.value);
+  if (!t) return [];
+  const days = expandDayRange(h.label);
+  if (!days.length) return [];
+  return [{
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: days,
+    opens: t.opens,
+    closes: t.closes,
+  }];
+});
+const siteUrl = seo.site_url || 'https://brianna.philipngo.ca';
+// Business name for structured data — prefer the first segment of OG title
+// (e.g. "mei skin studio — boutique restorative facials" → "mei skin studio"),
+// fall back to the wordmark.
+const bizName = ((site.meta.og_title || '').split(/[—–-]/)[0] || '').trim() || site.brand.name;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BeautySalon',
+  name: bizName,
+  description: site.meta.description,
+  url: siteUrl,
+  image: siteUrl + '/assets/mei-logo.png',
+  logo: siteUrl + '/assets/mei-logo.png',
+  priceRange: seo.price_range || '$$',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: seo.street_address || '',
+    addressLocality: seo.locality || '',
+    addressRegion: seo.region || '',
+    addressCountry: seo.country || '',
+  },
+  ...(seo.latitude && seo.longitude ? {
+    geo: { '@type': 'GeoCoordinates', latitude: seo.latitude, longitude: seo.longitude },
+  } : {}),
+  areaServed: seo.locality || 'Vancouver',
+  sameAs: [site.brand.ig_url].filter(u => u && u !== '#'),
+  openingHoursSpecification: openingHours,
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -58,7 +153,10 @@ const marqueeItems = [...site.marquee.items, ...site.marquee.items];
 
   <link rel="icon" type="image/png" href="/assets/mei-logo.png" />
   <link rel="apple-touch-icon" href="/assets/mei-logo.png" />
+  <link rel="canonical" href={siteUrl} />
   <link rel="stylesheet" href={`/styles/main.css?v=${cssVer}`} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
   {showGate && (
     <script is:inline set:html={`window.__MEI_PWD=${JSON.stringify((gate.password || 'meiskin').toLowerCase())};`} />
@@ -200,6 +298,49 @@ const marqueeItems = [...site.marquee.items, ...site.marquee.items];
       </div>
     </section>
 
+    <!-- meet mei ──────────────────────────────────────────── -->
+    {showAboutMei && (
+      <section class="meet-mei" id="meet-mei" aria-labelledby="meet-mei-h">
+        <div class="container meet-mei-grid">
+          <div class="meet-mei-text">
+            <p class="eyebrow reveal">{site.aboutMei.eyebrow}</p>
+            <h2 class="section-title reveal" id="meet-mei-h" set:html={inline(site.aboutMei.title)}></h2>
+            <p class="meet-mei-lede reveal">{site.aboutMei.lede}</p>
+            <p class="reveal">{site.aboutMei.body}</p>
+
+            {site.aboutMei.pull_quote && (
+              <blockquote class="meet-mei-quote reveal">
+                <span class="qmark" aria-hidden="true">"</span>{site.aboutMei.pull_quote}
+              </blockquote>
+            )}
+
+            {site.aboutMei.credentials && site.aboutMei.credentials.length > 0 && (
+              <dl class="meet-mei-credentials reveal" aria-label="credentials">
+                {site.aboutMei.credentials.map(c => (
+                  <div>
+                    <dt>{c.label}</dt>
+                    <dd>{c.org}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+
+            {site.aboutMei.cta_label && (
+              <a class="btn btn-primary reveal" href="#book" data-magnetic>
+                {site.aboutMei.cta_label} <span class="btn-arrow">→</span>
+              </a>
+            )}
+          </div>
+
+          <div class="meet-mei-media reveal" data-parallax="18">
+            <div class="frame">
+              {site.aboutMei.frame_label && <span class="frame-label">{site.aboutMei.frame_label}</span>}
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
     <!-- menu ──────────────────────────────────────────────── -->
     <section class="menu" id="menu">
       <div class="container">
@@ -300,6 +441,34 @@ const marqueeItems = [...site.marquee.items, ...site.marquee.items];
       </div>
     </section>
 
+    <!-- faq ───────────────────────────────────────────────── -->
+    {showFaq && (
+      <section class="faq" id="faq" aria-labelledby="faq-h">
+        <div class="container">
+          <p class="eyebrow reveal">{site.faq.eyebrow}</p>
+          <h2 class="section-title reveal" id="faq-h" set:html={inline(site.faq.title)}></h2>
+
+          <div class="faq-list reveal">
+            {site.faq.items.map((item, i) => (
+              <details class="faq-item" name="faq-group">
+                <summary>
+                  <span class="faq-q">{item.q}</span>
+                  <span class="faq-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                      <path d="M3 6l5 5 5-5" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="faq-a">
+                  <p>{item.a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
     <!-- newsletter / book ─────────────────────────────────── -->
     <section class="newsletter" id="book">
       <div class="container">
@@ -373,5 +542,11 @@ const marqueeItems = [...site.marquee.items, ...site.marquee.items];
   </div>
 
   <script src={`/scripts/main.js?v=${jsVer}`} defer></script>
+
+  {/* Vercel Web Analytics + Speed Insights — auto-served at /_vercel/* on Vercel
+       deploys. 404s gracefully on local preview. Enable in Vercel project
+       Settings → Analytics + Speed Insights. */}
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
