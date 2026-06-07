@@ -171,7 +171,9 @@ const jsonLd = {
       <div class="cs-inner">
         <img class="cs-logo" src="/assets/mei-logo.png" alt="mei skin studio" />
         <p class="cs-eyebrow">{gate.eyebrow}</p>
-        <h1 class="cs-title" set:html={inline(gate.title)}></h1>
+        {/* Use h2 — the gate is an <aside> overlay, not the document's primary outline.
+            The hero <h1> below is the page's true heading. */}
+        <h2 class="cs-title" set:html={inline(gate.title)}></h2>
         <p class="cs-sub">{gate.sub}</p>
 
         <form class="cs-form" id="cs-form" novalidate>
