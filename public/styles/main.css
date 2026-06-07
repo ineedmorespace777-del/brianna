@@ -252,41 +252,9 @@ body::after {
     radial-gradient(120% 90% at 25% 12%, rgba(255,255,255,.45), transparent 55%),
     linear-gradient(150deg, #f0ddcd, #e7cdb8 60%, #ddc0a8);
 }
-/* fine grain inside the frame */
-.frame::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: .5;
-  mix-blend-mode: soft-light;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
-}
-/* faint botanical single-line leaf — echoes the logo mark */
-.frame::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 140' fill='none' stroke='%232a2320' stroke-width='1' stroke-linecap='round' opacity='0.5'%3E%3Cpath d='M60 132 C60 90 60 60 60 8'/%3E%3Cpath d='M60 70 C30 64 18 44 22 22 C46 24 62 42 60 70Z'/%3E%3Cpath d='M60 56 C90 50 102 30 98 10 C74 12 58 30 60 56Z'/%3E%3C/svg%3E")
-    no-repeat center / 90px auto;
-  opacity: .14;
-  mix-blend-mode: multiply;
-}
-.frame > .frame-label {
-  position: absolute;
-  z-index: 2;
-  left: 22px; bottom: 18px;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 15px;
-  color: var(--fg);
-  opacity: .42;
-  letter-spacing: .01em;
-}
+/* keep image frames truly blank — no leaf icon, no captions, no inner grain.
+   the tint gradient + paper-grain body overlay is enough. */
+.frame > .frame-label { display: none; }
 
 /* header ────────────────────────────────────────────────── */
 .site-header {
@@ -885,10 +853,10 @@ html.js .line-mask.in > span { transform: translateY(0); }
   border-radius: 200px 200px 16px 16px;
   margin-bottom: 26px;
   position: relative;
-  overflow: hidden;
+  /* no overflow: hidden here — the .frame clips its own gradient with its own
+     overflow: hidden, and the price-tag needs to escape the arch top corners. */
 }
 .menu-card-img .frame { position: absolute; inset: 0; border-radius: inherit; transition: transform .8s var(--ease-out); }
-.menu-card-img .frame::after { background-size: 64px auto; opacity: .12; }
 .menu-card:hover .menu-card-img .frame { transform: scale(1.04); }
 .menu-card-img .price-tag {
   position: absolute;
