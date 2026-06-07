@@ -248,9 +248,13 @@ const jsonLd = {
         )}
       </div>
       <div class="hero-media reveal" data-parallax="20">
-        <div class={`frame ${site.hero.frame_tint || ''}`}>
-          {site.hero.frame_label && <span class="frame-label">{site.hero.frame_label}</span>}
-        </div>
+        {site.hero.image ? (
+          <img class="media-img" src={site.hero.image} alt={site.hero.image_alt || ''} loading="eager" fetchpriority="high" decoding="async" />
+        ) : (
+          <div class={`frame ${site.hero.frame_tint || ''}`}>
+            {site.hero.frame_label && <span class="frame-label">{site.hero.frame_label}</span>}
+          </div>
+        )}
         {site.hero.chip_label && (
           <div class="hero-chip"><span class="dot"></span> {site.hero.chip_label}</div>
         )}
@@ -285,9 +289,13 @@ const jsonLd = {
     <!-- studio split ──────────────────────────────────────── -->
     <section class="experience-split" aria-labelledby="exp-h">
       <div class="exp-img reveal" data-parallax="22">
-        <div class={`frame ${site.studioSplit.frame_tint || ''}`}>
-          {site.studioSplit.frame_label && <span class="frame-label">{site.studioSplit.frame_label}</span>}
-        </div>
+        {site.studioSplit.image ? (
+          <img class="media-img" src={site.studioSplit.image} alt={site.studioSplit.image_alt || ''} loading="lazy" decoding="async" />
+        ) : (
+          <div class={`frame ${site.studioSplit.frame_tint || ''}`}>
+            {site.studioSplit.frame_label && <span class="frame-label">{site.studioSplit.frame_label}</span>}
+          </div>
+        )}
       </div>
       <div class="exp-text">
         <p class="eyebrow reveal">{site.studioSplit.eyebrow}</p>
@@ -335,9 +343,13 @@ const jsonLd = {
           </div>
 
           <div class="meet-mei-media reveal" data-parallax="18">
-            <div class="frame">
-              {site.aboutMei.frame_label && <span class="frame-label">{site.aboutMei.frame_label}</span>}
-            </div>
+            {site.aboutMei.image ? (
+              <img class="media-img" src={site.aboutMei.image} alt={site.aboutMei.image_alt || `${site.brand.name} — practitioner portrait`} loading="lazy" decoding="async" />
+            ) : (
+              <div class="frame">
+                {site.aboutMei.frame_label && <span class="frame-label">{site.aboutMei.frame_label}</span>}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -358,7 +370,11 @@ const jsonLd = {
           {site.services.items.map(s => (
             <article class="menu-card reveal">
               <div class="menu-card-img" data-parallax="14">
-                <div class={`frame ${s.tint || ''}`}></div>
+                {s.image ? (
+                  <img class="media-img" src={s.image} alt={s.image_alt || s.name} loading="lazy" decoding="async" />
+                ) : (
+                  <div class={`frame ${s.tint || ''}`}></div>
+                )}
                 {s.price && <span class="price-tag">{s.price}</span>}
               </div>
               <div class="menu-card-body">
@@ -381,7 +397,11 @@ const jsonLd = {
 
     <!-- atmosphere ────────────────────────────────────────── -->
     <section class="atmosphere">
-      <div class={`frame ${site.atmosphere.frame_tint || ''}`} data-parallax="30" aria-hidden="true"></div>
+      {site.atmosphere.image ? (
+        <img class="media-img atmosphere-img" src={site.atmosphere.image} alt={site.atmosphere.image_alt || ''} data-parallax="30" loading="lazy" decoding="async" />
+      ) : (
+        <div class={`frame ${site.atmosphere.frame_tint || ''}`} data-parallax="30" aria-hidden="true"></div>
+      )}
       <div class="atmosphere-overlay"></div>
       <div class="container atmosphere-inner">
         <h2 class="atmosphere-title reveal" set:html={inline(site.atmosphere.title)}></h2>
@@ -414,9 +434,13 @@ const jsonLd = {
         {site.locations.items.map(loc => (
           <div class="loc-grid">
             <div class="loc-img reveal" data-parallax="18">
-              <div class={`frame ${loc.frame_tint || ''}`}>
-                {loc.frame_label && <span class="frame-label">{loc.frame_label}</span>}
-              </div>
+              {loc.image ? (
+                <img class="media-img" src={loc.image} alt={loc.image_alt || `${loc.city_tag || site.brand.name} studio`} loading="lazy" decoding="async" />
+              ) : (
+                <div class={`frame ${loc.frame_tint || ''}`}>
+                  {loc.frame_label && <span class="frame-label">{loc.frame_label}</span>}
+                </div>
+              )}
             </div>
             <div class="loc-body reveal">
               <span class="loc-city-tag">{loc.city_tag}</span>
