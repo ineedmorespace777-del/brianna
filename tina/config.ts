@@ -52,9 +52,15 @@ export default defineConfig({
         format: "json",
         match: { include: "site" },
         ui: {
+          // Singleton: one document, not creatable/deletable from the admin.
           allowedActions: { create: false, delete: false },
-          router: () => "/",
           filename: { readonly: true, slugify: () => "site" },
+          // NOTE: no `router` set on purpose. With router, Tina renders the
+          // live site in an iframe and expects useTina() in the page to send
+          // metadata back — which our static Astro page doesn't. Without
+          // router, Tina shows a clean form-only view with every field
+          // grouped by section. Side-by-side visual editing can be added
+          // later by integrating useTina() in src/pages/index.astro.
         },
         fields: [
           // ───────────────── meta / seo ─────────────────
