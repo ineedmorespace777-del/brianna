@@ -247,18 +247,12 @@ body::after {
     linear-gradient(150deg, var(--blush), var(--bg-2) 55%, var(--bg-3));
   isolation: isolate;
 }
-.frame.tint-sage {
-  background:
-    repeating-linear-gradient(135deg, transparent 0 14px, rgba(33,45,28,.05) 14px 15px),
-    radial-gradient(120% 90% at 25% 12%, rgba(255,255,255,.4), transparent 55%),
-    linear-gradient(150deg, #dfe2d4, #cdd3c0 60%, #bcc4ad);
-}
-.frame.tint-clay {
-  background:
-    repeating-linear-gradient(135deg, transparent 0 14px, rgba(70,38,18,.05) 14px 15px),
-    radial-gradient(120% 90% at 25% 12%, rgba(255,255,255,.45), transparent 55%),
-    linear-gradient(150deg, #f0ddcd, #e7cdb8 60%, #ddc0a8);
-}
+/* tint variants neutralized — all frames use the same warm sand base.
+   the tint class still exists in the JSON/CMS for future use (e.g. when
+   real photos go in we can use tint as a fallback color), but visually
+   every placeholder reads the same right now. */
+.frame.tint-sage,
+.frame.tint-clay { background: inherit; }
 /* corner brackets — top-left and bottom-right, very subtle */
 .frame::before,
 .frame::after {
