@@ -7,11 +7,14 @@ const titleLines = (s) => (s || '').split('\n').map(l => `<span>${em(l)}</span>`
 const inline = (s) => em(s);
 const nl2br = (s) => (s || '').replace(/\n/g, '<br/>');
 
-const cssVer = 'astro-1';
-const jsVer  = 'astro-1';
+const cssVer = 'redesign-1';
+const jsVer  = 'redesign-1';
 
 const gate = site.comingSoon || {};
 const showGate = gate.enabled !== false;
+
+// double-up marquee items so the css translateX(-50%) animation loops seamlessly
+const marqueeItems = [...site.marquee.items, ...site.marquee.items];
 ---
 <!doctype html>
 <html lang="en">
@@ -41,23 +44,22 @@ const showGate = gate.enabled !== false;
   <meta property="og:type" content="website" />
   <meta property="og:title" content={site.meta.og_title} />
   <meta property="og:description" content={site.meta.og_description} />
-  <meta property="og:image" content="/assets/mei-logo.jpg" />
+  <meta property="og:image" content="/assets/mei-logo.png" />
   <meta property="og:locale" content="en_US" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={site.meta.twitter_title} />
   <meta name="twitter:description" content={site.meta.twitter_description} />
-  <meta name="twitter:image" content="/assets/mei-logo.jpg" />
+  <meta name="twitter:image" content="/assets/mei-logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="icon" type="image/jpeg" href="/assets/mei-logo.jpg" />
-  <link rel="apple-touch-icon" href="/assets/mei-logo.jpg" />
+  <link rel="icon" type="image/png" href="/assets/mei-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/mei-logo.png" />
   <link rel="stylesheet" href={`/styles/main.css?v=${cssVer}`} />
 
-  <!-- expose the gate password to the inline gate script — kept here so editors can change it via cms -->
   {showGate && (
     <script is:inline set:html={`window.__MEI_PWD=${JSON.stringify((gate.password || 'meiskin').toLowerCase())};`} />
   )}
@@ -69,7 +71,7 @@ const showGate = gate.enabled !== false;
   {showGate && (
     <aside class="coming-soon-gate" id="coming-soon-gate" aria-label="coming soon">
       <div class="cs-inner">
-        <img class="cs-logo" src="/assets/mei-logo.jpg" alt="mei skin studio" />
+        <img class="cs-logo" src="/assets/mei-logo.png" alt="mei skin studio" />
         <p class="cs-eyebrow">{gate.eyebrow}</p>
         <h1 class="cs-title" set:html={inline(gate.title)}></h1>
         <p class="cs-sub">{gate.sub}</p>
@@ -94,11 +96,11 @@ const showGate = gate.enabled !== false;
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a class="brand" href="#top" aria-label={`${site.brand.name} — home`}>
-        <img src="/assets/mei-logo.jpg" alt={site.brand.name} />
+        <img src="/assets/mei-logo.png" alt={site.brand.name} />
         <span class="brand-word">{site.brand.name}</span>
       </a>
 
-      <a class="book-btn" href="#book">book</a>
+      <a class="book-btn" href="#book" data-magnetic>book a visit</a>
 
       <button class="nav-toggle" id="nav-toggle" aria-controls="overlay-nav" aria-expanded="false" aria-label="open menu">
         <span></span><span></span><span></span>
@@ -123,22 +125,46 @@ const showGate = gate.enabled !== false;
 
   <main id="main">
 
+    <!-- hero ──────────────────────────────────────────────── -->
     <section class="hero" id="top">
-      <div class="hero-media" aria-hidden="true">
-        <div class="hero-img"></div>
-        <div class="hero-vignette"></div>
-      </div>
       <div class="hero-inner">
         <p class="eyebrow reveal">{site.hero.eyebrow}</p>
-        <h1 class="hero-title reveal" set:html={titleLines(site.hero.title)}></h1>
+        <h1 class="hero-title">
+          {site.hero.title.split('\n').map(line => (
+            <span class="line-mask"><span set:html={inline(line)}></span></span>
+          ))}
+        </h1>
         <p class="hero-sub reveal">{site.hero.sub}</p>
         <div class="hero-ctas reveal">
-          <a class="btn btn-primary" href="#book">{site.hero.cta_primary_label}</a>
+          <a class="btn btn-primary" href="#book" data-magnetic>{site.hero.cta_primary_label} <span class="btn-arrow">→</span></a>
           <a class="btn btn-pill" href="#experience">{site.hero.cta_secondary_label}</a>
         </div>
+        {site.hero.meta && site.hero.meta.length > 0 && (
+          <dl class="hero-meta reveal">
+            {site.hero.meta.map(m => (
+              <div><dt>{m.dt}</dt><dd>{m.dd}</dd></div>
+            ))}
+          </dl>
+        )}
+      </div>
+      <div class="hero-media reveal" data-parallax="20">
+        <div class={`frame ${site.hero.frame_tint || ''}`}>
+          {site.hero.frame_label && <span class="frame-label">{site.hero.frame_label}</span>}
+        </div>
+        {site.hero.chip_label && (
+          <div class="hero-chip"><span class="dot"></span> {site.hero.chip_label}</div>
+        )}
       </div>
     </section>
 
+    <!-- marquee ───────────────────────────────────────────── -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        {marqueeItems.map(s => <span>{s}</span>)}
+      </div>
+    </div>
+
+    <!-- philosophy ────────────────────────────────────────── -->
     <section class="philosophy" id="experience">
       <div class="container">
         <p class="eyebrow reveal">{site.philosophy.eyebrow}</p>
@@ -156,11 +182,16 @@ const showGate = gate.enabled !== false;
       </div>
     </section>
 
+    <!-- studio split ──────────────────────────────────────── -->
     <section class="experience-split" aria-labelledby="exp-h">
-      <div class="exp-img" role="img" aria-label="single treatment room with soft window light"></div>
+      <div class="exp-img reveal" data-parallax="22">
+        <div class={`frame ${site.studioSplit.frame_tint || ''}`}>
+          {site.studioSplit.frame_label && <span class="frame-label">{site.studioSplit.frame_label}</span>}
+        </div>
+      </div>
       <div class="exp-text">
         <p class="eyebrow reveal">{site.studioSplit.eyebrow}</p>
-        <h2 class="section-title" id="exp-h" set:html={inline(site.studioSplit.title)}></h2>
+        <h2 class="section-title reveal" id="exp-h" set:html={inline(site.studioSplit.title)}></h2>
         <p class="reveal">
           {site.studioSplit.body_p1_before_link}<a class="link" href={site.studioSplit.body_p1_link_url} target="_blank" rel="noopener">{site.studioSplit.body_p1_link_text}</a>{site.studioSplit.body_p1_after_link}
         </p>
@@ -169,15 +200,24 @@ const showGate = gate.enabled !== false;
       </div>
     </section>
 
+    <!-- menu ──────────────────────────────────────────────── -->
     <section class="menu" id="menu">
       <div class="container">
-        <p class="eyebrow reveal">{site.services.eyebrow}</p>
-        <h2 class="section-title reveal">{site.services.title}</h2>
+        <div class="menu-head">
+          <div>
+            <p class="eyebrow reveal">{site.services.eyebrow}</p>
+            <h2 class="section-title reveal">{site.services.title}</h2>
+          </div>
+          {site.services.note && <p class="menu-note reveal">{site.services.note}</p>}
+        </div>
 
         <div class="menu-grid">
           {site.services.items.map(s => (
             <article class="menu-card reveal">
-              <div class="menu-card-img" data-img={s.img_key}></div>
+              <div class="menu-card-img" data-parallax="14">
+                <div class={`frame ${s.tint || ''}`}></div>
+                {s.price && <span class="price-tag">{s.price}</span>}
+              </div>
               <div class="menu-card-body">
                 <div class="menu-card-head">
                   <h3>{s.name}</h3>
@@ -191,13 +231,14 @@ const showGate = gate.enabled !== false;
 
         <div class="menu-footnote reveal">
           <p>{site.services.footnote}</p>
-          <a class="btn btn-primary" href="#book">{site.services.footnote_cta_label}</a>
+          <a class="btn btn-primary" href="#book" data-magnetic>{site.services.footnote_cta_label} <span class="btn-arrow">→</span></a>
         </div>
       </div>
     </section>
 
+    <!-- atmosphere ────────────────────────────────────────── -->
     <section class="atmosphere">
-      <div class="atmosphere-img" aria-hidden="true"></div>
+      <div class={`frame ${site.atmosphere.frame_tint || ''}`} data-parallax="30" aria-hidden="true"></div>
       <div class="atmosphere-overlay"></div>
       <div class="container atmosphere-inner">
         <h2 class="atmosphere-title reveal" set:html={inline(site.atmosphere.title)}></h2>
@@ -205,6 +246,7 @@ const showGate = gate.enabled !== false;
       </div>
     </section>
 
+    <!-- testimonials ──────────────────────────────────────── -->
     <section class="testimonials">
       <div class="container">
         <p class="eyebrow reveal">{site.testimonials.eyebrow}</p>
@@ -220,34 +262,37 @@ const showGate = gate.enabled !== false;
       </div>
     </section>
 
+    <!-- locations ─────────────────────────────────────────── -->
     <section class="locations" id="locations">
       <div class="container">
         <p class="eyebrow reveal">{site.locations.eyebrow}</p>
         <h2 class="section-title reveal" set:html={inline(site.locations.title)}></h2>
 
-        <div class="loc-grid">
-          {site.locations.items.map(loc => (
-            <article class="loc-card reveal">
-              <div class="loc-img" data-img={loc.city_tag.replace(/\s+/g, '-').toLowerCase()}></div>
-              <div class="loc-body">
-                <span class="loc-city-tag">{loc.city_tag}</span>
-                <h3 set:html={inline(loc.name)}></h3>
-                <p class="loc-address" set:html={nl2br(loc.address)}></p>
-                <dl class="loc-hours">
-                  {loc.hours.map(h => (
-                    <>
-                      <dt>{h.label}</dt><dd>{h.value}</dd>
-                    </>
-                  ))}
-                </dl>
-                <div class="loc-ctas">
-                  <a class="btn btn-primary" href={loc.cta_primary_url}>{loc.cta_primary_label}</a>
-                  <a class="btn btn-pill" href={loc.cta_secondary_url}>{loc.cta_secondary_label}</a>
-                </div>
+        {site.locations.items.map(loc => (
+          <div class="loc-grid">
+            <div class="loc-img reveal" data-parallax="18">
+              <div class={`frame ${loc.frame_tint || ''}`}>
+                {loc.frame_label && <span class="frame-label">{loc.frame_label}</span>}
               </div>
-            </article>
-          ))}
-        </div>
+            </div>
+            <div class="loc-body reveal">
+              <span class="loc-city-tag">{loc.city_tag}</span>
+              <h3 set:html={inline(loc.name)}></h3>
+              <p class="loc-address" set:html={nl2br(loc.address)}></p>
+              <dl class="loc-hours">
+                {loc.hours.map(h => (
+                  <>
+                    <dt>{h.label}</dt><dd>{h.value}</dd>
+                  </>
+                ))}
+              </dl>
+              <div class="loc-ctas">
+                <a class="btn btn-primary" href={loc.cta_primary_url} data-magnetic>{loc.cta_primary_label} <span class="btn-arrow">→</span></a>
+                <a class="btn btn-pill" href={loc.cta_secondary_url}>{loc.cta_secondary_label}</a>
+              </div>
+            </div>
+          </div>
+        ))}
 
         <p class="hours-line reveal">
           {site.locations.contact_line_label} · <a href={`mailto:${site.locations.contact_email}`}>{site.locations.contact_email}</a>
@@ -255,15 +300,16 @@ const showGate = gate.enabled !== false;
       </div>
     </section>
 
+    <!-- newsletter / book ─────────────────────────────────── -->
     <section class="newsletter" id="book">
       <div class="container">
-        <div class="newsletter-grid">
+        <div class="newsletter-grid reveal">
           <div class="newsletter-text">
-            <p class="eyebrow reveal">{site.newsletter.eyebrow}</p>
-            <h2 class="section-title reveal" set:html={inline(site.newsletter.title)}></h2>
-            <p class="reveal">{site.newsletter.body}</p>
+            <p class="eyebrow">{site.newsletter.eyebrow}</p>
+            <h2 class="section-title" set:html={inline(site.newsletter.title)}></h2>
+            <p>{site.newsletter.body}</p>
           </div>
-          <form class="newsletter-form reveal" id="newsletter-form" novalidate>
+          <form class="newsletter-form" id="newsletter-form" novalidate>
             <label for="nl-name" class="visually-hidden">first name</label>
             <input id="nl-name" name="name" type="text" placeholder={site.newsletter.name_placeholder} autocomplete="given-name" required />
 
@@ -283,7 +329,7 @@ const showGate = gate.enabled !== false;
     <div class="container footer-grid">
       <div class="footer-brand">
         <a class="brand" href="#top" aria-label={site.brand.name}>
-          <img src="/assets/mei-logo.jpg" alt={site.brand.name} />
+          <img src="/assets/mei-logo.png" alt={site.brand.name} />
         </a>
         <p>{site.footer.tagline}</p>
       </div>
@@ -320,6 +366,11 @@ const showGate = gate.enabled !== false;
       </div>
     </div>
   </footer>
+
+  <!-- sticky mobile book bar -->
+  <div class="book-bar" id="book-bar">
+    <a class="btn btn-primary" href="#book">book a visit <span class="btn-arrow">→</span></a>
+  </div>
 
   <script src={`/scripts/main.js?v=${jsVer}`} defer></script>
 </body>

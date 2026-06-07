@@ -6,7 +6,7 @@
     "og_description": "a boutique restorative skin studio in kitsilano, vancouver. one face at a time, by appointment.",
     "twitter_title": "mei skin studio",
     "twitter_description": "considered skin care. by appointment.",
-    "theme_color": "#f5f0e8"
+    "theme_color": "#f7f2ea"
   },
   "comingSoon": {
     "enabled": true,
@@ -39,7 +39,25 @@
     "title": "your skin,\n*considered.*",
     "sub": "a small skin studio on west broadway. each visit begins with a slow read of your skin and ends with a plan that fits your week, your budget, and your patience.",
     "cta_primary_label": "book a visit",
-    "cta_secondary_label": "about the studio"
+    "cta_secondary_label": "about the studio",
+    "frame_label": "the treatment room",
+    "frame_tint": "",
+    "chip_label": "now booking",
+    "meta": [
+      { "dt": "one", "dd": "face at a time, by appointment" },
+      { "dt": "60 min+", "dd": "every visit, never rushed" },
+      { "dt": "no", "dd": "upselling, ever" }
+    ]
+  },
+  "marquee": {
+    "items": [
+      "signature facials",
+      "microcurrent",
+      "chemical peels",
+      "led therapy",
+      "microneedling",
+      "deep cleanse"
+    ]
   },
   "philosophy": {
     "eyebrow": "the practice",
@@ -71,25 +89,29 @@
     "body_p1_link_url": "https://www.instagram.com/wedobeautystudio/",
     "body_p1_after_link": " on west broadway, there's a single treatment room, a single appointment slot per hour, and a single person caring for your skin from start to finish.",
     "body_p2": "we work with plant-based and pharmaceutical-grade actives — no marketing buzzwords, no surprise add-ons, no upselling at the front desk. the prices on the menu are the prices you pay.",
-    "cta_label": "request an appointment"
+    "cta_label": "request an appointment",
+    "frame_label": "a single room, soft window light",
+    "frame_tint": "tint-sage"
   },
   "services": {
     "eyebrow": "services",
     "title": "the menu.",
+    "note": "the prices below are the prices you pay — no add-ons at the desk.",
     "items": [
-      { "img_key": "signature", "name": "signature facial", "duration": "90 min", "description": "a full skin reading, double cleanse, custom exfoliation, masque, lymphatic massage, and a tailored finish. the visit to start with." },
-      { "img_key": "deep-clean", "name": "deep cleanse", "duration": "60 min", "description": "for congestion, breakouts, and texture. enzyme exfoliation, extractions handled with care, blue-light, and a calming masque." },
-      { "img_key": "microcurrent", "name": "microcurrent lift", "duration": "75 min", "description": "low-level electrical current that re-educates facial muscles. immediate lift in the cheekbone and jaw, cumulative over a series." },
-      { "img_key": "peel", "name": "chemical peel", "duration": "45 min", "description": "medical-grade aha/bha or jessner peels for tone, texture, and pigmentation. depth chosen with you after a thorough consult." },
-      { "img_key": "led", "name": "led light therapy", "duration": "30 min", "description": "red light for repair and inflammation, blue light for breakouts, near-infrared for deeper recovery. ideal as a single-session add-on." },
-      { "img_key": "microneedling", "name": "microneedling", "duration": "75 min", "description": "collagen induction therapy for fine lines, acne scarring, and overall skin density. numbing, a precise pen depth, and gentle aftercare." }
+      { "img_key": "signature",     "name": "signature facial",   "duration": "90 min", "price": "$215", "tint": "",          "description": "a full skin reading, double cleanse, custom exfoliation, masque, lymphatic massage, and a tailored finish. the visit to start with." },
+      { "img_key": "deep-clean",    "name": "deep cleanse",       "duration": "60 min", "price": "$165", "tint": "tint-sage", "description": "for congestion, breakouts, and texture. enzyme exfoliation, extractions handled with care, blue-light, and a calming masque." },
+      { "img_key": "microcurrent",  "name": "microcurrent lift",  "duration": "75 min", "price": "$195", "tint": "tint-clay", "description": "low-level electrical current that re-educates facial muscles. immediate lift in the cheekbone and jaw, cumulative over a series." },
+      { "img_key": "peel",          "name": "chemical peel",      "duration": "45 min", "price": "$140", "tint": "tint-sage", "description": "medical-grade aha/bha or jessner peels for tone, texture, and pigmentation. depth chosen with you after a thorough consult." },
+      { "img_key": "led",           "name": "led light therapy",  "duration": "30 min", "price": "$75",  "tint": "tint-clay", "description": "red light for repair and inflammation, blue light for breakouts, near-infrared for deeper recovery. ideal as a single-session add-on." },
+      { "img_key": "microneedling", "name": "microneedling",      "duration": "75 min", "price": "$285", "tint": "",          "description": "collagen induction therapy for fine lines, acne scarring, and overall skin density. numbing, a precise pen depth, and gentle aftercare." }
     ],
     "footnote": "full menu including brow shaping, lash tinting, and body services available on request. members receive priority booking and pricing.",
     "footnote_cta_label": "see availability"
   },
   "atmosphere": {
     "title": "an hour that's *actually* yours.",
-    "body": "no rotating staff, no shared waiting room, no other faces in the building during your treatment. just one practitioner, one room, and the time to do the work properly."
+    "body": "no rotating staff, no shared waiting room, no other faces in the building during your treatment. just one practitioner, one room, and the time to do the work properly.",
+    "frame_tint": "tint-sage"
   },
   "testimonials": {
     "eyebrow": "guest words",
@@ -113,6 +135,8 @@
         "city_tag": "kitsilano",
         "name": "the *studio*",
         "address": "inside we do beauty studio\nwest broadway · kitsilano\nvancouver, bc",
+        "frame_label": "west broadway, kitsilano",
+        "frame_tint": "tint-clay",
         "hours": [
           { "label": "tue — fri", "value": "10:00a — 7:00p" },
           { "label": "saturday", "value": "9:00a — 4:00p" },

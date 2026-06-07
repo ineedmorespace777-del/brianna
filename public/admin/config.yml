@@ -11,7 +11,7 @@ backend:
 # clickable "View site" link in the CMS header that takes you back to the public site
 display_url: https://brianna.philipngo.ca
 site_url: https://brianna.philipngo.ca
-logo_url: https://brianna.philipngo.ca/assets/mei-logo.jpg
+logo_url: https://brianna.philipngo.ca/assets/mei-logo.png
 
 media_folder: "public/assets/uploads"
 public_folder: "/assets/uploads"
@@ -45,7 +45,7 @@ collections:
               - { label: "Social share — description", name: "og_description", widget: "text" }
               - { label: "Twitter — title", name: "twitter_title", widget: "string" }
               - { label: "Twitter — description", name: "twitter_description", widget: "string" }
-              - { label: "Theme color (browser UI tint)", name: "theme_color", widget: "string", default: "#f5f0e8" }
+              - { label: "Theme color (browser UI tint)", name: "theme_color", widget: "string", default: "#f7f2ea" }
 
           # ─────────────────── COMING SOON GATE ───────────────────
           - label: "Coming Soon Splash"
@@ -93,10 +93,40 @@ collections:
             collapsed: false
             fields:
               - { label: "Eyebrow (small label above title)", name: "eyebrow", widget: "string" }
-              - { label: "Big title (use \\n for line breaks, *asterisks* for italics)", name: "title", widget: "text", hint: "Each new line becomes a separate line on screen. Wrap italic words in *asterisks*." }
+              - { label: "Big title (use newlines for line breaks, *asterisks* for italics)", name: "title", widget: "text", hint: "Each new line becomes a separate line on screen. Wrap italic words in *asterisks*." }
               - { label: "Subtitle paragraph", name: "sub", widget: "text" }
               - { label: "Primary button label", name: "cta_primary_label", widget: "string" }
               - { label: "Secondary button label", name: "cta_secondary_label", widget: "string" }
+              - { label: "Hero image: caption label", name: "frame_label", widget: "string", required: false, hint: "Small italic caption inside the hero image frame. Leave blank for none." }
+              - label: "Hero image: tint"
+                name: "frame_tint"
+                widget: "select"
+                default: ""
+                options:
+                  - { label: "Blush (default)", value: "" }
+                  - { label: "Sage", value: "tint-sage" }
+                  - { label: "Clay", value: "tint-clay" }
+              - { label: "Hero chip text", name: "chip_label", widget: "string", required: false, hint: "Floating chip on hero image (e.g., 'now booking'). Leave blank to hide." }
+              - label: "Hero meta (small proof points under CTAs)"
+                name: "meta"
+                widget: "list"
+                summary: "{{fields.dt}} · {{fields.dd}}"
+                fields:
+                  - { label: "Number/word", name: "dt", widget: "string", hint: "e.g. 'one', '60 min+', 'no'" }
+                  - { label: "Caption", name: "dd", widget: "string", hint: "e.g. 'face at a time, by appointment'" }
+
+          # ─────────────────── MARQUEE ───────────────────
+          - label: "Marquee (scrolling text under hero)"
+            name: "marquee"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Items (scroll across as a continuous loop)"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Phrase", name: "{{name}}", widget: "string", required: true }
+                summary: "{{fields.phrase}}"
 
           # ─────────────────── PHILOSOPHY ───────────────────
           - label: "Philosophy section"
@@ -129,6 +159,15 @@ collections:
               - { label: "Paragraph 1 — text after link", name: "body_p1_after_link", widget: "text" }
               - { label: "Paragraph 2", name: "body_p2", widget: "text" }
               - { label: "Button label", name: "cta_label", widget: "string" }
+              - { label: "Image caption label", name: "frame_label", widget: "string", required: false, hint: "Small italic caption inside the image frame." }
+              - label: "Image tint"
+                name: "frame_tint"
+                widget: "select"
+                default: "tint-sage"
+                options:
+                  - { label: "Blush (default)", value: "" }
+                  - { label: "Sage", value: "tint-sage" }
+                  - { label: "Clay", value: "tint-clay" }
 
           # ─────────────────── SERVICES MENU ───────────────────
           - label: "Services Menu"
@@ -138,14 +177,24 @@ collections:
             fields:
               - { label: "Eyebrow", name: "eyebrow", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
+              - { label: "Note (small caption at the top of the menu)", name: "note", widget: "string", required: false }
               - label: "Services"
                 name: "items"
                 widget: "list"
-                summary: "{{fields.name}} · {{fields.duration}}"
+                summary: "{{fields.name}} · {{fields.duration}} · {{fields.price}}"
                 fields:
-                  - { label: "Image key (internal — leave as-is)", name: "img_key", widget: "string" }
+                  - { label: "Image key (internal slug — leave as-is)", name: "img_key", widget: "string" }
                   - { label: "Service name", name: "name", widget: "string" }
-                  - { label: "Duration / price", name: "duration", widget: "string", hint: "e.g. '90 min' or '90 min · $185'" }
+                  - { label: "Duration", name: "duration", widget: "string", hint: "e.g. '90 min'" }
+                  - { label: "Price", name: "price", widget: "string", required: false, hint: "e.g. '$215' — shown as a tag on the image." }
+                  - label: "Image tint"
+                    name: "tint"
+                    widget: "select"
+                    default: ""
+                    options:
+                      - { label: "Blush (default)", value: "" }
+                      - { label: "Sage", value: "tint-sage" }
+                      - { label: "Clay", value: "tint-clay" }
                   - { label: "Description", name: "description", widget: "text" }
               - { label: "Footnote paragraph", name: "footnote", widget: "text" }
               - { label: "Footnote button label", name: "footnote_cta_label", widget: "string" }
@@ -158,6 +207,14 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string", hint: "*italic* allowed" }
               - { label: "Body paragraph", name: "body", widget: "text" }
+              - label: "Background tint"
+                name: "frame_tint"
+                widget: "select"
+                default: "tint-sage"
+                options:
+                  - { label: "Blush", value: "" }
+                  - { label: "Sage (default)", value: "tint-sage" }
+                  - { label: "Clay", value: "tint-clay" }
 
           # ─────────────────── TESTIMONIALS ───────────────────
           - label: "Testimonials"
@@ -191,6 +248,15 @@ collections:
                   - { label: "City tag (small label, e.g. KITSILANO)", name: "city_tag", widget: "string" }
                   - { label: "Location name", name: "name", widget: "string", hint: "*italic* allowed" }
                   - { label: "Address (use new lines for line breaks)", name: "address", widget: "text" }
+                  - { label: "Image caption", name: "frame_label", widget: "string", required: false }
+                  - label: "Image tint"
+                    name: "frame_tint"
+                    widget: "select"
+                    default: "tint-clay"
+                    options:
+                      - { label: "Blush", value: "" }
+                      - { label: "Sage", value: "tint-sage" }
+                      - { label: "Clay (default)", value: "tint-clay" }
                   - label: "Hours"
                     name: "hours"
                     widget: "list"
