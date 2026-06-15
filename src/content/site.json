@@ -109,14 +109,14 @@
   },
   "studioSplit": {
     "eyebrow": "the studio",
-    "title": "a single room. *one face* at a time.",
-    "body_p1_before_link": "mei skin is a one-practitioner boutique built around the belief that good skin care is unhurried. set inside ",
+    "title": "a relaxing space. *experience* a retreat for your skin.",
+    "body_p1_before_link": "mei skin is built around the belief that skin care is personal. step inside.",
     "body_p1_link_text": "we do beauty studio",
     "body_p1_link_url": "https://www.instagram.com/wedobeautystudio/",
     "body_p1_after_link": " on west broadway, there's a single treatment room, a single appointment slot per hour, and a single person caring for your skin from start to finish.",
-    "body_p2": "we work with plant-based and pharmaceutical-grade actives — no marketing buzzwords, no surprise add-ons, no upselling at the front desk. the prices on the menu are the prices you pay.",
+    "body_p2": "we combine a spa experience with results reflecting the approach of skin clinics in Japan and South Korea, using the same medical-grade Korean formulations alongside advanced skin technologies.",
     "cta_label": "request an appointment",
-    "frame_label": "a single room, soft window light"
+    "frame_label": "a quite treatment room and natural studio light"
   },
   "services": {
     "eyebrow": "services",
