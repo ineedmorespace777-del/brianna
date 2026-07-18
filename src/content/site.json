@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "mei skin studio — boutique restorative facials · vancouver",
-    "description": "mei skin studio — boutique restorative facials in kitsilano, vancouver. microcurrent, peels, LED therapy. by appointment.",
-    "og_title": "mei skin studio — boutique restorative facials",
+    "title": "mei skin — boutique facial studio · vancouver",
+    "description": "mei skin — boutique korean facials in kitsilano, vancouver. high-frequency, peels, facial massage, LED therapy. by appointment.",
+    "og_title": "mei skin — boutique facial studio",
     "og_description": "a boutique restorative skin studio in kitsilano, vancouver. one face at a time, by appointment.",
-    "twitter_title": "mei skin studio",
+    "twitter_title": "mei skin",
     "twitter_description": "considered skin care. by appointment.",
     "theme_color": "#f7f2ea"
   },
@@ -50,12 +50,12 @@
     ],
     "book_label": "book a visit",
     "foot_left": "by appointment · kitsilano, vancouver",
-    "foot_right": "tue — sat · 10–7"
+    "foot_right": "tue — sat · 10–3"
   },
   "hero": {
     "eyebrow": "boutique restorative facials · kitsilano, vancouver",
     "title": "your skin,\n*considered.*",
-    "sub": "a small skin studio on west broadway. each visit begins with a slow read of your skin and ends with a plan that fits your week, your budget, and your patience.",
+    "sub": "a skin practice on west broadway. each visit begins with a slow read of your skin and ends with a plan that fits your week, your budget, and your patience.",
     "cta_primary_label": "book a visit",
     "cta_secondary_label": "about the studio",
     "frame_label": "the treatment room",
@@ -70,25 +70,25 @@
         "dd": "every visit, never rushed"
       },
       {
-        "dt": "no",
-        "dd": "upselling, ever"
+        "dt": "bespoke",
+        "dd": "curated for you"
       }
     ]
   },
   "marquee": {
     "items": [
-      "signature facials",
+      "plasma high frequency ",
       "microcurrent",
       "chemical peels",
-      "led therapy",
-      "microneedling",
-      "deep cleanse"
+      "facial massage",
+      "hifu ",
+      "ultrasonic extractions"
     ]
   },
   "philosophy": {
     "eyebrow": "the practice",
-    "title": "slow skin care.\n*honest* results.",
-    "lede": "we don't sell quick fixes. each appointment is a full hour at minimum, set aside for one person at a time. the work is unhurried, the conversation is private, and the products are chosen for what your skin actually needs — not what we have in stock.",
+    "title": "customized skin care.\n*glowing* results.",
+    "lede": "we don't sell quick fixes. each appointment is a full hour at minimum, set aside for one person at a time. the work is unhurried, the conversation is private, and the products are chosen for what your skin actually needs.",
     "triad": [
       {
         "num": "01",
@@ -109,14 +109,14 @@
   },
   "studioSplit": {
     "eyebrow": "the studio",
-    "title": "a single room. *one face* at a time.",
-    "body_p1_before_link": "mei skin is a one-practitioner boutique built around the belief that good skin care is unhurried. set inside ",
+    "title": "a relaxing space. *experience* a retreat for your skin.",
+    "body_p1_before_link": "mei skin is built around the belief that skin care is personal. step inside.",
     "body_p1_link_text": "we do beauty studio",
     "body_p1_link_url": "https://www.instagram.com/wedobeautystudio/",
     "body_p1_after_link": " on west broadway, there's a single treatment room, a single appointment slot per hour, and a single person caring for your skin from start to finish.",
-    "body_p2": "we work with plant-based and pharmaceutical-grade actives — no marketing buzzwords, no surprise add-ons, no upselling at the front desk. the prices on the menu are the prices you pay.",
+    "body_p2": "we combine a spa experience with results reflecting the approach of skin clinics in Japan and South Korea, using the same medical-grade Korean formulations alongside advanced skin technologies.",
     "cta_label": "request an appointment",
-    "frame_label": "a single room, soft window light"
+    "frame_label": "a quite treatment room and natural studio light"
   },
   "services": {
     "eyebrow": "services",
@@ -125,38 +125,10 @@
     "items": [
       {
         "img_key": "signature",
-        "name": "signature facial",
+        "name": "the mei reset facial (recovery + restoration)",
         "duration": "90 min",
-        "price": "$215",
-        "description": "a full skin reading, double cleanse, custom exfoliation, masque, lymphatic massage, and a tailored finish. the visit to start with."
-      },
-      {
-        "img_key": "deep-clean",
-        "name": "deep cleanse",
-        "duration": "60 min",
-        "price": "$165",
-        "description": "for congestion, breakouts, and texture. enzyme exfoliation, extractions handled with care, blue-light, and a calming masque."
-      },
-      {
-        "img_key": "microcurrent",
-        "name": "microcurrent lift",
-        "duration": "75 min",
-        "price": "$195",
-        "description": "fighting philip"
-      },
-      {
-        "img_key": "peel",
-        "name": "chemical peel",
-        "duration": "45 min",
-        "price": "$140",
-        "description": "medical-grade aha/bha or jessner peels for tone, texture, and pigmentation. depth chosen with you after a thorough consult."
-      },
-      {
-        "img_key": "led",
-        "name": "led light therapy",
-        "duration": "30 min",
-        "price": "$75",
-        "description": "red light for repair and inflammation, blue light for breakouts, near-infrared for deeper recovery. ideal as a single-session add-on."
+        "price": "$200",
+        "description": "a boutique 90-minute restorative facial designed for skin that feels irritated, stressed, or easily reactive. \n\nthe mei reset combines a spa experience with results reflecting the approach of skin clinics in Japan and South Korea, using the same medical-grade Korean formulations alongside advanced skin technologies.\n\nthis customized treatment focuses on soothing visible irritation, supporting barrier repair, and improving overall comfort and balance in the skin. Each session is composed to help reduce redness, increase moisture retention, and refine texture and tone.\n\nyour treatment may include ultrasonic skin scrubber extractions, eye/face RF lifting, plasma + high-frequency for collagen-building, and multi-modal circulation support, paired with professional-grade products from Dr. esthé, Éclat du teint, and Dermabell.\n\nthe result is calmer, clearer skin with enhanced barrier function, and a replenished complexion."
       },
       {
         "img_key": "microneedling",
@@ -164,6 +136,11 @@
         "duration": "75 min",
         "price": "$285",
         "description": "collagen induction therapy for fine lines, acne scarring, and overall skin density. numbing, a precise pen depth, and gentle aftercare."
+      },
+      {
+        "name": "the mei glow facial (refinement + radiance)",
+        "duration": "60 min",
+        "description": "a boutique 60-minute Korean facial tailored to enhance tone, refine texture, and promote a smooth, radiant complexion. \n\nthe mei glow is customized for clients seeking brighter, clearer, and more even skin with a polished, natural finish.\n\nthis service focuses on complexion refinement and visible clarity. medical-grade Korean formulations are combined with gentle device work and sculpting massage to support circulation, encourage healthy skin function, and enhance brightness.\n\nyour treatment includes a double cleanse ritual, a custom light peel for uneven texture, micro-current hydration infusion, lymphatic sculpting massage for the face, neck, and décolletage, layered masking, and a tailored selection of finishing essences, serums, and creams chosen to support your skin goals.\n\nthe result is hydrated, radiant, bouncy skin with improved tone, smoother texture, and a refined, healthy glow."
       }
     ],
     "footnote": "full menu including brow shaping, lash tinting, and body services available on request. members receive priority booking and pricing.",
@@ -172,7 +149,7 @@
   "aboutMei": {
     "enabled": true,
     "eyebrow": "the practitioner",
-    "title": "meet *mei.*",
+    "title": "meet brrrriannnna",
     "lede": "skin care, for me, started with my own. a long stretch of trial and error, a handful of mentors, and the slow realization that the work i wanted to do wasn't in a chain spa — it was in a small room, with one person, taking the time. joean was here",
     "body": "i trained in clinical aesthetics in vancouver and spent six years on treatment-room floors at studios across the city before opening mei skin. i still see every visit the same way: it's an hour for you, and the only job is to leave your skin (and you) a little more at home in itself. philip was here",
     "credentials": [
@@ -210,32 +187,16 @@
     "title": "in their own words.",
     "items": [
       {
-        "name": "philip",
-        "quote": "i'd been to four other facialists this year before i found mei. the first visit changed how i think about my skin."
+        "name": "amberly",
+        "quote": "Brianna is a highly skilled medical-grade facial aesthetician. Her Korean facial treatments drastically improved my skin texture and helped heal my skin barrier. With your needs and specifications in mind, she tailors her treatment to your skin. I’d definitely recommend coming here if you’re looking for personalized, attentive care as well as feeling luxurious and comfortable."
       },
       {
-        "name": "marcus",
-        "quote": "my skin barrier was wrecked from over-exfoliating. she fixed in three visits what i'd been chasing for two years."
+        "name": "natalie",
+        "quote": "I got the Mei Glow Facial at Mei Skin and it was honestly the best facial in Vancouver. The studio is so cute and calming and feels like a boutique facial studio. I felt relaxed the whole time.\n\nBrianna is really sweet and knows so much about skincare. She customized everything for my skin and used Korean medical-grade skincare like Dr. Esthé. My skin looked so glowy and hydrated after. My redness went down and my face felt super smooth. It is hard to find a Korean facial in Vancouver that feels this gentle and still gives real results.\nThe whole experience felt really high quality and relaxing. It honestly felt like I was treating myself at a luxury skincare studio.\n\nIf you want glowing, radiant skin, I totally recommend Mei Skin. This is definitely my new go-to facial studio in Vancouver."
       },
       {
         "name": "rosa",
         "quote": "i came in for a peel. she talked me out of it and recommended led + a different home routine instead. that kind of honesty is rare."
-      },
-      {
-        "name": "jun",
-        "quote": "microcurrent + her hands. i'm forty-one and people keep asking what i've done. i tell them."
-      },
-      {
-        "name": "elena",
-        "quote": "i've been a member for two years. my skin has never looked more like itself."
-      },
-      {
-        "name": "davis",
-        "quote": "my partner gifted me a series for our anniversary. now we both go."
-      },
-      {
-        "name": "priya",
-        "quote": "the consultation alone is worth the price of admission. i took notes."
       },
       {
         "name": "theo",
@@ -282,19 +243,19 @@
     "items": [
       {
         "q": "what should i expect on my first visit?",
-        "a": "we start with a careful skin reading — under good light, with no clock running. i ask about your routine, your history, and what brought you in. the treatment is chosen for what i see, not a pre-set menu. you'll leave with a written plan and a small kit of samples."
+        "a": "we start with a careful skin reading — under good light, with no clock running. i ask about your routine, your history, and what brought you in. the treatment is chosen for what i see, not a pre-set menu. you'll leave with a written plan and a small kit of samples if desired."
       },
       {
         "q": "how long are appointments, and how often should i come?",
-        "a": "first visits run 90 minutes; follow-ups are usually 60 or 75 depending on the treatment. cadence depends on your skin — most clients land somewhere between every four and eight weeks. i won't book you in more often than your skin needs."
+        "a": "most mei skin appointments are 60–90+ minutes, depending on your treatment and skin goals. your first visit may be slightly longer to allow time for a personalized consultation and skin assessment.or best results, we typically recommend treatments every 4–6 weeks, which aligns with your skin’s natural renewal cycle. however, the ideal frequency depends on your skin concerns, lifestyle, and goals. some clients visit monthly for ongoing maintenance and glow, while others come seasonally or before special events.\n\nduring your appointment, we'll create a customized treatment plan and recommend a schedule that works for your skin and your lifestyle."
       },
       {
         "q": "do you sell products?",
-        "a": "i carry a small, curated shelf of skin care that i actually use on clients. i won't push it. if a drugstore product would work better for your case, i'll tell you which one and why."
+        "a": "yes we have retail products from dermabell, éclat du teint, dr.esthé, and more available to purchase on-site."
       },
       {
         "q": "i have sensitive or reactive skin. is this for me?",
-        "a": "yes — and especially yes. a lot of clients arrive after their barrier has been worked over by harsh routines or rushed appointments elsewhere. we start gently, with calming modalities and a slow rebuild. patch tests are standard."
+        "a": "absolutely. mei skin specializes in a thoughtful, skin-first approach that prioritizes barrier health, comfort, and long-term skin wellness. every treatment is customized to your skin's needs on the day of your appointment.\n\nif you have sensitive, reactive, redness-prone, or easily irritated skin, we'll carefully select products and techniques that support your skin without overwhelming it. we focus on strengthening and nourishing the skin barrier rather than aggressive treatments that can lead to irritation.\n\nbefore every facial, we'll discuss your skin history, sensitivities, allergies, and current skincare routine to ensure your treatment is both safe and effective.\n\nour goal is for your skin to leave feeling calm, balanced, and healthy—not stripped, inflamed, or overworked."
       },
       {
         "q": "can i bring products i'm already using?",
@@ -302,7 +263,7 @@
       },
       {
         "q": "what's your cancellation policy?",
-        "a": "24-hour notice for full credit. cancellations inside 24 hours are charged 50% of the booked service. i hold one slot per hour, so a late cancel means an empty room — i appreciate your help keeping it fair."
+        "a": "24-hour notice for full credit. cancellations inside 24 hours are charged 50% of the booked service. a late cancel means an empty room — i appreciate your help keeping it fair."
       },
       {
         "q": "do you offer gift cards?",
@@ -326,14 +287,14 @@
   },
   "newsletter": {
     "eyebrow": "stay close",
-    "title": "a quiet *note,* now and then.",
-    "body": "openings, new services, and the occasional skin care thought from mei. once a month, never more. unsubscribe whenever — we won't be offended.",
+    "title": "a personalized *note,* now and then.",
+    "body": "openings, new services, and the occasional skin care thought from mei skin. once a month, never more. unsubscribe whenever — we won't be offended.",
     "name_placeholder": "first name",
     "email_placeholder": "email address",
     "submit_label": "subscribe"
   },
   "footer": {
-    "tagline": "a boutique restorative skin studio. by appointment, kitsilano, vancouver.",
+    "tagline": "a boutique skin studio. by appointment, kitsilano, vancouver.",
     "columns": [
       {
         "heading": "visit",
