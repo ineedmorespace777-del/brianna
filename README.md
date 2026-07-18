@@ -1,6 +1,6 @@
 # mei skin studio
 
-Static site for [mei skin studio](https://brianna.philipngo.ca) — a boutique restorative skin studio in Kitsilano, Vancouver. Built with Astro + a small JSON content file that's edited via Decap CMS at `/admin/`.
+Static site for [mei skin studio](https://meiskinstudio.co) — a boutique restorative skin studio in Kitsilano, Vancouver. Built with Astro + a small JSON content file that's edited via Decap CMS at `/admin/`.
 
 ## Project layout
 
@@ -51,7 +51,7 @@ Or for the quick local preview (without npm), the old `preview.bat` still works 
 ## Editing content
 
 **Via the CMS (recommended for content people):**
-Go to `https://brianna.philipngo.ca/admin/` → Login with GitHub → edit → publish.
+Go to `https://meiskinstudio.co/admin/` → Login with GitHub → edit → publish.
 
 **Via direct JSON edit (recommended for devs):**
 Edit `src/content/site.json` → `git commit` → `git push` → Vercel auto-deploys.

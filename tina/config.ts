@@ -342,7 +342,7 @@ export default defineConfig({
               { type: "string", name: "country", label: "Country code", description: "e.g. CA, US" },
               { type: "string", name: "latitude", label: "Latitude" },
               { type: "string", name: "longitude", label: "Longitude" },
-              { type: "string", name: "site_url", label: "Public site URL", description: "e.g. https://brianna.philipngo.ca" },
+              { type: "string", name: "site_url", label: "Public site URL", description: "e.g. https://meiskinstudio.co" },
             ],
           },
 

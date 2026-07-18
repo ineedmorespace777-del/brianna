@@ -11,7 +11,7 @@ You do the five steps below **once** to wire it up. After that the workflow for 
 ## 0 — What's already done
 
 - ✅ GitHub repo wired (`ineedmorespace777-del/brianna`)
-- ✅ Vercel project deployed to `brianna.philipngo.ca`
+- ✅ Vercel project deployed to `meiskinstudio.co`
 - ✅ Tina schema written (`tina/config.ts`) — every field on the site is editable
 - ✅ Build pipeline updated (`npm run build` runs Tina + Astro together)
 - ✅ Old Decap CMS + GitHub OAuth removed (silent-save bug)
@@ -92,7 +92,7 @@ vercel --prod
 ```
 
 After deploy:
-1. Open `https://brianna.philipngo.ca/admin/`
+1. Open `https://meiskinstudio.co/admin/`
 2. Click "Log in with Tina Cloud"
 3. Authorize with your tina.io account
 4. You land in the editor — sidebar shows every section of the site
@@ -105,7 +105,7 @@ After deploy:
 
 After you invite her as a collaborator in Tina Cloud:
 
-1. She visits `brianna.philipngo.ca/admin/`
+1. She visits `meiskinstudio.co/admin/`
 2. Logs in with her email (Tina Cloud sends a magic-link code — no password)
 3. Edits any text on the site
 4. Hits Save

@@ -8,7 +8,7 @@ You never need a developer for any of this. No terminal, no GitHub, no code. Jus
 
 ## getting in
 
-1. Go to **https://brianna.philipngo.ca/admin/**
+1. Go to **https://meiskinstudio.co/admin/**
 2. Click **"Log in with Tina Cloud"**
 3. Log in with the email I invited you with — a magic-link code arrives in your inbox, paste it in, you're in
 4. You'll see your site's sections in a sidebar on the left
@@ -23,7 +23,7 @@ That's it. No password to remember. The login lasts a few days before it asks yo
 2. The fields for that section open on the right
 3. Type your change
 4. Click **"Save"** at the top right
-5. Wait ~30 seconds — your change goes live at brianna.philipngo.ca
+5. Wait ~30 seconds — your change goes live at meiskinstudio.co
 
 Behind the scenes, every save commits to GitHub, GitHub tells the host (Vercel) to rebuild, Vercel publishes. You don't have to think about any of that. Just: edit → save → wait half a minute → refresh the live site.
 
@@ -94,7 +94,7 @@ The current site uses arch-topped placeholder frames everywhere photos would go.
 1. In the sidebar, click **"Coming Soon splash"**
 2. Untick **"Show the splash?"**
 3. Click **Save**
-4. ~30 seconds later, brianna.philipngo.ca shows your real homepage to everyone — no password needed
+4. ~30 seconds later, meiskinstudio.co shows your real homepage to everyone — no password needed
 
 Your coming-soon content is still saved. If you ever want to put the gate back up (renovating, on vacation, etc.) just tick the toggle on again.
 

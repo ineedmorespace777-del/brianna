@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://brianna.philipngo.ca',
+  site: 'https://meiskinstudio.co',
   // We're using Vercel for static hosting + serverless functions in api/
   // No SSR adapter needed — output is fully static HTML.
   output: 'static',
