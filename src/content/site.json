@@ -53,16 +53,18 @@
     "foot_right": "Wed — Sun · 10–4"
   },
   "hero": {
-    "eyebrow": "boutique restorative facials · kitsilano, vancouver",
-    "title": "your skin,\n*considered.*",
-    "sub": "a skin practice on west broadway. each visit begins with a slow read of your skin and ends with a plan that fits your week, your budget, and your patience.",
+    "eyebrow": "Boutique Facials · Kitsilano, Vancouver",
+    "title": "Your skin,\n*well-kept.*",
+    "sub": "A skincare practice where every visit gets one face's worth of attention. Treatments are chosen, not templated — matched to what your skin needs this week.",
     "cta_primary_label": "book a visit",
     "cta_secondary_label": "about the studio",
-    "frame_label": "the treatment room",
-    "chip_label": "now booking",
+    "image": "/uploads/Mei-Skin.jpg",
+    "image_alt": "mei skin facial",
+    "frame_label": "mei skin facial",
+    "chip_label": "Now Booking",
     "meta": [
       {
-        "dt": "one",
+        "dt": "One",
         "dd": "face at a time, by appointment"
       },
       {
