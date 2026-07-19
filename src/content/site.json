@@ -260,10 +260,6 @@
         "a": "Yes, we have retail products from Dermabell, Éclat du Teint, Dr.esthé, and more available to purchase on-site."
       },
       {
-        "q": "do you offer gift cards?",
-        "a": "yes, in any amount. delivered electronically or as a small printed card. they don't expire."
-      },
-      {
         "q": "Where do I park?",
         "a": "There's paid underground parking directly below the studio at 2080 West Broadway. Free street parking is also available along Maple St, Cypress St, and W 10th, 11th, and 12th."
       },
@@ -280,7 +276,8 @@
         "a": "Absolutely. mei skin specializes in a thoughtful, skin-first approach that prioritizes barrier health, comfort, and long-term skin wellness. every treatment is customized to your skin's needs on the day of your appointment.\n\nif you have sensitive, reactive, redness-prone, or easily irritated skin, we'll carefully select products and techniques that support your skin without overwhelming it. we focus on strengthening and nourishing the skin barrier rather than aggressive treatments that can lead to irritation.\n\nbefore every facial, we'll discuss your skin history, sensitivities, allergies, and current skincare routine to ensure your treatment is both safe and effective.\n\nour goal is for your skin to leave feeling calm, balanced, and healthy—not stripped, inflamed, or overworked."
       },
       {
-        "q": "What should I do after my visit?"
+        "q": "What should I do after my visit?",
+        "a": "You're welcome to cleanse as usual at the end of the day. The one habit we'll always encourage: wear sunscreen every day, rain or shine. Even on cloudy days, UV rays still reach your skin, so keeping that protection consistent is one of the best things you can do for your results."
       }
     ]
   },
