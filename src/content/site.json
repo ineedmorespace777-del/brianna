@@ -252,6 +252,10 @@
         "a": "Every facial at Mei Skin is bespoke — built around your skin that day rather than a fixed protocol. We draw from techniques like double cleansing, custom light peels, micro-current hydration, lymphatic sculpting massage, RF lifting, plasma + high-frequency, and layered masking, using medical-grade Korean formulations. The main difference between sessions is time: a 60-minute visit (The Mei Glow) covers the essentials, while a 90-minute visit (The Mei Reset) allows room to go deeper — more focus, more modalities, more restoration."
       },
       {
+        "q": "How long are appointments, and how often should I come?",
+        "a": "Sessions currently run either 60 or 90 minutes, depending on how much time you want to give your skin that day. We recommend every 4-6 weeks for maintenance."
+      },
+      {
         "q": "do you sell products?",
         "a": "yes we have retail products from dermabell, éclat du teint, dr.esthé, and more available to purchase on-site."
       },
@@ -276,8 +280,11 @@
         "a": "street parking on west broadway and the side streets, free after 6pm. the studio is a short walk from broadway-city hall (10–12 min) or any bus along the broadway corridor."
       },
       {
-        "q": "How long are appointments, and how often should I come?",
-        "a": "Sessions currently run either 60 or 90 minutes, depending on how much time you want to give your skin that day. We recommend every 4-6 weeks for maintenance."
+        "q": "Do I need to do anything to prepare for my visit?",
+        "a": ""
+      },
+      {
+        "q": "What should I do after my visit?"
       }
     ]
   },
