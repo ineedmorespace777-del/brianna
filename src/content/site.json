@@ -260,28 +260,24 @@
         "a": "Yes, we have retail products from Dermabell, Éclat du Teint, Dr.esthé, and more available to purchase on-site."
       },
       {
-        "q": "I have sensitive or reactive skin. Is this for me?",
-        "a": "Absolutely. mei skin specializes in a thoughtful, skin-first approach that prioritizes barrier health, comfort, and long-term skin wellness. every treatment is customized to your skin's needs on the day of your appointment.\n\nif you have sensitive, reactive, redness-prone, or easily irritated skin, we'll carefully select products and techniques that support your skin without overwhelming it. we focus on strengthening and nourishing the skin barrier rather than aggressive treatments that can lead to irritation.\n\nbefore every facial, we'll discuss your skin history, sensitivities, allergies, and current skincare routine to ensure your treatment is both safe and effective.\n\nour goal is for your skin to leave feeling calm, balanced, and healthy—not stripped, inflamed, or overworked."
-      },
-      {
-        "q": "can i bring products i'm already using?",
-        "a": "please. bring everything — including the things you're embarrassed about. we go through it together and figure out what stays, what goes, and what's missing. no judgment, ever."
-      },
-      {
-        "q": "what's your cancellation policy?",
-        "a": "24-hour notice for full credit. cancellations inside 24 hours are charged 50% of the booked service. a late cancel means an empty room — i appreciate your help keeping it fair."
-      },
-      {
         "q": "do you offer gift cards?",
         "a": "yes, in any amount. delivered electronically or as a small printed card. they don't expire."
       },
       {
-        "q": "where do i park?",
-        "a": "street parking on west broadway and the side streets, free after 6pm. the studio is a short walk from broadway-city hall (10–12 min) or any bus along the broadway corridor."
+        "q": "Where do I park?",
+        "a": "There's paid underground parking directly below the studio at 2080 West Broadway. Free street parking is also available along Maple St, Cypress St, and W 10th, 11th, and 12th."
       },
       {
         "q": "Do I need to do anything to prepare for my visit?",
         "a": ""
+      },
+      {
+        "q": "What's your cancellation policy?",
+        "a": "24-hour notice for full credit. Cancellations inside 24 hours are charged 50% of the booked service. a late cancel means an empty room — i appreciate your help keeping it fair."
+      },
+      {
+        "q": "I have sensitive or reactive skin. Is this for me?",
+        "a": "Absolutely. mei skin specializes in a thoughtful, skin-first approach that prioritizes barrier health, comfort, and long-term skin wellness. every treatment is customized to your skin's needs on the day of your appointment.\n\nif you have sensitive, reactive, redness-prone, or easily irritated skin, we'll carefully select products and techniques that support your skin without overwhelming it. we focus on strengthening and nourishing the skin barrier rather than aggressive treatments that can lead to irritation.\n\nbefore every facial, we'll discuss your skin history, sensitivities, allergies, and current skincare routine to ensure your treatment is both safe and effective.\n\nour goal is for your skin to leave feeling calm, balanced, and healthy—not stripped, inflamed, or overworked."
       },
       {
         "q": "What should I do after my visit?"
