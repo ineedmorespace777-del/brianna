@@ -150,14 +150,14 @@
   },
   "aboutMei": {
     "enabled": true,
-    "eyebrow": "the practitioner",
-    "title": "meet brrrriannnna",
-    "lede": "skin care, for me, started with my own. a long stretch of trial and error, a handful of mentors, and the slow realization that the work i wanted to do wasn't in a chain spa — it was in a small room, with one person, taking the time. joean was here",
-    "body": "i trained in clinical aesthetics in vancouver and spent six years on treatment-room floors at studios across the city before opening mei skin. i still see every visit the same way: it's an hour for you, and the only job is to leave your skin (and you) a little more at home in itself. philip was here",
+    "eyebrow": "The Practitioner",
+    "title": "Meet Brianna",
+    "lede": "Brianna is an esthetician and the founder of mei skin. She holds a Bachelor's degree in Psychology from the University of British Columbia, and brings over five years of experience at Vancouver's top luxury spas to mei skin. Her training includes in-house education with BABOR, Éminence Organic Skin Care, Knesko Skin, Dr.esthé and Éclat du teint, Dermabell, and more, Dermalogica certifications, hands-on private training through We Do Beauty Academy, and ongoing mentorship from leading industry experts.",
+    "body": "Outside the treatment room, Brianna's interests in movement, wellness, and time outdoors inform the calm, considered energy of mei skin.",
     "credentials": [
       {
-        "label": "certified aesthetician",
-        "org": "blanche macdonald · vancouver"
+        "label": "Certificate, Korean Skincare Management",
+        "org": "We Do Beauty Academy, Vancouver"
       },
       {
         "label": "advanced peel certification",
@@ -176,7 +176,7 @@
         "org": "nuface trinity pro"
       }
     ],
-    "pull_quote": "i won't sell you something you don't need. if your skin's doing well, i'll tell you to come back in eight weeks, not six.",
+    "pull_quote": "Good skincare should be bespoke — your skin changes, and your skin is unique to you.",
     "frame_label": "mei, in studio",
     "cta_label": "book a visit"
   },
