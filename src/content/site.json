@@ -55,7 +55,7 @@
   "hero": {
     "eyebrow": "Boutique Facials · Kitsilano, Vancouver",
     "title": "Your skin,\n*well-kept.*",
-    "sub": "A skincare practice where every visit gets one face's worth of attention. Treatments are chosen, not templated — matched to what your skin needs this week.",
+    "sub": "A skincare practice where every visit gets one face's worth of attention. No templates, no rush — just a treatment chosen for what your skin needs right now.",
     "cta_primary_label": "book a visit",
     "cta_secondary_label": "about the studio",
     "image": "/uploads/image.png",
@@ -79,12 +79,13 @@
   },
   "marquee": {
     "items": [
-      "Plasma High-Frequency ",
+      "High-Frequency ",
       "Microcurrent",
       "Chemical Peels",
       "Facial Massage",
-      "HIFU",
-      "Ultrasonic Extractions"
+      "Ultrasonic Extractions",
+      "Korean Medical-Grade Products",
+      "LED Therapy"
     ]
   },
   "philosophy": {
