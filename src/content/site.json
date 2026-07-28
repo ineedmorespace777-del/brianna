@@ -55,7 +55,7 @@
   "hero": {
     "eyebrow": "Boutique Facials · Kitsilano, Vancouver",
     "title": "Your skin,\n*well-kept.*",
-    "sub": "A skincare practice where every visit gets one face's worth of attention. No templates, no rush — just a treatment chosen for what your skin needs right now.",
+    "sub": "A skincare practice where nothing is templated and no one is rushed — just a treatment considered for what your skin needs today.",
     "cta_primary_label": "book a visit",
     "cta_secondary_label": "about the studio",
     "image": "/uploads/Untitled-design.png",
@@ -139,7 +139,7 @@
         "duration": "90 min",
         "price": "$200",
         "description": "A boutique treatment for stressed, irritated, or reactive skin, drawing on the clinical approach of Japanese and Korean skin studios — medical-grade Korean formulations paired with advanced skin technologies. Each session is customized to calm redness, rebuild the skin barrier, and restore comfort and balance, using treatments like RF lifting, plasma + high-frequency, and multi-modal circulation support alongside Dr. esthé, Dermabell, and Éclat du teint. The result: calmer, clearer skin with a replenished, resilient complexion.",
-        "image": "/uploads/20251013-DSC_9208.JPG"
+        "image": ""
       },
       {
         "img_key": "",
