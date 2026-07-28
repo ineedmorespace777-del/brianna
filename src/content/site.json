@@ -52,10 +52,10 @@
   "hero": {
     "eyebrow": "Boutique Facials · Kitsilano, Vancouver",
     "title": "Your skin,\n*well-kept.*",
-    "sub": "A skincare practice where every visit gets one face's worth of attention. No templates, no rush — just a treatment chosen for what your skin needs right now.",
+    "sub": "A skincare practice where nothing is templated and no one is rushed — just a treatment considered for what your skin needs today.",
     "cta_primary_label": "book a visit",
     "cta_secondary_label": "about the studio",
-    "image": "/uploads/hero.webp",
+    "image": "/uploads/untitled-design-web.webp",
     "image_alt": "mei skin facial",
     "frame_label": "mei skin facial",
     "chip_label": "Now Booking",
@@ -102,7 +102,7 @@
       },
       {
         "num": "03",
-        "title": "*tend*",
+        "title": "*Tend*",
         "body": "You leave with a personalized plan to carry it forward. Nothing is upsold. If your skin doesn't need a product, we won't hand you one."
       }
     ]
@@ -124,31 +124,27 @@
     "note": "the prices below are the prices you pay — no add-ons at the desk.",
     "items": [
       {
+        "name": "the mei glow facial (refinement + radiance)",
+        "duration": "60 min",
+        "price": "$140",
+        "description": "A treatment focused on complexion refinement and radiance — designed for clients seeking brighter, more even, naturally polished skin. Medical-grade Korean formulations meet gentle device work and sculpting massage, including a double cleanse, custom light peel, micro-current hydration infusion, lymphatic sculpting massage, and layered masking, finished with essences and serums chosen for your skin's needs. The result: hydrated, radiant, bouncy skin with smoother texture and a refined glow.",
+        "image": "/uploads/20251013-dsc-8712-web.webp"
+      },
+      {
         "img_key": "signature",
         "name": "the mei reset facial (recovery + restoration)",
         "duration": "90 min",
         "price": "$200",
-        "description": "A boutique treatment for stressed, irritated, or reactive skin, drawing on the clinical approach of Japanese and Korean skin studios — medical-grade Korean formulations paired with advanced skin technologies. Each session is customized to calm redness, rebuild the skin barrier, and restore comfort and balance, using treatments like RF lifting, plasma + high-frequency, and multi-modal circulation support alongside Dr. esthé, Dermabell, and Éclat du teint. The result: calmer, clearer skin with a replenished, resilient complexion."
-      },
-      {
-        "img_key": "microneedling",
-        "name": "microneedling",
-        "duration": "75 min",
-        "price": "TBA",
-        "description": "coming soon"
-      },
-      {
-        "name": "the mei glow facial (refinement + radiance)",
-        "duration": "60 min",
-        "price": "$140",
-        "description": "A treatment focused on complexion refinement and radiance — designed for clients seeking brighter, more even, naturally polished skin. Medical-grade Korean formulations meet gentle device work and sculpting massage, including a double cleanse, custom light peel, micro-current hydration infusion, lymphatic sculpting massage, and layered masking, finished with essences and serums chosen for your skin's needs. The result: hydrated, radiant, bouncy skin with smoother texture and a refined glow."
+        "description": "A boutique treatment for stressed, irritated, or reactive skin, drawing on the clinical approach of Japanese and Korean skin studios — medical-grade Korean formulations paired with advanced skin technologies. Each session is customized to calm redness, rebuild the skin barrier, and restore comfort and balance, using treatments like RF lifting, plasma + high-frequency, and multi-modal circulation support alongside Dr. esthé, Dermabell, and Éclat du teint. The result: calmer, clearer skin with a replenished, resilient complexion.",
+        "image": ""
       },
       {
         "img_key": "",
         "name": "the mei cica facial",
         "duration": "60 min",
         "price": "$175",
-        "description": "Built around Centella Asiatica — a clinical-grade ingredient prized for its ability to heal, soothe, and calm irritation. This classic facial is elevated with three exclusive strategies: Éclat du Teint's Vital Peeling Solution, a CICA and PHA exfoliating mask that gently clears buildup while preserving moisture balance; a custom ampoule and serum cocktail delivered with High-Intensity Focused Ultrasound for deeper absorption, non-invasive lifting, and collagen stimulation; and Éclat du Teint's CICA B5 modeling mask, layered over a cream mask to lock in hydration and visibly reduce redness. No downtime. CICA-driven formulations. Restorative care"
+        "description": "Built around Centella Asiatica — a clinical-grade ingredient prized for its ability to heal, soothe, and calm irritation. This classic facial is elevated with three exclusive strategies: Éclat du Teint's Vital Peeling Solution, a CICA and PHA exfoliating mask that gently clears buildup while preserving moisture balance; a custom ampoule and serum cocktail delivered with High-Intensity Focused Ultrasound for deeper absorption, non-invasive lifting, and collagen stimulation; and Éclat du Teint's CICA B5 modeling mask, layered over a cream mask to lock in hydration and visibly reduce redness. No downtime. CICA-driven formulations. Restorative care",
+        "image": "/uploads/3860x.webp"
       }
     ],
     "footnote": " all services are bespoke. we professionally assess, listen to your input and preferences, and make recommendations accordingly ",
@@ -179,6 +175,7 @@
       }
     ],
     "pull_quote": "Good skincare should be bespoke — your skin changes, and your skin is unique to you.",
+    "image": "/uploads/bri-wong-5-web.webp",
     "frame_label": "mei, in studio",
     "cta_label": "book a visit"
   },
@@ -295,6 +292,7 @@
     "eyebrow": "book a visit",
     "title": "request an *appointment.*",
     "body": "tell us a little about what you are after and when suits you. we read every request and reply personally, usually within a day or two.",
+    "fine_print": "this is a request, not a confirmed booking — your time is held once we reply to confirm it. we will go through your skin history and any medications together at your first visit, so no need to send that here.",
     "name_placeholder": "first name",
     "email_placeholder": "email address",
     "phone_placeholder": "phone (optional)",
@@ -304,8 +302,7 @@
     "message_placeholder": "anything else we should know? (optional)",
     "submit_label": "send request",
     "success_message": "thank you, {name} — your request is in. we will reply to {email} within a day or two to confirm a time.",
-    "error_message": "something went wrong sending that. please email us directly and we will sort it out.",
-    "fine_print": "this is a request, not a confirmed booking — your time is held once we reply to confirm it. we will go through your skin history and any medications together at your first visit, so no need to send that here."
+    "error_message": "something went wrong sending that. please email us directly and we will sort it out."
   },
   "footer": {
     "tagline": "boutique facials. where skin is read, not rushed. ",
@@ -380,8 +377,8 @@
   },
   "legal": {
     "privacy": {
-      "title": "privacy *policy.*",
       "eyebrow": "the fine print",
+      "title": "privacy *policy.*",
       "updated": "july 18, 2026",
       "intro": "mei skin studio runs this website. this page explains what happens to your information when you visit it.\n\nthe short version: this site collects very little, we don't sell anything to anyone, and there are no advertising trackers here.",
       "sections": [
@@ -414,8 +411,8 @@
       "contact_body": "questions about this policy, or about information we hold on you:"
     },
     "terms": {
-      "title": "terms &\n*conditions.*",
       "eyebrow": "the fine print",
+      "title": "terms &\n*conditions.*",
       "updated": "july 18, 2026",
       "intro": "these terms cover the use of this website and the services provided at mei skin studio. booking an appointment or using this site means you agree to them.",
       "sections": [
