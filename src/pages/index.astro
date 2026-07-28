@@ -7,8 +7,8 @@ const titleLines = (s) => (s || '').split('\n').map(l => `<span>${em(l)}</span>`
 const inline = (s) => em(s);
 const nl2br = (s) => (s || '').replace(/\n/g, '<br/>');
 
-const cssVer = 'redesign-3';
-const jsVer  = 'redesign-2';
+const cssVer = 'booking-1';
+const jsVer  = 'booking-1';
 
 const gate = site.comingSoon || {};
 const showGate = gate.enabled !== false;
@@ -495,23 +495,54 @@ const jsonLd = {
       </section>
     )}
 
-    <!-- newsletter / book ─────────────────────────────────── -->
-    <section class="newsletter" id="book">
+    <!-- appointment request ───────────────────────────────── -->
+    <section class="booking" id="book">
       <div class="container">
-        <div class="newsletter-grid reveal">
-          <div class="newsletter-text">
-            <p class="eyebrow">{site.newsletter.eyebrow}</p>
-            <h2 class="section-title" set:html={inline(site.newsletter.title)}></h2>
-            <p>{site.newsletter.body}</p>
+        <div class="booking-grid reveal">
+          <div class="booking-text">
+            <p class="eyebrow">{site.booking.eyebrow}</p>
+            <h2 class="section-title" set:html={inline(site.booking.title)}></h2>
+            <p>{site.booking.body}</p>
+            {site.booking.fine_print && <p class="booking-fine">{site.booking.fine_print}</p>}
           </div>
-          <form class="newsletter-form" id="newsletter-form" novalidate>
-            <label for="nl-name" class="visually-hidden">first name</label>
-            <input id="nl-name" name="name" type="text" placeholder={site.newsletter.name_placeholder} autocomplete="given-name" required />
 
-            <label for="nl-email" class="visually-hidden">email</label>
-            <input id="nl-email" name="email" type="email" placeholder={site.newsletter.email_placeholder} autocomplete="email" required />
+          <form
+            class="booking-form"
+            id="booking-form"
+            novalidate
+            data-success={site.booking.success_message}
+            data-error={site.booking.error_message}
+          >
+            <label for="bk-name" class="visually-hidden">first name</label>
+            <input id="bk-name" name="name" type="text" placeholder={site.booking.name_placeholder} autocomplete="given-name" required />
 
-            <button type="submit" class="btn btn-primary btn-block">{site.newsletter.submit_label}</button>
+            <label for="bk-email" class="visually-hidden">email</label>
+            <input id="bk-email" name="email" type="email" placeholder={site.booking.email_placeholder} autocomplete="email" required />
+
+            <label for="bk-phone" class="visually-hidden">phone</label>
+            <input id="bk-phone" name="phone" type="tel" placeholder={site.booking.phone_placeholder} autocomplete="tel" />
+
+            <label for="bk-service" class="visually-hidden">{site.booking.service_label}</label>
+            <select id="bk-service" name="service">
+              <option value="">{site.booking.service_any_label}</option>
+              {site.services.items.filter(s => s.name).map(s => (
+                <option value={s.name}>{s.name}</option>
+              ))}
+            </select>
+
+            <label for="bk-timing" class="visually-hidden">preferred timing</label>
+            <input id="bk-timing" name="timing" type="text" placeholder={site.booking.timing_placeholder} />
+
+            <label for="bk-message" class="visually-hidden">message</label>
+            <textarea id="bk-message" name="message" rows="3" placeholder={site.booking.message_placeholder}></textarea>
+
+            {/* honeypot — hidden from people, catches bots. not a real field. */}
+            <div class="hp-field" aria-hidden="true">
+              <label for="bk-company">company</label>
+              <input id="bk-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">{site.booking.submit_label}</button>
             <p class="form-msg" role="status" aria-live="polite" hidden></p>
           </form>
         </div>

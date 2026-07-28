@@ -292,13 +292,21 @@
     "longitude": "-123.1547",
     "site_url": "https://meiskinstudio.co"
   },
-  "newsletter": {
-    "eyebrow": "stay close",
-    "title": "be the first *to know* ",
-    "body": "this is where you'll hear about facial pop-ups first — limited spots, announced with little notice, gone fast. no spam, no noise. just a heads up before a spot opens.",
+  "booking": {
+    "eyebrow": "book a visit",
+    "title": "request an *appointment.*",
+    "body": "tell us a little about what you are after and when suits you. we read every request and reply personally, usually within a day or two.",
     "name_placeholder": "first name",
     "email_placeholder": "email address",
-    "submit_label": "subscribe"
+    "phone_placeholder": "phone (optional)",
+    "service_label": "which treatment?",
+    "service_any_label": "not sure yet — help me choose",
+    "timing_placeholder": "when suits you? e.g. weekday mornings",
+    "message_placeholder": "anything else we should know? (optional)",
+    "submit_label": "send request",
+    "success_message": "thank you, {name} — your request is in. we will reply to {email} within a day or two to confirm a time.",
+    "error_message": "something went wrong sending that. please email us directly and we will sort it out.",
+    "fine_print": "this is a request, not a confirmed booking — your time is held once we reply to confirm it. we will go through your skin history and any medications together at your first visit, so no need to send that here."
   },
   "footer": {
     "tagline": "boutique facials. where skin is read, not rushed. ",
@@ -384,7 +392,7 @@
       "sections": [
         {
           "heading": "information collection and use",
-          "body": "**what you give us.** this website doesn't have a booking system or a working contact form. enquiries reach us by email or instagram, not through this site.\n\nthe newsletter sign-up on the home page is not connected yet — anything typed into it stays in your browser and is never sent to us or stored anywhere.\n\nwhen you do email or message us, we keep that correspondence so we can reply, book you in, and remember your skin history between visits.\n\n**what's collected automatically.** basic technical information about your visit:\n\n- which pages you looked at, and for how long\n- the site or search that sent you here\n- your rough region — city or country level, never a precise address\n- browser and device type\n\nwe look at this in aggregate to understand which parts of the site are useful. it isn't used to build a profile of you."
+          "body": "**what you give us.** the appointment request form on this site asks for your name, email, and optionally your phone number, which treatment you're interested in, and when suits you. when you send it, that goes straight to our studio inbox as an email. it isn't stored in a database, and it isn't passed to any advertising or marketing company.\n\nplease don't send skin conditions, medications, or other health details through the form — we go through all of that with you in person at your first visit, where it belongs.\n\nwhen you email or message us, we keep that correspondence so we can reply, book you in, and remember your skin history between visits.\n\n**what's collected automatically.** basic technical information about your visit:\n\n- which pages you looked at, and for how long\n- the site or search that sent you here\n- your rough region — city or country level, never a precise address\n- browser and device type\n\nwe look at this in aggregate to understand which parts of the site are useful. it isn't used to build a profile of you."
         },
         {
           "heading": "cookies and local storage",

@@ -5,7 +5,7 @@
    - scroll reveals + hero line-mask reveals
    - subtle parallax on image frames
    - magnetic CTAs (pointer devices only)
-   - newsletter form validation
+   - appointment request form (posts to /api/request)
 */
 (() => {
   'use strict';
@@ -142,25 +142,73 @@
     });
   }
 
-  /* newsletter form */
-  const form = document.getElementById('newsletter-form');
+  /* appointment request form → /api/request → email */
+  const form = document.getElementById('booking-form');
   if (form) {
     const msg = form.querySelector('.form-msg');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = form.querySelector('#nl-name').value.trim();
-      const email = form.querySelector('#nl-email').value.trim();
-      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      if (!name || !emailOk) {
-        msg.hidden = false;
-        msg.style.color = '#c08968';
-        msg.textContent = !name ? 'please add your first name.' : "that email doesn't look right.";
-        return;
-      }
+    const button = form.querySelector('button[type="submit"]');
+    const buttonLabel = button ? button.textContent : '';
+    const ERROR_TONE = '#b04a4a';
+
+    const say = (text, isError) => {
       msg.hidden = false;
-      msg.style.color = '';
-      msg.textContent = `thanks, ${name.toLowerCase()}. we'll write when there's news from the studio.`;
-      form.reset();
+      msg.style.color = isError ? ERROR_TONE : '';
+      msg.textContent = text;
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const value = (sel) => (form.querySelector(sel).value || '').trim();
+      const name = value('#bk-name');
+      const email = value('#bk-email');
+
+      if (!name) return say('please add your first name.', true);
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return say("that email doesn't look right.", true);
+      }
+
+      const payload = {
+        name,
+        email,
+        phone: value('#bk-phone'),
+        service: value('#bk-service'),
+        timing: value('#bk-timing'),
+        message: value('#bk-message'),
+        company: value('#bk-company'), // honeypot
+      };
+
+      if (button) { button.disabled = true; button.textContent = 'sending…'; }
+      say('sending your request…', false);
+
+      try {
+        const res = await fetch('/api/request', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok || !data.ok) {
+          throw new Error(data.error || 'send failed');
+        }
+
+        const template =
+          form.dataset.success ||
+          'thank you, {name} — your request is in. we will reply to {email} shortly.';
+        say(
+          template.replace('{name}', name.toLowerCase()).replace('{email}', email),
+          false
+        );
+        form.reset();
+      } catch (err) {
+        const fallback =
+          form.dataset.error ||
+          'something went wrong sending that. please email us directly.';
+        say(err && err.message && err.message !== 'send failed' ? err.message : fallback, true);
+      } finally {
+        if (button) { button.disabled = false; button.textContent = buttonLabel; }
+      }
     });
   }
 

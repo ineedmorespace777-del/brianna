@@ -115,6 +115,51 @@ No git, no GitHub, no terminal, no markdown. The form sidebar mirrors the site s
 
 ---
 
+## 6 — Wire up the appointment request form
+
+The form at the bottom of the site posts to `api/request.js` (a Vercel serverless
+function), which emails the request to the studio inbox via **Resend**. The API key
+lives server-side, so it's never exposed to visitors.
+
+**a) Get a Resend API key**
+
+1. Sign up at **https://resend.com** (free tier: 3,000 emails/month, 100/day)
+2. Go to **API Keys** → **Create API Key** → name it `meiskin-prod`, permission `Sending access`
+3. Copy the key (starts `re_…`) — you only see it once
+
+**b) Verify the domain** so mail sends from `@meiskinstudio.co` rather than Resend's shared sender
+
+In Resend: **Domains** → **Add Domain** → `meiskinstudio.co`. Resend gives you DNS
+records to add at GoDaddy.
+
+> ⚠️ **SPF must be merged, never duplicated.** The domain already has
+> `v=spf1 include:dc-aa8e722993._spfm.meiskinstudio.co ~all` (GoDaddy) and Mailchimp
+> DKIM records. A domain may only have **one** SPF record — adding a second breaks
+> email authentication for *everything*, including Google Workspace mail. Merge
+> Resend's `include:` into the existing record instead of adding a new TXT row.
+> DKIM records are safe to add alongside (they use separate selectors).
+
+**c) Add the env vars to Vercel**
+
+```powershell
+vercel env add RESEND_API_KEY production --value "re_PASTE_KEY_HERE"
+vercel env add RESEND_FROM   production --value "mei skin <hello@meiskinstudio.co>"
+vercel env add CONTACT_TO    production --value "contact@meiskinstudio.co"
+```
+
+- `RESEND_FROM` must be on a domain verified in step (b). Before verifying, use
+  `onboarding@resend.dev` to test — but note Resend's shared sender can only
+  deliver to your own account email until the domain is verified.
+- `CONTACT_TO` defaults to `contact@meiskinstudio.co` if unset.
+- Replies go straight to the client — the function sets `reply_to` to their address.
+
+**d) Redeploy**, then send yourself a test request from the live site.
+
+If the key is missing the form fails gracefully with "the form isn't finished being
+set up" rather than silently swallowing the enquiry.
+
+---
+
 ## Local development
 
 ```powershell

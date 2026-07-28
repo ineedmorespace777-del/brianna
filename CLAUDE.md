@@ -49,6 +49,19 @@ The Astro page does a **build-time** `import site from '../content/site.json'`. 
 
 Every photo placeholder in `index.astro` ternary-renders: `image` field set → `<img class="media-img">`, otherwise `<div class="frame">` (arch-topped CSS placeholder with diagonal stripes + corner brackets). To wire a new image slot, add `image` + `image_alt` fields to the schema + JSON, then add the ternary in the markup. Hero image gets `loading="eager"` + `fetchpriority="high"`; everything else is lazy.
 
+### The one server-side piece
+
+`api/request.js` is a Vercel serverless function at the **project root** (not
+`src/pages/api/` — that would require the Astro Vercel adapter and `output: 'server'`).
+Root `/api/*.js` works alongside a static framework build; the old Decap OAuth proxy
+used the same pattern. The site stays fully static; only this endpoint runs server-side,
+which is what keeps `RESEND_API_KEY` out of the browser.
+
+It takes the appointment form POST, validates it, drops honeypot submissions, and
+emails the studio via Resend with `reply_to` set to the client. Deliberately collects
+**no health information** — skin history and medications are handled in person, and
+the privacy policy says so. Don't add fields for them.
+
 ### Coming-soon gate
 
 `src/pages/index.astro` renders the gate as an `<aside>` when `site.comingSoon.enabled !== false`. Password lives in `window.__MEI_PWD` (inlined from `site.json`). Successful unlock writes `localStorage['mei-unlocked'] = 'true'` and adds `.unlocked` to `<html>`. To bypass during dev: `localStorage.setItem('mei-unlocked','true')`.
@@ -58,7 +71,7 @@ Every photo placeholder in `index.astro` ternary-renders: `image` field set → 
 - **GitHub repo:** `ineedmorespace777-del/brianna` (public)
 - **Vercel project:** `brianna` under `ineedmorespace777-dels-projects`. Project ID `prj_FxLw23f9se9A7JoyFNelFbLysfoZ`, org `team_gQXzBbGVttv8W3hn4seJlbtY`.
 - **Tina Cloud project:** ID `3de1965e-4e2a-4dc2-83f0-f34b7b85e093` (https://app.tina.io/projects/3de1965e-4e2a-4dc2-83f0-f34b7b85e093)
-- **Required env vars** (set on Vercel for production, preview, development): `PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`, `TINA_SEARCH_TOKEN`.
+- **Required env vars** (set on Vercel for production, preview, development): `PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`, `TINA_SEARCH_TOKEN`. Form delivery also needs `RESEND_API_KEY`, `RESEND_FROM`, `CONTACT_TO` (see SETUP.md §6).
 - **Manual deploy:** `npx vercel --prod`
 
 ## Landmines (read before changing build/deploy stuff)

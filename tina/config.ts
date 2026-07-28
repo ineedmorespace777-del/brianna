@@ -346,16 +346,39 @@ export default defineConfig({
             ],
           },
 
-          // ───────────────── newsletter ─────────────────
+          // ───────────────── booking / appointment request ─────────────────
           {
-            type: "object", name: "newsletter", label: "Newsletter signup",
+            type: "object", name: "booking", label: "Appointment request form",
+            description: "The form at the bottom of the page. Every 'book a visit' button scrolls here. Submissions are emailed to you.",
             fields: [
               { type: "string", name: "eyebrow", label: "Eyebrow" },
               { type: "string", name: "title", label: "Title", description: "*italic* allowed" },
               { type: "string", name: "body", label: "Body paragraph", ui: { component: "textarea" } },
+              {
+                type: "string", name: "fine_print", label: "Small print under the text",
+                ui: { component: "textarea" },
+                description: "Sets expectations — that this is a request, not a confirmed booking. Shown in smaller type.",
+              },
               { type: "string", name: "name_placeholder", label: "Name field placeholder" },
               { type: "string", name: "email_placeholder", label: "Email field placeholder" },
+              { type: "string", name: "phone_placeholder", label: "Phone field placeholder" },
+              { type: "string", name: "service_label", label: "Treatment dropdown — screen-reader label" },
+              {
+                type: "string", name: "service_any_label", label: "Treatment dropdown — first option",
+                description: "Shown when they haven't picked a treatment, e.g. 'not sure yet — help me choose'. The rest of the list fills in automatically from your Services menu.",
+              },
+              { type: "string", name: "timing_placeholder", label: "Preferred timing placeholder" },
+              { type: "string", name: "message_placeholder", label: "Message box placeholder" },
               { type: "string", name: "submit_label", label: "Submit button label" },
+              {
+                type: "string", name: "success_message", label: "Message shown after sending",
+                ui: { component: "textarea" },
+                description: "Write {name} and {email} where you want their answers to appear.",
+              },
+              {
+                type: "string", name: "error_message", label: "Message shown if sending fails",
+                ui: { component: "textarea" },
+              },
             ],
           },
 
