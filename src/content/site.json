@@ -6,8 +6,7 @@
     "og_description": "Boutique Facials in Kitsilano, Vancouver. Skincare, Curated.",
     "twitter_title": "mei skin",
     "twitter_description": "Boutique Facials",
-    "theme_color": "#f7f2ea",
-    "og_image": "/assets/mei-logo.png"
+    "theme_color": "#f7f2ea"
   },
   "comingSoon": {
     "enabled": true,
@@ -43,6 +42,10 @@
       {
         "label": "faq",
         "anchor": "#faq"
+      },
+      {
+        "label": "gift cards",
+        "anchor": "#gift"
       }
     ],
     "book_label": "book a visit",
@@ -55,7 +58,7 @@
     "sub": "A skincare practice where nothing is templated and no one is rushed — just a treatment considered for what your skin needs today.",
     "cta_primary_label": "book a visit",
     "cta_secondary_label": "about the studio",
-    "image": "/uploads/untitled-design-web.webp",
+    "image": "/uploads/Untitled-design.png",
     "image_alt": "mei skin facial",
     "frame_label": "mei skin facial",
     "chip_label": "Now Booking",
@@ -128,7 +131,7 @@
         "duration": "60 min",
         "price": "$140",
         "description": "A treatment focused on complexion refinement and radiance — designed for clients seeking brighter, more even, naturally polished skin. Medical-grade Korean formulations meet gentle device work and sculpting massage, including a double cleanse, custom light peel, micro-current hydration infusion, lymphatic sculpting massage, and layered masking, finished with essences and serums chosen for your skin's needs. The result: hydrated, radiant, bouncy skin with smoother texture and a refined glow.",
-        "image": "/uploads/20251013-dsc-8712-web.webp"
+        "image": "/uploads/Mei-Skin-Light.JPG"
       },
       {
         "img_key": "signature",
@@ -175,7 +178,7 @@
       }
     ],
     "pull_quote": "Good skincare should be bespoke — your skin changes, and your skin is unique to you.",
-    "image": "/uploads/bri-wong-5-web.webp",
+    "image": "/uploads/BRI-WONG-5.jpg",
     "frame_label": "mei, in studio",
     "cta_label": "book a visit"
   },
@@ -231,7 +234,7 @@
         "cta_primary_label": "request appointment",
         "cta_primary_url": "#book",
         "cta_secondary_label": "get directions",
-        "cta_secondary_url": "https://www.google.com/maps/search/?api=1&query=We+Do+Beauty+Studio+West+Broadway+Vancouver+BC"
+        "cta_secondary_url": "#"
       }
     ],
     "contact_line_label": "questions before booking",
@@ -284,9 +287,7 @@
     "country": "CA",
     "latitude": "49.2638",
     "longitude": "-123.1547",
-    "site_url": "https://meiskinstudio.co",
-    "postal_code": "",
-    "telephone": ""
+    "site_url": "https://meiskinstudio.co"
   },
   "booking": {
     "eyebrow": "book a visit",
@@ -317,6 +318,10 @@
           {
             "label": "book a visit",
             "url": "#book"
+          },
+          {
+            "label": "gift cards",
+            "url": "#"
           }
         ]
       },
@@ -324,19 +329,19 @@
         "heading": "services",
         "items": [
           {
-            "label": "the mei reset facial (recovery + restoration)",
+            "label": "signature facial",
+            "url": "#menu"
+          },
+          {
+            "label": "microcurrent",
+            "url": "#menu"
+          },
+          {
+            "label": "peels",
             "url": "#menu"
           },
           {
             "label": "microneedling",
-            "url": "#menu"
-          },
-          {
-            "label": "the mei glow facial (refinement + radiance)",
-            "url": "#menu"
-          },
-          {
-            "label": "the mei cica facial",
             "url": "#menu"
           }
         ]
@@ -346,11 +351,11 @@
         "items": [
           {
             "label": "our story",
-            "url": "#meet-mei"
+            "url": "#"
           },
           {
             "label": "faq",
-            "url": "#faq"
+            "url": "#"
           },
           {
             "label": "press",
@@ -358,7 +363,7 @@
           },
           {
             "label": "contact",
-            "url": "#book"
+            "url": "#"
           }
         ]
       }
