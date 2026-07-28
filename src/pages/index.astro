@@ -107,9 +107,56 @@ const jsonLd = {
     geo: { '@type': 'GeoCoordinates', latitude: seo.latitude, longitude: seo.longitude },
   } : {}),
   areaServed: seo.locality || 'Vancouver',
-  sameAs: [site.brand.ig_url].filter(u => u && u !== '#'),
+  sameAs: [site.brand.ig_url, site.brand.tiktok_url].filter(u => u && u !== '#'),
   openingHoursSpecification: openingHours,
+  ...(seo.postal_code ? { address_postal: undefined } : {}),
+  ...(seo.telephone ? { telephone: seo.telephone } : {}),
+  // the treatment menu, so Google can surface services + prices
+  ...(site.services?.items?.length ? {
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'treatments',
+      itemListElement: site.services.items
+        .filter(s => s.name)
+        .map(s => ({
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: s.name,
+            ...(s.description ? { description: s.description } : {}),
+            provider: { '@type': 'BeautySalon', name: bizName },
+          },
+          // only advertise a price when it's a real number — "TBA" would be a lie
+          ...(s.price && /^\$?\d/.test(s.price) ? {
+            price: s.price.replace(/[^0-9.]/g, ''),
+            priceCurrency: 'CAD',
+          } : {}),
+        })),
+    },
+  } : {}),
 };
+// postal code belongs inside the address object, not at the top level
+if (seo.postal_code) jsonLd.address.postalCode = seo.postal_code;
+if (seo.street_address) jsonLd.address.streetAddress = seo.street_address;
+delete jsonLd.address_postal;
+
+// FAQPage — makes the site eligible for expandable FAQ results in Google.
+// Only emitted when the section is actually shown, otherwise it'd describe
+// content a visitor can't see, which Google treats as a violation.
+const faqEnabled = site.faq && site.faq.enabled !== false && (site.faq.items || []).length > 0;
+const faqLd = faqEnabled ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: site.faq.items
+    .filter(item => item.q && item.a)
+    .map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+} : null;
+
+const ogImage = siteUrl + (site.meta.og_image || '/assets/mei-logo.png');
 ---
 <!doctype html>
 <html lang="en">
@@ -139,13 +186,15 @@ const jsonLd = {
   <meta property="og:type" content="website" />
   <meta property="og:title" content={site.meta.og_title} />
   <meta property="og:description" content={site.meta.og_description} />
-  <meta property="og:image" content="/assets/mei-logo.png" />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:url" content={siteUrl} />
+  <meta property="og:site_name" content={bizName} />
   <meta property="og:locale" content="en_US" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={site.meta.twitter_title} />
   <meta name="twitter:description" content={site.meta.twitter_description} />
-  <meta name="twitter:image" content="/assets/mei-logo.png" />
+  <meta name="twitter:image" content={ogImage} />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -157,6 +206,7 @@ const jsonLd = {
   <link rel="stylesheet" href={`/styles/main.css?v=${cssVer}`} />
 
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+  {faqLd && <script type="application/ld+json" set:html={JSON.stringify(faqLd)}></script>}
 
   {showGate && (
     <script is:inline set:html={`window.__MEI_PWD=${JSON.stringify((gate.password || 'meiskin').toLowerCase())};`} />
@@ -575,7 +625,9 @@ const jsonLd = {
         <h4>follow</h4>
         <ul>
           <li><a href={site.brand.ig_url} target="_blank" rel="noopener" aria-label="instagram">ig</a></li>
-          <li><a href={site.brand.tiktok_url} aria-label="tiktok">tt</a></li>
+          {site.brand.tiktok_url && site.brand.tiktok_url !== '#' && (
+            <li><a href={site.brand.tiktok_url} target="_blank" rel="noopener" aria-label="tiktok">tt</a></li>
+          )}
         </ul>
       </div>
     </div>
@@ -587,7 +639,6 @@ const jsonLd = {
           {site.footer.legal_links.map((l, i) => (
             <>{i > 0 && ' · '}<a href={l.url}>{l.label}</a></>
           ))}
-          <span class="admin-sep"> · </span><a class="admin-link" href="/admin/">admin</a>
         </small>
       </div>
     </div>

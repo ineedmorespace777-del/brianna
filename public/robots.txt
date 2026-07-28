@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
-Disallow: /verify-output/
-Disallow: /scripts/verify.mjs
 
-Sitemap: /sitemap.xml
+# the CMS — no value in search results
+Disallow: /admin/
+Disallow: /verify-output/
+
+# Sitemap must be an absolute URL — a relative path here is ignored.
+Sitemap: https://meiskinstudio.co/sitemap.xml

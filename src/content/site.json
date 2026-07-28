@@ -6,7 +6,8 @@
     "og_description": "Boutique Facials in Kitsilano, Vancouver. Skincare, Curated.",
     "twitter_title": "mei skin",
     "twitter_description": "Boutique Facials",
-    "theme_color": "#f7f2ea"
+    "theme_color": "#f7f2ea",
+    "og_image": "/assets/mei-logo.png"
   },
   "comingSoon": {
     "enabled": true,
@@ -42,10 +43,6 @@
       {
         "label": "faq",
         "anchor": "#faq"
-      },
-      {
-        "label": "gift cards",
-        "anchor": "#gift"
       }
     ],
     "book_label": "book a visit",
@@ -58,7 +55,7 @@
     "sub": "A skincare practice where every visit gets one face's worth of attention. No templates, no rush — just a treatment chosen for what your skin needs right now.",
     "cta_primary_label": "book a visit",
     "cta_secondary_label": "about the studio",
-    "image": "/uploads/image.png",
+    "image": "/uploads/hero.webp",
     "image_alt": "mei skin facial",
     "frame_label": "mei skin facial",
     "chip_label": "Now Booking",
@@ -237,7 +234,7 @@
         "cta_primary_label": "request appointment",
         "cta_primary_url": "#book",
         "cta_secondary_label": "get directions",
-        "cta_secondary_url": "#"
+        "cta_secondary_url": "https://www.google.com/maps/search/?api=1&query=We+Do+Beauty+Studio+West+Broadway+Vancouver+BC"
       }
     ],
     "contact_line_label": "questions before booking",
@@ -290,7 +287,9 @@
     "country": "CA",
     "latitude": "49.2638",
     "longitude": "-123.1547",
-    "site_url": "https://meiskinstudio.co"
+    "site_url": "https://meiskinstudio.co",
+    "postal_code": "",
+    "telephone": ""
   },
   "booking": {
     "eyebrow": "book a visit",
@@ -321,10 +320,6 @@
           {
             "label": "book a visit",
             "url": "#book"
-          },
-          {
-            "label": "gift cards",
-            "url": "#"
           }
         ]
       },
@@ -332,19 +327,19 @@
         "heading": "services",
         "items": [
           {
-            "label": "signature facial",
-            "url": "#menu"
-          },
-          {
-            "label": "microcurrent",
-            "url": "#menu"
-          },
-          {
-            "label": "peels",
+            "label": "the mei reset facial (recovery + restoration)",
             "url": "#menu"
           },
           {
             "label": "microneedling",
+            "url": "#menu"
+          },
+          {
+            "label": "the mei glow facial (refinement + radiance)",
+            "url": "#menu"
+          },
+          {
+            "label": "the mei cica facial",
             "url": "#menu"
           }
         ]
@@ -354,11 +349,11 @@
         "items": [
           {
             "label": "our story",
-            "url": "#"
+            "url": "#meet-mei"
           },
           {
             "label": "faq",
-            "url": "#"
+            "url": "#faq"
           },
           {
             "label": "press",
@@ -366,7 +361,7 @@
           },
           {
             "label": "contact",
-            "url": "#"
+            "url": "#book"
           }
         ]
       }

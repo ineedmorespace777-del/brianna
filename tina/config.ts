@@ -75,6 +75,7 @@ export default defineConfig({
               { type: "string", name: "twitter_title", label: "Twitter — title" },
               { type: "string", name: "twitter_description", label: "Twitter — description" },
               { type: "string", name: "theme_color", label: "Theme color (browser UI tint)", description: "e.g. #f7f2ea" },
+              { type: "image", name: "og_image", label: "Social share image", description: "Shown when the site is shared on Instagram, Facebook, iMessage, WhatsApp. Best at 1200×630 pixels — a photo works far better than the logo." },
             ],
           },
 
@@ -340,6 +341,8 @@ export default defineConfig({
               { type: "string", name: "locality", label: "City" },
               { type: "string", name: "region", label: "Province / state code", description: "e.g. BC, CA, NY" },
               { type: "string", name: "country", label: "Country code", description: "e.g. CA, US" },
+              { type: "string", name: "postal_code", label: "Postal code", description: "e.g. V6K 2G6. Google matches this against your Google Business Profile — worth filling in." },
+              { type: "string", name: "telephone", label: "Public phone number", description: "Format like +1-604-555-0123. Leave blank if you'd rather not list one." },
               { type: "string", name: "latitude", label: "Latitude" },
               { type: "string", name: "longitude", label: "Longitude" },
               { type: "string", name: "site_url", label: "Public site URL", description: "e.g. https://meiskinstudio.co" },
