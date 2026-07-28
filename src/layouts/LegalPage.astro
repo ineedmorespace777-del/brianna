@@ -1,0 +1,90 @@
+---
+import site from '../content/site.json';
+
+const { page, slug } = Astro.props;
+
+const cssVer = 'legal-1';
+
+// inline markdown: **bold** first so it doesn't get eaten by the *italic* pass
+const md = (s) => (s || '')
+  .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+  .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+const titleLines = (s) => (s || '').split('\n').map(l => `<span>${md(l)}</span>`).join('<br/>');
+
+// body text: blank line = new block. a block whose lines all start with "- "
+// becomes a list; everything else is a paragraph.
+function renderBody(body) {
+  return (body || '').split(/\n{2,}/).map(block => {
+    const lines = block.split('\n').filter(l => l.trim());
+    if (lines.length && lines.every(l => l.trim().startsWith('- '))) {
+      return `<ul>${lines.map(l => `<li>${md(l.trim().slice(2))}</li>`).join('')}</ul>`;
+    }
+    return `<p>${md(block).replace(/\n/g, '<br/>')}</p>`;
+  }).join('');
+}
+
+const email = site.locations?.contact_email || '';
+const plainTitle = (page.title || '').replace(/[*\n]/g, ' ').replace(/\s+/g, ' ').trim();
+const siteUrl = site.seo?.site_url || 'https://meiskinstudio.co';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content={site.meta.theme_color} />
+  <title>{plainTitle} — {site.brand.name}</title>
+  <meta name="description" content={`${plainTitle} for ${site.brand.name}, a boutique skin studio in kitsilano, vancouver.`} />
+  <link rel="canonical" href={`${siteUrl}/${slug}`} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="/assets/mei-logo.png" />
+  <link rel="stylesheet" href={`/styles/main.css?v=${cssVer}`} />
+
+  <!-- legal pages stay reachable while the coming-soon gate is up -->
+  <script is:inline>
+    document.documentElement.classList.add('unlocked');
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#legal-main">skip to content</a>
+
+  <header class="legal-header">
+    <a class="brand" href="/" aria-label={`${site.brand.name} — home`}>
+      <img src="/assets/mei-logo.png" alt={site.brand.name} />
+      <span class="brand-word">{site.brand.name}</span>
+    </a>
+  </header>
+
+  <main class="legal" id="legal-main">
+    <div class="legal-inner">
+      {page.eyebrow && <p class="eyebrow">{page.eyebrow}</p>}
+      <h1 class="legal-title" set:html={titleLines(page.title)}></h1>
+      {page.updated && <p class="legal-updated">last updated {page.updated}</p>}
+
+      {page.intro && <div class="legal-intro" set:html={renderBody(page.intro)}></div>}
+
+      {(page.sections || []).map(section => (
+        <section class="legal-section">
+          <h2>{section.heading}</h2>
+          <div set:html={renderBody(section.body)}></div>
+        </section>
+      ))}
+
+      {page.contact_heading && (
+        <section class="legal-section">
+          <h2>{page.contact_heading}</h2>
+          {page.contact_body && <div set:html={renderBody(page.contact_body)}></div>}
+          {email && <p class="legal-contact"><a href={`mailto:${email}`}>{email}</a></p>}
+        </section>
+      )}
+
+      <p class="legal-back"><a href="/">← back to the studio</a></p>
+    </div>
+  </main>
+</body>
+</html>

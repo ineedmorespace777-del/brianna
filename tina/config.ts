@@ -390,6 +390,56 @@ export default defineConfig({
               },
             ],
           },
+
+          // ───────────────── legal pages ─────────────────
+          // Rendered by src/pages/privacy.astro + terms.astro via the
+          // LegalPage layout. Body fields: blank line = new paragraph,
+          // lines starting with "- " become a bulleted list,
+          // **bold** and *italic* both work.
+          {
+            type: "object", name: "legal", label: "Legal pages (privacy & terms)",
+            description: "The /privacy and /terms pages. Have a lawyer review before relying on these.",
+            fields: [
+              {
+                type: "object", name: "privacy", label: "Privacy policy",
+                fields: [
+                  { type: "string", name: "eyebrow", label: "Eyebrow (small label above title)" },
+                  { type: "string", name: "title", label: "Page title", description: "*italic* allowed. Enter = new line." },
+                  { type: "string", name: "updated", label: "Last updated date", description: "Shown under the title. Update this whenever you change the wording." },
+                  { type: "string", name: "intro", label: "Opening paragraphs", ui: { component: "textarea" }, description: "Blank line between paragraphs." },
+                  {
+                    type: "object", name: "sections", label: "Sections", list: true,
+                    ui: { itemProps: (item) => ({ label: item?.heading || "—" }) },
+                    fields: [
+                      { type: "string", name: "heading", label: "Section heading" },
+                      { type: "string", name: "body", label: "Section text", ui: { component: "textarea" }, description: "Blank line = new paragraph. Start a line with '- ' for a bullet. **bold** and *italic* work." },
+                    ],
+                  },
+                  { type: "string", name: "contact_heading", label: "Contact section heading" },
+                  { type: "string", name: "contact_body", label: "Contact section text", ui: { component: "textarea" }, description: "The email address itself comes from Visit / Location → Contact email." },
+                ],
+              },
+              {
+                type: "object", name: "terms", label: "Terms & conditions",
+                fields: [
+                  { type: "string", name: "eyebrow", label: "Eyebrow (small label above title)" },
+                  { type: "string", name: "title", label: "Page title", description: "*italic* allowed. Enter = new line." },
+                  { type: "string", name: "updated", label: "Last updated date", description: "Shown under the title. Update this whenever you change the wording." },
+                  { type: "string", name: "intro", label: "Opening paragraphs", ui: { component: "textarea" }, description: "Blank line between paragraphs." },
+                  {
+                    type: "object", name: "sections", label: "Sections", list: true,
+                    ui: { itemProps: (item) => ({ label: item?.heading || "—" }) },
+                    fields: [
+                      { type: "string", name: "heading", label: "Section heading" },
+                      { type: "string", name: "body", label: "Section text", ui: { component: "textarea" }, description: "Blank line = new paragraph. Start a line with '- ' for a bullet. **bold** and *italic* work." },
+                    ],
+                  },
+                  { type: "string", name: "contact_heading", label: "Contact section heading" },
+                  { type: "string", name: "contact_body", label: "Contact section text", ui: { component: "textarea" }, description: "The email address itself comes from Visit / Location → Contact email." },
+                ],
+              },
+            ],
+          },
         ],
       },
     ],
