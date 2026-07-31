@@ -221,8 +221,8 @@
         "frame_label": "west broadway, kitsilano",
         "hours": [
           {
-            "label": "tue — fri",
-            "value": "10:00a — 7:00p"
+            "label": "Thurs — Sun",
+            "value": "11:00a — 7:00p"
           },
           {
             "label": "saturday",
