@@ -243,7 +243,7 @@
   "faq": {
     "enabled": true,
     "eyebrow": "questions",
-    "title": "commonly *asked.*",
+    "title": "Commonly *asked.*",
     "items": [
       {
         "q": "What should I expect on my first visit?",
