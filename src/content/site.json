@@ -124,7 +124,7 @@
   "services": {
     "eyebrow": "services",
     "title": "the menu.",
-    "note": "the prices below are the prices you pay — no add-ons at the desk.",
+    "note": "",
     "items": [
       {
         "name": "the mei glow facial (refinement + radiance)",
@@ -150,14 +150,14 @@
         "image": "/uploads/3860x.webp"
       }
     ],
-    "footnote": " all services are bespoke. we professionally assess, listen to your input and preferences, and make recommendations accordingly ",
+    "footnote": " All services are bespoke. We professionally assess, listen to your input and preferences, and make recommendations accordingly.",
     "footnote_cta_label": "see availability"
   },
   "aboutMei": {
     "enabled": true,
     "eyebrow": "The Practitioner",
     "title": "Meet Brianna",
-    "lede": "Brianna is an esthetician and the founder of mei skin. She holds a Bachelor's degree in Psychology from the University of British Columbia — a foundation that shapes how she reads skin concerns, listens to client needs, and creates a nurturing environment in the treatment room. She brings over five years of experience at Vancouver's top luxury spas to mei skin, along with in-house education with BABOR, Éminence Organic Skin Care, Knesko Skin, Dr.esthé and Éclat du teint, Dermabell, and more, Dermalogica certifications, and hands-on private training through We Do Beauty Academy. Her curiosity about ingredients, formulations, and the research behind skincare is insatiable — she's always studying what works, and what's next.",
+    "lede": "Brianna is an esthetician and the founder of Mei Skin. Her education shapes how she reads skin concerns, listens to client needs, and creates a nurturing environment in the treatment room. She brings over five years of experience at Vancouver's top luxury spas to Mei Skin, in-house education with BABOR, Éminence Organic Skin Care, Knesko Skin, Dr.esthé and Éclat du teint, Dermabell, and more. Her curiosity about ingredients and formulation is insatiable — she's always studying what works, and what's next.",
     "body": "Outside the treatment room, Brianna practices yoga, and has interests in health and wellness, informing the calm, considered energy of mei skin. ",
     "credentials": [
       {
