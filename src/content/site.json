@@ -112,18 +112,18 @@
   },
   "studioSplit": {
     "eyebrow": "the studio",
-    "title": "A relaxing space. *experience* a retreat for your skin.",
+    "title": "a relaxing space. *experience* a retreat for your skin.",
     "body_p1_before_link": "Step inside to the world of mei skin, nestled within",
     "body_p1_link_text": "We Do Beauty Studio.",
     "body_p1_link_url": "https://www.instagram.com/wedobeautystudio/",
-    "body_p1_after_link": " In the treatment room we focus on bringing balance to the skin and supporting long-term results through a tailored approach to skin health. ",
+    "body_p1_after_link": "In the treatment room we focus on bringing balance to the skin and supporting long-term results through a tailored approach to skin health. ",
     "body_p2": "We combine a spa experience with results reflecting the approach of skin clinics in Japan and South Korea, using the same medical-grade Korean formulations alongside advanced skin technologies.",
     "cta_label": "request an appointment",
     "frame_label": "a relaxing treatment room"
   },
   "services": {
     "eyebrow": "services",
-    "title": "The menu.",
+    "title": "the menu.",
     "note": "",
     "items": [
       {
@@ -183,12 +183,12 @@
     "cta_label": "book a visit"
   },
   "atmosphere": {
-    "title": "A *relaxing*, restorative experience.",
-    "body": "No two treatments are ever the same, because no two skins are. Each session is read, considered, and shaped around what's in front of us — a method, not a menu. The result is consistency you can trust, visit after visit."
+    "title": "A *relaxing*, restorative experience",
+    "body": "No two treatments are ever the same, because no two skins are. Each session is read, considered, and shaped around what's in front of us — a method, not a menu. The result is consistency you can trust, visit after visit"
   },
   "testimonials": {
     "eyebrow": "guest words",
-    "title": "In their own words.",
+    "title": "in their own words.",
     "items": [
       {
         "name": "Natalie",
@@ -196,7 +196,7 @@
       },
       {
         "name": "Gem",
-        "quote": "gentle, expert skincare guidance that left my skin glowing, dewy and hydrated with a visible instant glow thanks to Brianna."
+        "quote": "Gentle, expert skincare guidance that left my skin glowing, dewy and hydrated with a visible instant glow thanks to Brianna."
       },
       {
         "name": "Joean",
@@ -210,7 +210,7 @@
   },
   "locations": {
     "eyebrow": "visit",
-    "title": "The *studio*.",
+    "title": "the *studio*.",
     "items": [
       {
         "city_tag": "kitsilano",
@@ -243,7 +243,7 @@
   "faq": {
     "enabled": true,
     "eyebrow": "questions",
-    "title": "Commonly *asked.*",
+    "title": "commonly *asked.*",
     "items": [
       {
         "q": "What should I expect on my first visit?",
@@ -291,19 +291,19 @@
   },
   "booking": {
     "eyebrow": "book a visit",
-    "title": "Request an *appointment.*",
-    "body": "Tell us a little about what you are after and when suits you. We read every request.",
-    "fine_print": "This is a request, not a confirmed booking — your time is held once we reply to confirm it. We will go through your skin history and any medications together at your first visit, so no need to send that here.",
-    "name_placeholder": "Name",
-    "email_placeholder": "Email Address",
-    "phone_placeholder": "Phone ",
-    "service_label": "Which Treatment?",
-    "service_any_label": "Not sure yet — help me choose",
-    "timing_placeholder": "When suits you? E.g. weekday mornings",
-    "message_placeholder": "Anything else we should know? (optional)",
-    "submit_label": "Send Request",
-    "success_message": "Thank you, {name} — your request is in. Due to the high number of inquiries we may take a moment to reply, and we appreciate your patience.",
-    "error_message": "Something went wrong sending that. Please email us directly, and we can assist you."
+    "title": "request an *appointment.*",
+    "body": "tell us a little about what you are after and when suits you. we read every request and reply personally, usually within a day or two.",
+    "fine_print": "this is a request, not a confirmed booking — your time is held once we reply to confirm it. we will go through your skin history and any medications together at your first visit, so no need to send that here.",
+    "name_placeholder": "first name",
+    "email_placeholder": "email address",
+    "phone_placeholder": "phone (optional)",
+    "service_label": "which treatment?",
+    "service_any_label": "not sure yet — help me choose",
+    "timing_placeholder": "when suits you? e.g. weekday mornings",
+    "message_placeholder": "anything else we should know? (optional)",
+    "submit_label": "send request",
+    "success_message": "thank you, {name} — your request is in. we will reply to {email} within a day or two to confirm a time.",
+    "error_message": "something went wrong sending that. please email us directly and we will sort it out."
   },
   "footer": {
     "tagline": "boutique facials. where skin is read, not rushed. ",
