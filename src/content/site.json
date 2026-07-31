@@ -302,8 +302,8 @@
     "timing_placeholder": "When suits you? E.g. weekday mornings",
     "message_placeholder": "Anything else we should know? (optional)",
     "submit_label": "Send Request",
-    "success_message": "Thank you, {name} — your request is in. We will reply to {email} within a day or two to confirm a time.",
-    "error_message": "something went wrong sending that. please email us directly and we will sort it out."
+    "success_message": "Thank you, {name} — your request is in. Due to the high number of inquiries we may take a moment to reply, and we appreciate your patience.",
+    "error_message": "Something went wrong sending that. Please email us directly, and we can assist you."
   },
   "footer": {
     "tagline": "boutique facials. where skin is read, not rushed. ",
