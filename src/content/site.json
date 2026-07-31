@@ -296,8 +296,8 @@
   "booking": {
     "eyebrow": "book a visit",
     "title": "request an *appointment.*",
-    "body": "tell us a little about what you are after and when suits you. we read every request and reply personally, usually within a day or two.",
-    "fine_print": "this is a request, not a confirmed booking — your time is held once we reply to confirm it. we will go through your skin history and any medications together at your first visit, so no need to send that here.",
+    "body": "Tell us a little about what you are looking for and your availability. We read every request and reply personally, usually within a day or two.",
+    "fine_print": "This is a request, not a confirmed booking — your time is held once we reply to confirm it. we will go through your skin history and any medications together at your first visit, so no need to send that here.",
     "name_placeholder": "first name",
     "email_placeholder": "email address",
     "phone_placeholder": "phone (optional)",
