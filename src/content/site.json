@@ -58,7 +58,7 @@
     "sub": "A skincare practice where nothing is templated and no one is rushed — just a treatment considered for what your skin needs today.",
     "cta_primary_label": "book a visit",
     "cta_secondary_label": "about the studio",
-    "image": "/uploads/Untitled-design.png",
+    "image": "/uploads/edited-(2).png",
     "image_alt": "mei skin facial",
     "frame_label": "mei skin facial",
     "chip_label": "Now Booking",
@@ -112,18 +112,19 @@
   },
   "studioSplit": {
     "eyebrow": "the studio",
-    "title": "a relaxing space. *experience* a retreat for your skin.",
+    "title": "A relaxing space. *experience* a retreat for your skin.",
     "body_p1_before_link": "Step inside to the world of mei skin, nestled within",
     "body_p1_link_text": "We Do Beauty Studio.",
     "body_p1_link_url": "https://www.instagram.com/wedobeautystudio/",
-    "body_p1_after_link": "In the treatment room we focus on bringing balance to the skin and supporting long-term results through a tailored approach to skin health. ",
+    "body_p1_after_link": " In the treatment room we focus on bringing balance to the skin and supporting long-term results through a tailored approach to skin health. ",
     "body_p2": "We combine a spa experience with results reflecting the approach of skin clinics in Japan and South Korea, using the same medical-grade Korean formulations alongside advanced skin technologies.",
     "cta_label": "request an appointment",
+    "image": "/uploads/Copy-of-Black-and-White-Minimalist-Summer-Quotes-Instagram-Post-(1).png",
     "frame_label": "a relaxing treatment room"
   },
   "services": {
     "eyebrow": "services",
-    "title": "the menu.",
+    "title": "The menu.",
     "note": "",
     "items": [
       {
@@ -183,11 +184,11 @@
     "cta_label": "book a visit"
   },
   "atmosphere": {
-    "title": "A *relaxing*, restorative experience",
-    "body": "No two treatments are ever the same, because no two skins are. Each session is read, considered, and shaped around what's in front of us — a method, not a menu. The result is consistency you can trust, visit after visit"
+    "title": "A *relaxing*, restorative experience.",
+    "body": "No two treatments are ever the same, because no two skins are. Each session is read, considered, and shaped around what's in front of us — a method, not a menu. The result is consistency you can trust, visit after visit."
   },
   "testimonials": {
-    "eyebrow": "guest testimonials",
+    "eyebrow": "guest words",
     "title": "In their own words.",
     "items": [
       {
@@ -196,7 +197,7 @@
       },
       {
         "name": "Gem",
-        "quote": "Gentle, expert skincare guidance that left my skin glowing, dewy and hydrated with a visible instant glow thanks to Brianna."
+        "quote": "gentle, expert skincare guidance that left my skin glowing, dewy and hydrated with a visible instant glow thanks to Brianna."
       },
       {
         "name": "Joean",
@@ -210,12 +211,13 @@
   },
   "locations": {
     "eyebrow": "visit",
-    "title": "the *studio*.",
+    "title": "The *studio*.",
     "items": [
       {
         "city_tag": "kitsilano",
-        "name": "the *studio*",
-        "address": "inside we do beauty studio\nwest broadway · kitsilano\nvancouver, bc",
+        "name": "The *studio*",
+        "address": "Inside We Do Beauty Studio\nWest Broadway · Kitsilano\nVancouver, BC",
+        "image": "/uploads/Screenshot-2026-07-31-at-2.13.10-PM.png",
         "frame_label": "west broadway, kitsilano",
         "hours": [
           {
@@ -227,8 +229,8 @@
             "value": "9:00a — 4:00p"
           },
           {
-            "label": "sun — mon",
-            "value": "closed"
+            "label": "Mon — Wed",
+            "value": "Closed"
           }
         ],
         "cta_primary_label": "request appointment",
@@ -243,12 +245,8 @@
   "faq": {
     "enabled": true,
     "eyebrow": "questions",
-    "title": "commonly *asked.*",
+    "title": "Commonly *asked.*",
     "items": [
-      {
-        "q": "Do I need to do anything to prepare for my visit?",
-        "a": "We recommend arriving without makeup if you can — every visit starts with a double cleanse, so it will come off either way, but skipping it beforehand means we can start reading your skin right away. And if you're wearing sunscreen when you walk in, even better — we love that. In the week leading up to your visit, please avoid retinol and exfoliating products, and please book at least month after a chemical peel, microneedling, or facial laser treatment."
-      },
       {
         "q": "What should I expect on my first visit?",
         "a": "Your first visit begins with a cleanse, followed by a skin reading — a conversation to understand your skin's history, habits, and what it needs right now. From there, we build a treatment around you."
@@ -258,16 +256,16 @@
         "a": "Every facial at Mei Skin is bespoke. We draw from a variety of techniques and technologies, including custom facial peel cocktails, microcurrent hydration infusion, lymphatic sculpting massage, RF eye/face lifting, layered masking, ultrasonic skin scrubber extractions, high-frequency with plasma, paired with professional-grade Korean formulations chosen for your skin that day. A 60-minute visit (The Mei Glow) covers the essentials; a 90-minute visit (The Mei Reset) gives us more time to go deeper."
       },
       {
-        "q": "What products do you use? ",
-        "a": "We use medical-grade Korean skincare formulations from brands like Dr. esthé, Dermabell, and Éclat du Teint, paired with advanced technologies such as micro-current, RF lifting, plasma + high-frequency, and High-Intensity Focused Ultrasound; customized to each treatment and your skin's needs."
-      },
-      {
         "q": "How long are appointments, and how often should I come?",
         "a": "Sessions currently run either 60 to 90 minutes, depending on how much time you want to give your skin that day. We recommend every a treatment every 4-6 weeks to achieve and maintain results."
       },
       {
-        "q": "Do your facials require downtime?",
-        "a": "None of our facials require downtime so you can go about your day and cleanse as usual that evening. We highly encourage you to wear sunscreen daily, rain or shine, as UV rays reach your skin even on cloudy days, and consistent SPF is key to maintaining your results."
+        "q": "Do I need to do anything to prepare for my visit?",
+        "a": "We recommend arriving without makeup if you can — every visit starts with a double cleanse, so it will come off either way, but skipping it beforehand means we can start reading your skin right away. And if you're wearing sunscreen when you walk in, even better — we love that. In the week leading up to your visit, please avoid retinol and exfoliating products, and please book at least month after a chemical peel, microneedling, or facial laser treatment."
+      },
+      {
+        "q": "What should I do after my visit?",
+        "a": "You're welcome to cleanse as usual at the end of the day. The one habit we'll always encourage: wear sunscreen every day, rain or shine. Even on cloudy days, UV rays still reach your skin, so keeping that protection consistent is one of the best things you can do for your results."
       },
       {
         "q": "Do you sell products?",
@@ -295,22 +293,22 @@
   },
   "booking": {
     "eyebrow": "book a visit",
-    "title": "request an *appointment.*",
-    "body": "Tell us a little about what you are looking for and your availability. We read every request and reply personally, usually within a day or two.",
-    "fine_print": "This is a request, not a confirmed booking — your time is held once we reply to confirm it. we will go through your skin history and any medications together at your first visit, so no need to send that here.",
-    "name_placeholder": "first name",
-    "email_placeholder": "email address",
-    "phone_placeholder": "phone (optional)",
-    "service_label": "which treatment?",
-    "service_any_label": "not sure yet — help me choose",
-    "timing_placeholder": "when suits you? e.g. weekday mornings",
-    "message_placeholder": "anything else we should know? (optional)",
-    "submit_label": "send request",
-    "success_message": "thank you, {name} — your request is in. we will reply to {email} within a day or two to confirm a time.",
-    "error_message": "something went wrong sending that. please email us directly and we will sort it out."
+    "title": "Request an *appointment.*",
+    "body": "Tell us a little about what you are after and when suits you. We read every request.",
+    "fine_print": "This is a request, not a confirmed booking — your time is held once we reply to confirm it. We will go through your skin history and any medications together at your first visit, so no need to send that here.",
+    "name_placeholder": "Name",
+    "email_placeholder": "Email Address",
+    "phone_placeholder": "Phone ",
+    "service_label": "Which Treatment?",
+    "service_any_label": "Not sure yet — help me choose",
+    "timing_placeholder": "When suits you? E.g. weekday mornings",
+    "message_placeholder": "Anything else we should know? (optional)",
+    "submit_label": "Send Request",
+    "success_message": "Thank you, {name} — your request is in. Due to the high number of inquiries we may take a moment to reply, and we appreciate your patience.",
+    "error_message": "Something went wrong sending that. Please email us directly, and we can assist you."
   },
   "footer": {
-    "tagline": "Boutique facials. Where skin is read, not rushed. ",
+    "tagline": "boutique facials. where skin is read, not rushed. ",
     "columns": [
       {
         "heading": "visit",
