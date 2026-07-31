@@ -225,12 +225,12 @@
             "value": "11:00a — 7:00p"
           },
           {
-            "label": "Outside hours available upon request",
-            "value": "For return clients only"
-          },
-          {
             "label": "Mon — Wed",
             "value": "Closed"
+          },
+          {
+            "label": "Outside hours available upon request",
+            "value": "For return clients only"
           }
         ],
         "cta_primary_label": "request appointment",
