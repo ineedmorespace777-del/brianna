@@ -113,8 +113,8 @@
   "studioSplit": {
     "eyebrow": "the studio",
     "title": "A relaxing space. *experience* a retreat for your skin.",
-    "body_p1_before_link": "Step inside to the world of mei skin, nestled within ",
-    "body_p1_link_text": "  We Do Beauty Studio.",
+    "body_p1_before_link": "Step inside to the world of mei skin, nestled within",
+    "body_p1_link_text": " We Do Beauty Studio.",
     "body_p1_link_url": "https://www.instagram.com/wedobeautystudio/",
     "body_p1_after_link": " In the treatment room we focus on bringing balance to the skin and supporting long-term results through a tailored approach to skin health. ",
     "body_p2": "We combine a spa experience with results reflecting the approach of skin clinics in Japan and South Korea, using the same medical-grade Korean formulations alongside advanced skin technologies.",
@@ -128,7 +128,7 @@
     "note": "",
     "items": [
       {
-        "name": "Mei Glow Facial ",
+        "name": "The Mei Glow Facial ",
         "duration": "60 min",
         "price": "$140",
         "description": "A treatment focused on complexion refinement and radiance — designed for clients seeking brighter, more even, naturally polished skin. Medical-grade Korean formulations meet gentle device work and sculpting massage, including a double cleanse, custom light peel, micro-current hydration infusion, lymphatic sculpting massage, and layered masking, finished with essences and serums chosen for your skin's needs. The result: hydrated, radiant, bouncy skin with smoother texture and a refined glow.",
@@ -136,7 +136,7 @@
       },
       {
         "img_key": "signature",
-        "name": "Mei Reset Facial",
+        "name": "The Mei Reset Facial",
         "duration": "90 min",
         "price": "$200",
         "description": "A boutique treatment for stressed, irritated, or reactive skin, drawing on the clinical approach of Japanese and Korean skin studios — medical-grade Korean formulations paired with advanced skin technologies. Each session is customized to calm redness, rebuild the skin barrier, and restore comfort and balance, using treatments like RF lifting, plasma + high-frequency, and multi-modal circulation support alongside Dr. esthé, Dermabell, and Éclat du teint. The result: calmer, clearer skin with a replenished, resilient complexion.",
@@ -144,14 +144,14 @@
       },
       {
         "img_key": "",
-        "name": "Mei Cica Facial",
+        "name": "The Mei Cica Facial",
         "duration": "60 min",
         "price": "$175",
         "description": "Built around Centella Asiatica — a clinical-grade ingredient prized for its ability to heal, soothe, and calm irritation. This classic facial is elevated with three exclusive strategies: Éclat du Teint's Vital Peeling Solution, a CICA and PHA exfoliating mask that gently clears buildup while preserving moisture balance; a custom ampoule and serum cocktail delivered with High-Intensity Focused Ultrasound for deeper absorption, non-invasive lifting, and collagen stimulation; and Éclat du Teint's CICA B5 modeling mask, layered over a cream mask to lock in hydration and visibly reduce redness. No downtime. CICA-driven formulations. Restorative care",
         "image": "/uploads/3860x.webp"
       }
     ],
-    "footnote": " All services are bespoke. We professionally listen to your preferences and input to provide better recommendations and assessments.",
+    "footnote": " All services are bespoke. We professionally assess, listen to your input and preferences, and make recommendations accordingly.",
     "footnote_cta_label": "see availability"
   },
   "aboutMei": {
@@ -253,7 +253,7 @@
       },
       {
         "q": "What's included in a facial?",
-        "a": "Every facial at Mei Skin is bespoke. We draw from a variety of techniques and technologies, including custom facial peel cocktails, microcurrent hydration infusion, lymphatic sculpting massage, RF eye/face lifting, layered masking, ultrasonic skin scrubber extractions, high-frequency with plasma, paired with professional-grade Korean formulations chosen for your skin that day. A 60-minute visit (Mei Glow) covers the essentials; a 90-minute visit (Mei Reset) gives us more time to go deeper."
+        "a": "Every facial at Mei Skin is bespoke. We draw from a variety of techniques and technologies, including custom facial peel cocktails, microcurrent hydration infusion, lymphatic sculpting massage, RF eye/face lifting, layered masking, ultrasonic skin scrubber extractions, high-frequency with plasma, paired with professional-grade Korean formulations chosen for your skin that day. A 60-minute visit (The Mei Glow) covers the essentials; a 90-minute visit (The Mei Reset) gives us more time to go deeper."
       },
       {
         "q": "How long are appointments, and how often should I come?",
@@ -261,7 +261,7 @@
       },
       {
         "q": "Do I need to do anything to prepare for my visit?",
-        "a": "We recommend arriving without makeup if you can — every visit starts with a double cleanse, so it will come off either way, but skipping it beforehand means we can start reading your skin right away. If you're wearing sunscreen when you walk in, even better — we love that. In the week leading up to your visit, please avoid retinol and exfoliating products, and please book at least month after a chemical peel, microneedling, or facial laser treatment."
+        "a": "We recommend arriving without makeup if you can — every visit starts with a double cleanse, so it will come off either way, but skipping it beforehand means we can start reading your skin right away. And if you're wearing sunscreen when you walk in, even better — we love that. In the week leading up to your visit, please avoid retinol and exfoliating products, and please book at least month after a chemical peel, microneedling, or facial laser treatment."
       },
       {
         "q": "What should I do after my visit?",
@@ -277,7 +277,7 @@
       },
       {
         "q": "What's your cancellation policy?",
-        "a": "We ask for at least 48 hours notice for cancellations or rescheduling. Cancellations within 48 hours are subject to a 50% fee, and cancellations within 24 hours are subject to a 100% fee."
+        "a": "We ask for at least 48 hours' notice for cancellations or rescheduling. Cancellations within 48 hours are subject to a 50% fee, and cancellations within 24 hours are subject to a 100% fee."
       }
     ]
   },
@@ -290,22 +290,6 @@
     "latitude": "49.2638",
     "longitude": "-123.1547",
     "site_url": "https://meiskinstudio.co"
-  },
-  "booking": {
-    "eyebrow": "book a visit",
-    "title": "Request an *appointment.*",
-    "body": "Tell us a little about what you are after and when suits you. We read every request.",
-    "fine_print": "This is a request, not a confirmed booking — your time is held once we reply to confirm it. We will go through your skin history and any medications together at your first visit, so no need to send that here.",
-    "name_placeholder": "Name",
-    "email_placeholder": "Email Address",
-    "phone_placeholder": "Phone ",
-    "service_label": "Which Treatment?",
-    "service_any_label": "Not sure yet — help me choose",
-    "timing_placeholder": "When suits you? E.g. weekday mornings",
-    "message_placeholder": "Anything else we should know? (optional)",
-    "submit_label": "Send Request",
-    "success_message": "Thank you, {name} — your request is in. Due to the high number of inquiries we may take a moment to reply, and we appreciate your patience.",
-    "error_message": "Something went wrong sending that. Please email us directly, and we can assist you."
   },
   "footer": {
     "tagline": "boutique facials. where skin is read, not rushed. ",
@@ -331,19 +315,7 @@
         "heading": "services",
         "items": [
           {
-            "label": "signature facial",
-            "url": "#menu"
-          },
-          {
-            "label": "microcurrent",
-            "url": "#menu"
-          },
-          {
-            "label": "peels",
-            "url": "#menu"
-          },
-          {
-            "label": "microneedling",
+            "label": "the menu",
             "url": "#menu"
           }
         ]
@@ -381,79 +353,5 @@
         "url": "/terms"
       }
     ]
-  },
-  "legal": {
-    "privacy": {
-      "eyebrow": "the fine print",
-      "title": "privacy *policy.*",
-      "updated": "july 18, 2026",
-      "intro": "mei skin studio runs this website. this page explains what happens to your information when you visit it.\n\nthe short version: this site collects very little, we don't sell anything to anyone, and there are no advertising trackers here.",
-      "sections": [
-        {
-          "heading": "information collection and use",
-          "body": "**what you give us.** the appointment request form on this site asks for your name, email, and optionally your phone number, which treatment you're interested in, and when suits you. when you send it, that goes straight to our studio inbox as an email. it isn't stored in a database, and it isn't passed to any advertising or marketing company.\n\nplease don't send skin conditions, medications, or other health details through the form — we go through all of that with you in person at your first visit, where it belongs.\n\nwhen you email or message us, we keep that correspondence so we can reply, book you in, and remember your skin history between visits.\n\n**what's collected automatically.** basic technical information about your visit:\n\n- which pages you looked at, and for how long\n- the site or search that sent you here\n- your rough region — city or country level, never a precise address\n- browser and device type\n\nwe look at this in aggregate to understand which parts of the site are useful. it isn't used to build a profile of you."
-        },
-        {
-          "heading": "cookies and local storage",
-          "body": "this site sets no advertising or cross-site tracking cookies.\n\nthe one thing stored in your browser is a small flag remembering that you entered the preview password, so you aren't asked for it on every page. it lives on your device, is never sent to us, and clearing your browsing data removes it."
-        },
-        {
-          "heading": "third-party services",
-          "body": "two services are involved in serving this site:\n\n- **vercel** — hosts the website and provides its visitor analytics. the analytics are cookie-free and don't follow you to other sites.\n- **google fonts** — serves the typefaces used here. as part of loading them, your ip address is visible to google.\n\nwe don't run advertising pixels, and nothing about your visit is shared with advertisers."
-        },
-        {
-          "heading": "your choices and rights",
-          "body": "under british columbia's personal information protection act and canada's PIPEDA, you can ask us what personal information we hold about you, ask us to correct it, or ask us to delete it.\n\nemail us and we'll respond within 30 days. there's no charge for a reasonable request."
-        },
-        {
-          "heading": "security",
-          "body": "we take reasonable measures to protect the information we hold, and we keep as little of it as possible — the less that exists, the less there is to lose.\n\nthat said, no method of transmitting information over the internet is completely secure, and we can't guarantee absolute security."
-        },
-        {
-          "heading": "changes to this privacy policy",
-          "body": "if this policy changes, the updated version will appear on this page with a new date at the top. material changes will be flagged on the site."
-        }
-      ],
-      "contact_heading": "contact us",
-      "contact_body": "questions about this policy, or about information we hold on you:"
-    },
-    "terms": {
-      "eyebrow": "the fine print",
-      "title": "terms &\n*conditions.*",
-      "updated": "july 18, 2026",
-      "intro": "these terms cover the use of this website and the services provided at mei skin studio. booking an appointment or using this site means you agree to them.",
-      "sections": [
-        {
-          "heading": "booking and appointments",
-          "body": "appointments are requested by email or instagram and confirmed by us directly. a time isn't held until you've had a confirmation back.\n\n- **cancelling or rescheduling.** 24 hours' notice keeps your full credit. inside 24 hours, 50% of the booked service is charged. one room, one appointment per slot — a late cancel means an empty room.\n- **running late.** we'll do what we can, but a late start may mean a shortened treatment so the next guest isn't pushed back.\n- **no-shows.** a missed appointment without notice is charged in full."
-        },
-        {
-          "heading": "treatments and results",
-          "body": "the services offered here are esthetic skin treatments. they are not medical care, and nothing said in the studio or on this site is a diagnosis or medical advice. if something on your skin concerns you, please see a physician or dermatologist.\n\nbefore your first visit, tell us about:\n\n- skin conditions, allergies, or recent reactions\n- medications and actives you're using — retinoids, acids, accutane in particular\n- recent treatments, injectables, or procedures\n- pregnancy or breastfeeding\n\nsome treatments aren't appropriate in these situations, and a few are unsafe. we may patch test, modify, or decline a treatment when it's the safer call — that judgment is part of the service, not an inconvenience.\n\nskin is individual. results vary between people and between visits, and no particular outcome is guaranteed."
-        },
-        {
-          "heading": "pricing and payment",
-          "body": "the prices on the menu are the prices you pay. there are no add-ons applied at the desk.\n\npayment is due at the time of your appointment. prices may change over time; the price quoted when you book is the price honoured for that visit."
-        },
-        {
-          "heading": "gift cards",
-          "body": "gift cards are available in any amount, delivered electronically or as a printed card. they don't expire.\n\nthey aren't refundable and can't be exchanged for cash."
-        },
-        {
-          "heading": "website content",
-          "body": "the writing, photographs, and design on this site belong to mei skin studio. please don't republish or reuse them without asking first.\n\nwe try to keep everything here accurate and current, but the site is provided as-is."
-        },
-        {
-          "heading": "privacy",
-          "body": "how your information is handled is set out separately in our privacy policy."
-        },
-        {
-          "heading": "changes to these terms",
-          "body": "these terms may be updated from time to time. the current version always lives on this page, with its date at the top."
-        }
-      ],
-      "contact_heading": "contact us",
-      "contact_body": "questions about any of the above:"
-    }
   }
 }
