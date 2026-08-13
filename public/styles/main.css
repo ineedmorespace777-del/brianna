@@ -1386,10 +1386,13 @@ html:not(.unlocked) body { overflow: hidden; }
   /* Portrait ratio so a headshot fills the frame instead of being cropped
      into it. The dome is softened from the full --r-arch (999px), which was
      built for tall scene shots and cuts awkwardly around a face. */
+  /* width must be definite: with both width and height auto, aspect-ratio has
+     nothing to resolve against — the only child is absolutely positioned, so
+     the box collapsed to 0x0 and the lazy image never loaded. */
+  width: 100%;
   aspect-ratio: 4 / 5;
   height: auto;
   max-height: min(80vh, 700px);
-  margin-inline: auto;
   border-radius: clamp(110px, 20vw, 230px) clamp(110px, 20vw, 230px) 20px 20px;
   position: relative;
   overflow: hidden;
