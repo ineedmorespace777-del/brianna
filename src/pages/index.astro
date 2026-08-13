@@ -7,8 +7,8 @@ const titleLines = (s) => (s || '').split('\n').map(l => `<span>${em(l)}</span>`
 const inline = (s) => em(s);
 const nl2br = (s) => (s || '').replace(/\n/g, '<br/>');
 
-const cssVer = 'booking-1';
-const jsVer  = 'booking-1';
+const cssVer = 'booking-2';
+const jsVer  = 'booking-2';
 
 const gate = site.comingSoon || {};
 const showGate = gate.enabled !== false;
@@ -107,7 +107,7 @@ const jsonLd = {
     geo: { '@type': 'GeoCoordinates', latitude: seo.latitude, longitude: seo.longitude },
   } : {}),
   areaServed: seo.locality || 'Vancouver',
-  sameAs: [site.brand.ig_url, site.brand.tiktok_url].filter(u => u && u !== '#'),
+  sameAs: [site.brand.ig_url, site.brand.tiktok_url, site.brand.linkedin_url].filter(u => u && u !== '#'),
   openingHoursSpecification: openingHours,
   ...(seo.postal_code ? { address_postal: undefined } : {}),
   ...(seo.telephone ? { telephone: seo.telephone } : {}),
@@ -157,6 +157,16 @@ const faqLd = faqEnabled ? {
 } : null;
 
 const ogImage = siteUrl + (site.meta.og_image || '/assets/mei-logo.png');
+
+// Nav/footer links can be either an on-page anchor (#menu) or a full URL
+// (e.g. the Square gift-card page). External ones open in a new tab.
+//
+// Editors paste full URLs into fields whose examples start with "#", which
+// yields href="#https://…" — the browser reads that as a jump-to-section and
+// the link silently dies. Normalising here means the site can't be broken
+// that way no matter what gets typed in the CMS.
+const cleanUrl = (url = '') => String(url).replace(/^#+(?=https?:\/\/)/i, '');
+const isExternal = (url = '') => /^https?:\/\//i.test(cleanUrl(url));
 ---
 <!doctype html>
 <html lang="en">
@@ -262,7 +272,11 @@ const ogImage = siteUrl + (site.meta.og_image || '/assets/mei-logo.png');
     <div class="overlay-nav-inner">
       <ul>
         {site.overlayNav.items.map(item => (
-          <li><a href={item.anchor}><span>{item.label}</span></a></li>
+          <li>
+            <a href={cleanUrl(item.anchor)} {...(isExternal(item.anchor) ? { target: '_blank', rel: 'noopener' } : {})}>
+              <span>{item.label}</span>
+            </a>
+          </li>
         ))}
         <li><a class="overlay-book" href="#book"><em>{site.overlayNav.book_label}</em></a></li>
       </ul>
@@ -504,8 +518,8 @@ const ogImage = siteUrl + (site.meta.og_image || '/assets/mei-logo.png');
                 ))}
               </dl>
               <div class="loc-ctas">
-                <a class="btn btn-primary" href={loc.cta_primary_url} data-magnetic>{loc.cta_primary_label} <span class="btn-arrow">→</span></a>
-                <a class="btn btn-pill" href={loc.cta_secondary_url}>{loc.cta_secondary_label}</a>
+                <a class="btn btn-primary" href={cleanUrl(loc.cta_primary_url)} {...(isExternal(loc.cta_primary_url) ? { target: '_blank', rel: 'noopener' } : {})} data-magnetic>{loc.cta_primary_label} <span class="btn-arrow">→</span></a>
+                <a class="btn btn-pill" href={cleanUrl(loc.cta_secondary_url)} {...(isExternal(loc.cta_secondary_url) ? { target: '_blank', rel: 'noopener' } : {})}>{loc.cta_secondary_label}</a>
               </div>
             </div>
           </div>
@@ -580,8 +594,19 @@ const ogImage = siteUrl + (site.meta.og_image || '/assets/mei-logo.png');
               ))}
             </select>
 
-            <label for="bk-timing" class="visually-hidden">preferred timing</label>
-            <input id="bk-timing" name="timing" type="text" placeholder={site.booking.timing_placeholder} />
+            {(site.booking.timing_options || []).length > 0 && (
+              <fieldset class="timing-group">
+                <legend>{site.booking.timing_label || 'when suits you best?'}</legend>
+                <div class="timing-options">
+                  {site.booking.timing_options.map((opt, i) => (
+                    <label class="timing-option">
+                      <input type="checkbox" name="timing" value={opt} id={`bk-timing-${i}`} />
+                      <span>{opt}</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            )}
 
             <label for="bk-message" class="visually-hidden">message</label>
             <textarea id="bk-message" name="message" rows="3" placeholder={site.booking.message_placeholder}></textarea>
@@ -615,7 +640,9 @@ const ogImage = siteUrl + (site.meta.og_image || '/assets/mei-logo.png');
           <h4>{col.heading}</h4>
           <ul>
             {col.items.map(item => (
-              <li><a href={item.url}>{item.label}</a></li>
+              <li>
+                <a href={cleanUrl(item.url)} {...(isExternal(item.url) ? { target: '_blank', rel: 'noopener' } : {})}>{item.label}</a>
+              </li>
             ))}
           </ul>
         </nav>
@@ -627,6 +654,9 @@ const ogImage = siteUrl + (site.meta.og_image || '/assets/mei-logo.png');
           <li><a href={site.brand.ig_url} target="_blank" rel="noopener" aria-label="instagram">ig</a></li>
           {site.brand.tiktok_url && site.brand.tiktok_url !== '#' && (
             <li><a href={site.brand.tiktok_url} target="_blank" rel="noopener" aria-label="tiktok">tt</a></li>
+          )}
+          {site.brand.linkedin_url && site.brand.linkedin_url !== '#' && (
+            <li><a href={site.brand.linkedin_url} target="_blank" rel="noopener" aria-label="linkedin">in</a></li>
           )}
         </ul>
       </div>

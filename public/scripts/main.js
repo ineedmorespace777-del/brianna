@@ -173,7 +173,10 @@
         email,
         phone: value('#bk-phone'),
         service: value('#bk-service'),
-        timing: value('#bk-timing'),
+        // timing is a set of tick boxes — send whichever are ticked
+        timing: Array.from(form.querySelectorAll('input[name="timing"]:checked'))
+          .map(el => el.value)
+          .join(', '),
         message: value('#bk-message'),
         company: value('#bk-company'), // honeypot
       };

@@ -99,7 +99,8 @@ export default defineConfig({
             fields: [
               { type: "string", name: "name", label: "Brand name" },
               { type: "string", name: "ig_url", label: "Instagram URL" },
-              { type: "string", name: "tiktok_url", label: "TikTok URL" },
+              { type: "string", name: "tiktok_url", label: "TikTok URL", description: "Leave blank to hide the TikTok icon." },
+              { type: "string", name: "linkedin_url", label: "LinkedIn URL", description: "Leave blank to hide the LinkedIn icon." },
             ],
           },
 
@@ -370,7 +371,12 @@ export default defineConfig({
                 type: "string", name: "service_any_label", label: "Treatment dropdown — first option",
                 description: "Shown when they haven't picked a treatment, e.g. 'not sure yet — help me choose'. The rest of the list fills in automatically from your Services menu.",
               },
-              { type: "string", name: "timing_placeholder", label: "Preferred timing placeholder" },
+              { type: "string", name: "timing_label", label: "Timing question", description: "Shown above the tick boxes, e.g. 'when suits you best?'" },
+              {
+                type: "string", name: "timing_options", label: "Timing choices", list: true,
+                description: "Tick boxes visitors can choose from. Add or rename freely — they can pick more than one.",
+                ui: { itemProps: (item) => ({ label: item || "—" }) },
+              },
               { type: "string", name: "message_placeholder", label: "Message box placeholder" },
               { type: "string", name: "submit_label", label: "Submit button label" },
               {
