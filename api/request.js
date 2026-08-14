@@ -25,6 +25,7 @@ const LIMITS = {
   email: 200,
   phone: 40,
   service: 140,
+  days: 200,
   timing: 200,
   message: 2000,
 };
@@ -63,6 +64,7 @@ export default async function handler(req, res) {
   const email = clean(body.email, LIMITS.email);
   const phone = clean(body.phone, LIMITS.phone);
   const service = clean(body.service, LIMITS.service);
+  const days = clean(body.days, LIMITS.days);
   const timing = clean(body.timing, LIMITS.timing);
   const message = clean(body.message, LIMITS.message);
 
@@ -90,7 +92,8 @@ export default async function handler(req, res) {
     ['email', email],
     ['phone', phone],
     ['service', service],
-    ['preferred timing', timing],
+    ['preferred days', days],
+    ['preferred time', timing],
   ].filter(([, value]) => value);
 
   const html = `

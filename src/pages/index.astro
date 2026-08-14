@@ -7,8 +7,8 @@ const titleLines = (s) => (s || '').split('\n').map(l => `<span>${em(l)}</span>`
 const inline = (s) => em(s);
 const nl2br = (s) => (s || '').replace(/\n/g, '<br/>');
 
-const cssVer = 'booking-3';
-const jsVer  = 'booking-2';
+const cssVer = 'booking-4';
+const jsVer  = 'booking-3';
 
 const gate = site.comingSoon || {};
 const showGate = gate.enabled !== false;
@@ -594,12 +594,26 @@ const isExternal = (url = '') => /^https?:\/\//i.test(cleanUrl(url));
               ))}
             </select>
 
+            {(site.booking.days_options || []).length > 0 && (
+              <fieldset class="check-group">
+                <legend>{site.booking.days_label || 'preferred days of the week (select all that apply):'}</legend>
+                <div class="check-list check-list-cols">
+                  {site.booking.days_options.map((opt, i) => (
+                    <label class="check-item">
+                      <input type="checkbox" name="days" value={opt} id={`bk-day-${i}`} />
+                      <span>{opt}</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            )}
+
             {(site.booking.timing_options || []).length > 0 && (
-              <fieldset class="timing-group">
-                <legend>{site.booking.timing_label || 'when suits you best?'}</legend>
-                <div class="timing-options">
+              <fieldset class="check-group">
+                <legend>{site.booking.timing_label || 'preferred time of day:'}</legend>
+                <div class="check-list">
                   {site.booking.timing_options.map((opt, i) => (
-                    <label class="timing-option">
+                    <label class="check-item">
                       <input type="checkbox" name="timing" value={opt} id={`bk-timing-${i}`} />
                       <span>{opt}</span>
                     </label>

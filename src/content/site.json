@@ -302,7 +302,16 @@
     "phone_placeholder": "Phone ",
     "service_label": "Which Treatment?",
     "service_any_label": "Not sure yet — help me choose",
-    "timing_label": "when suits you best?",
+    "days_label": "preferred days of the week (select all that apply):",
+    "days_options": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "timing_label": "preferred time of day:",
     "timing_options": [
       "mornings",
       "afternoons",

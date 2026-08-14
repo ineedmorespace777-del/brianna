@@ -173,7 +173,10 @@
         email,
         phone: value('#bk-phone'),
         service: value('#bk-service'),
-        // timing is a set of tick boxes — send whichever are ticked
+        // days + time-of-day are tick boxes — send whichever are ticked
+        days: Array.from(form.querySelectorAll('input[name="days"]:checked'))
+          .map(el => el.value)
+          .join(', '),
         timing: Array.from(form.querySelectorAll('input[name="timing"]:checked'))
           .map(el => el.value)
           .join(', '),
