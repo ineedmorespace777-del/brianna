@@ -1389,17 +1389,19 @@ html:not(.unlocked) body { overflow: hidden; }
      nothing to resolve against — the only child is absolutely positioned, so
      the box collapsed to 0x0 and the lazy image never loaded. */
   width: 100%;
-  aspect-ratio: 4 / 5;
+  /* 2:3 matches the portrait source, so cover crops nothing vertically and the
+     full head of hair stays in frame. max-height has to allow the ratio to be
+     honoured — clamping it shorter reintroduces the crop. */
+  aspect-ratio: 2 / 3;
   height: auto;
-  max-height: min(80vh, 700px);
+  max-height: min(92vh, 900px);
   border-radius: clamp(70px, 12vw, 150px) clamp(70px, 12vw, 150px) 20px 20px;
   position: relative;
   overflow: hidden;
 }
 .meet-mei-media .frame { position: absolute; inset: 0; border-radius: inherit; }
-/* pull the crop toward the top of the source so there's headroom above the
-   hair, rather than the dome curving into it */
-.meet-mei-media .media-img { object-position: 50% 6%; }
+/* anchor to the top so any residual crop takes from the bottom, never the hair */
+.meet-mei-media .media-img { object-position: 50% 0%; }
 @media (max-width: 991px) {
   .meet-mei-grid { grid-template-columns: 1fr; }
   .meet-mei-media { aspect-ratio: 4 / 5; max-height: 60vh; order: -1; }
