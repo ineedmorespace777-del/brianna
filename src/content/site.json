@@ -295,8 +295,8 @@
   "booking": {
     "eyebrow": "book a visit",
     "title": "Request an *appointment.*",
-    "body": "Tell us a little about what you are after and when suits you. We read every request.",
-    "fine_print": "This is a request, not a confirmed booking — your time is held once we reply to confirm it. We will go through your skin history and any medications together at your first visit, so no need to send that here.",
+    "body": "Tell us a little about what you are after and when suits you. We read every inquiry.",
+    "fine_print": "This is a request, not a confirmed booking — your time is held once we reply to confirm it.",
     "name_placeholder": "Name",
     "email_placeholder": "Email Address",
     "phone_placeholder": "Phone ",
