@@ -224,6 +224,10 @@
           {
             "label": "Thurs — Sun",
             "value": "11:00a — 7:00p"
+          },
+          {
+            "label": "Mon — Wed",
+            "value": "Available upon request"
           }
         ],
         "cta_primary_label": "request appointment",
