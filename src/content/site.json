@@ -311,11 +311,11 @@
       "Friday",
       "Saturday"
     ],
-    "timing_label": "preferred time of day:",
+    "timing_label": "Preferred time of day:",
     "timing_options": [
-      "mornings",
-      "afternoons",
-      "evenings"
+      "Mornings",
+      "Afternoons",
+      "Evenings"
     ],
     "message_placeholder": "Anything else we should know? (optional)",
     "submit_label": "Send Request",
