@@ -224,14 +224,6 @@
           {
             "label": "Thurs — Sun",
             "value": "11:00a — 7:00p"
-          },
-          {
-            "label": "Mon — Wed",
-            "value": "Closed"
-          },
-          {
-            "label": "Outside hours available upon request",
-            "value": "For return clients only"
           }
         ],
         "cta_primary_label": "request appointment",
