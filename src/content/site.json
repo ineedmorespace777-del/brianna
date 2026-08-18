@@ -301,12 +301,10 @@
     "service_any_label": "Not sure yet — help me choose",
     "days_label": "Preferred days of the week (select all that apply):",
     "days_options": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
       "Thursday",
       "Friday",
-      "Saturday"
+      "Saturday",
+      "Sunday"
     ],
     "timing_label": "Preferred time of day:",
     "timing_options": [
