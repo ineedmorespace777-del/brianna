@@ -390,12 +390,16 @@
           "body": "1.1 Information You Provide. The appointment request form on this website collects your name, email address, and, optionally, your phone number, treatment of interest, and preferred appointment times. Submissions are delivered directly to our studio email inbox. This information is not stored in a database and is not shared with any advertising or marketing service.\n\nPlease do not submit information regarding skin conditions, medications, or other health details through the form. This information is collected in person during your first visit.\n\nCorrespondence conducted by email or direct message is retained in order to respond to inquiries, process bookings, and maintain a record of skin history between visits.\n\n1.2 Information Collected Automatically. The following technical information is collected automatically when you visit this website:\n\nPages visited and time spent on each page;\nThe referring website or search engine;\nGeneral geographic location, at the city or country level only; and\nBrowser and device type.\n\nThis information is reviewed in aggregate to evaluate website performance and is not used to create an individual profile of any visitor."
         },
         {
+          "heading": "2. Retention of Information",
+          "body": "Booking and correspondence records are retained for as long as you remain a client of Mei Skin, and for a reasonable period thereafter, including as required for tax or insurance purposes. You may request earlier deletion of your information as set out in Section 5 below."
+        },
+        {
           "heading": "3. Cookies and Local Storage",
           "body": "This website does not use advertising or cross-site tracking cookies.\n\nA single item is stored in your browser to remember that a preview password has been entered, so that it is not requested on subsequent page visits. This item is stored locally on your device, is not transmitted to us, and is removed when browsing data is cleared."
         },
         {
-          "heading": "third-party services",
-          "body": "two services are involved in serving this site:\n\n- **vercel** — hosts the website and provides its visitor analytics. the analytics are cookie-free and don't follow you to other sites.\n- **google fonts** — serves the typefaces used here. as part of loading them, your ip address is visible to google.\n\nwe don't run advertising pixels, and nothing about your visit is shared with advertisers."
+          "heading": "4. Third-Party Services",
+          "body": "This website relies on the following third-party services:\n\nVercel, which hosts the website and provides cookie-free visitor analytics. Vercel's servers may be located outside of Canada, meaning your information may be processed in another jurisdiction while the website is loading.\nGoogle Fonts, which serves the typefaces used on this website. As part of this service, your IP address is visible to Google.\n\nNo advertising pixels are used on this website, and no information regarding your visit is shared with advertisers."
         },
         {
           "heading": "your choices and rights",
@@ -408,10 +412,6 @@
         {
           "heading": "changes to this privacy policy",
           "body": "if this policy changes, the updated version will appear on this page with a new date at the top. material changes will be flagged on the site."
-        },
-        {
-          "heading": "2. Retention of Information",
-          "body": "Booking and correspondence records are retained for as long as you remain a client of Mei Skin, and for a reasonable period thereafter, including as required for tax or insurance purposes. You may request earlier deletion of your information as set out in Section 5 below."
         }
       ],
       "contact_heading": "contact us",
