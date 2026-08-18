@@ -9,7 +9,7 @@
     "theme_color": "#f7f2ea"
   },
   "comingSoon": {
-    "enabled": true,
+    "enabled": false,
     "password": "meiskin",
     "eyebrow": "Skin Studio · Kitsilano, Vancouver",
     "title": "*coming* soon.",
