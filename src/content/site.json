@@ -432,26 +432,6 @@
           "body": "The services offered by Mei Skin are esthetic skin treatments. They do not constitute medical care, and nothing communicated in the studio or on this website should be construed as a medical diagnosis or medical advice. Clients with concerns regarding their skin should consult a physician or dermatologist.\n\nPrior to a first visit, clients are required to disclose:\n\nSkin conditions, allergies, or recent adverse reactions;\nMedications and active skincare ingredients in use, including retinoids, acids, and isotretinoin (Accutane);\nRecent treatments, injectables, or cosmetic procedures; and\nPregnancy or breastfeeding status.\n\nCertain treatments may not be appropriate, or may be contraindicated, under these circumstances. Mei Skin reserves the right to conduct a patch test, modify a treatment, or decline to provide a treatment where doing so is necessary for the client's safety. This determination is made at the sole discretion of Mei Skin and is considered part of the service provided.\n\nSkin response varies between individuals and between visits. No specific outcome or result is guaranteed."
         },
         {
-          "heading": "pricing and payment",
-          "body": "the prices on the menu are the prices you pay. there are no add-ons applied at the desk.\n\npayment is due at the time of your appointment. prices may change over time; the price quoted when you book is the price honoured for that visit."
-        },
-        {
-          "heading": "gift cards",
-          "body": "gift cards are available in any amount, delivered electronically or as a printed card. they don't expire.\n\nthey aren't refundable and can't be exchanged for cash."
-        },
-        {
-          "heading": "website content",
-          "body": "the writing, photographs, and design on this site belong to mei skin studio. please don't republish or reuse them without asking first.\n\nwe try to keep everything here accurate and current, but the site is provided as-is."
-        },
-        {
-          "heading": "privacy",
-          "body": "how your information is handled is set out separately in our privacy policy."
-        },
-        {
-          "heading": "changes to these terms",
-          "body": "these terms may be updated from time to time. the current version always lives on this page, with its date at the top."
-        },
-        {
           "heading": "4. Assumption of Risk",
           "body": "As with any skin treatment, there exists a possibility of reaction, irritation, or an outcome that differs from what was anticipated, notwithstanding the exercise of reasonable care and adherence to provided guidance. By booking an appointment, the client acknowledges and accepts this risk as inherent to the treatment provided."
         },
@@ -474,6 +454,10 @@
         {
           "heading": "9. Gift Cards",
           "body": "Gift cards are available with a minimum amount of $20.00 CAD and a maximum amount of $1000.00 CAD, and may be issued electronically. Gift cards do not expire, are non-refundable, and may not be redeemed for cash."
+        },
+        {
+          "heading": "10. Website Content",
+          "body": "All text, photographs, and design elements on this website are the property of Mei Skin. Reproduction or use of this content without prior written permission is prohibited.\n\nWhile reasonable efforts are made to keep the content of this website accurate and current, the website is provided on an \"as is\" basis, without warranty of any kind, express or implied."
         }
       ],
       "contact_heading": "contact us",
