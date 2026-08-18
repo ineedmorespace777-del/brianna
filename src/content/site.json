@@ -217,8 +217,8 @@
     "items": [
       {
         "city_tag": "kitsilano",
-        "name": "The *studio*",
-        "address": "Inside We Do Beauty Studio\nWest Broadway · Kitsilano\nVancouver, BC",
+        "name": "The *studio*.",
+        "address": "2078 W Broadway, Vancouver, BC V6J 1Z4",
         "image": "/uploads/IMG_1380.jpg",
         "frame_label": "west broadway, kitsilano",
         "hours": [
