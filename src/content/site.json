@@ -298,7 +298,7 @@
     "phone_placeholder": "Phone ",
     "service_label": "Which Treatment?",
     "service_any_label": "Not sure yet — help me choose",
-    "days_label": "preferred days of the week (select all that apply):",
+    "days_label": "Preferred days of the week (select all that apply):",
     "days_options": [
       "Monday",
       "Tuesday",
