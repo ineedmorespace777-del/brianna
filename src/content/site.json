@@ -402,20 +402,12 @@
           "body": "This website relies on the following third-party services:\n\nVercel, which hosts the website and provides cookie-free visitor analytics. Vercel's servers may be located outside of Canada, meaning your information may be processed in another jurisdiction while the website is loading.\nGoogle Fonts, which serves the typefaces used on this website. As part of this service, your IP address is visible to Google.\n\nNo advertising pixels are used on this website, and no information regarding your visit is shared with advertisers."
         },
         {
-          "heading": "your choices and rights",
-          "body": "under british columbia's personal information protection act and canada's PIPEDA, you can ask us what personal information we hold about you, ask us to correct it, or ask us to delete it.\n\nemail us and we'll respond within 30 days. there's no charge for a reasonable request."
-        },
-        {
-          "heading": "security",
-          "body": "we take reasonable measures to protect the information we hold, and we keep as little of it as possible — the less that exists, the less there is to lose.\n\nthat said, no method of transmitting information over the internet is completely secure, and we can't guarantee absolute security."
-        },
-        {
-          "heading": "changes to this privacy policy",
-          "body": "if this policy changes, the updated version will appear on this page with a new date at the top. material changes will be flagged on the site."
-        },
-        {
           "heading": "5. Children's Privacy",
           "body": "This website is not directed at children, and we do not knowingly collect personal information from individuals under the age of 13. If you believe a child has submitted personal information to us, please contact us and it will be removed."
+        },
+        {
+          "heading": "6. Your Rights",
+          "body": "As a business operating in British Columbia, Mei Skin is governed by British Columbia's Personal Information Protection Act (\"PIPA\"). Under PIPA, you may request access to the personal information we hold about you, request that it be corrected, or request that it be deleted. You may also request to opt out of further email or message communications at any time."
         }
       ],
       "contact_heading": "contact us",
