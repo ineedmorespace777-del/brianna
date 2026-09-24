@@ -4,6 +4,7 @@ Allow: /
 # the CMS — no value in search results
 Disallow: /admin/
 Disallow: /verify-output/
+Disallow: /mockup
 
 # Sitemap must be an absolute URL — a relative path here is ignored.
 Sitemap: https://meiskinstudio.co/sitemap.xml

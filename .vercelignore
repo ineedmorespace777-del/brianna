@@ -34,6 +34,9 @@ preview.bat
 SETUP.md
 FOR-BRIANNA.md
 
+# design sources (the built preview ships from public/mockup)
+design
+
 # NOTE: package.json + package-lock.json + astro.config.mjs + tina/config.ts +
 # src/ + public/ (except admin) + tools/ + vercel.json MUST deploy so Vercel
 # can npm install and run the build.

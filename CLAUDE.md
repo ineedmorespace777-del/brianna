@@ -62,6 +62,16 @@ emails the studio via Resend with `reply_to` set to the client. Deliberately col
 **no health information** — skin history and medications are handled in person, and
 the privacy policy says so. Don't add fields for them.
 
+### Design preview (`/mockup`)
+
+`public/mockup/index.html` is a generated, self-contained preview of the v4 redesign
+(photos inlined as data URIs) for Brianna to review. It has a client-side password
+gate (`meiskin`), `noindex`, and a `Disallow: /mockup` in `robots.txt`. The gate is a
+soft lock: the content is in the page source. Source lives in `design/v4/template.html`;
+rebuild with `python design/v4/build.py` (needs Python + Pillow). Its copy is a
+hand-synced snapshot of `site.json`, **not** wired to Tina. When the redesign ships or
+is dropped, delete `public/mockup/` and the robots line.
+
 ### Coming-soon gate
 
 `src/pages/index.astro` renders the gate as an `<aside>` when `site.comingSoon.enabled !== false`. Password lives in `window.__MEI_PWD` (inlined from `site.json`). Successful unlock writes `localStorage['mei-unlocked'] = 'true'` and adds `.unlocked` to `<html>`. To bypass during dev: `localStorage.setItem('mei-unlocked','true')`.

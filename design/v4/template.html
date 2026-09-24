@@ -1,0 +1,684 @@
+<title>Mei Skin, The Room</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap">
+<style>
+/* A deliberately single-theme page: it previews a client's light-only website. */
+:root{
+  --paper:#FBFAF8;      /* the towels and her white tee */
+  --wall:#F0EDE9;       /* the treatment-room wall */
+  --ink:#221C1A;        /* logo ink */
+  --ink-2:#5E5551;
+  --ink-3:#958B86;
+  --rule:#DFD8D3;
+  --ox:#6C2A2C;         /* the oxblood shelving in her room */
+  --ox-deep:#561F21;
+  --ox-em:#EBC4BA;
+  --on-ox:#FBF6F3;
+  --on-ox-2:rgba(251,246,243,.76);
+  --on-ox-rule:rgba(251,246,243,.34);
+  --cica:#5C7A47;
+  --serif:'Gowun Batang','Nanum Myeongjo',Georgia,'Times New Roman',serif;
+  --sans:'Gowun Dodum','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --gut:clamp(20px,4vw,56px);
+  --gap:clamp(16px,2.2vw,32px);
+  --head-h:72px;
+  color-scheme:light;
+}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-.012em}
+em{font-style:normal;color:var(--ox)}
+figure{margin:0}
+figcaption{font-size:13px;line-height:1.45;color:var(--ink-3);margin-top:10px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--ox);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1360px;margin-inline:auto;padding-inline:var(--gut)}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(251,250,248,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top.scrolled{border-bottom-color:var(--rule)}
+.top-in{display:flex;align-items:center;gap:36px;height:var(--head-h)}
+.brand{display:block;flex:none}
+.brand img{height:44px;width:auto}
+.nav{display:flex;gap:28px;font-size:14.5px}
+.nav a{text-decoration:none;color:var(--ink-2);transition:color .2s}
+.nav a:hover{color:var(--ink)}
+.top-r{margin-left:auto;display:flex;align-items:center;gap:24px}
+.status{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;color:var(--ink-2);white-space:nowrap}
+.status i{flex:none;width:7px;height:7px;border-radius:50%;background:var(--ink-3)}
+.status.is-open i{background:var(--cica);box-shadow:0 0 0 3px rgba(92,122,71,.16)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ox);color:var(--on-ox);text-decoration:none;border:0;border-radius:999px;padding:15px 26px;font-family:var(--sans);font-size:15px;line-height:1;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:var(--ox-deep)}
+.btn-sm{padding:11px 18px;font-size:14px}
+.link{color:var(--ink);font-size:15px;text-decoration:underline;text-decoration-color:var(--rule);text-decoration-thickness:1px;text-underline-offset:6px;transition:text-decoration-color .2s}
+.link:hover{text-decoration-color:var(--ox)}
+@media (max-width:1180px){.top .status{display:none}}
+@media (max-width:980px){.nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding-block:clamp(12px,2vw,28px) clamp(72px,9vw,132px)}
+.hero-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:end}
+.hero-fig{grid-column:1/span 6}
+.hero-fig img{width:100%;height:auto;aspect-ratio:6/7;max-height:calc(100vh - 150px);min-height:440px;object-fit:cover;object-position:50% 40%}
+.hero-text{grid-column:8/-1;padding-bottom:26px}
+.hero .status{margin-bottom:30px}
+h1{font-size:clamp(46px,5.5vw,84px);line-height:1.02}
+.hero-where{font-size:14px;color:var(--ink-2);margin-top:22px}
+.hero-sub{margin-top:26px;color:var(--ink-2);max-width:40ch}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:34px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:52px 0 0;padding-top:20px;border-top:1px solid var(--rule)}
+.facts dt{font-family:var(--serif);font-size:21px;line-height:1.2}
+.facts dd{margin:4px 0 0;font-size:13.5px;line-height:1.4;color:var(--ink-2)}
+@media (max-width:1180px){.hero-fig{grid-column:1/span 7}}
+@media (max-width:860px){
+  .hero-grid{display:block}
+  .hero-fig{margin-inline:calc(var(--gut) * -1)}
+  .hero-fig img{aspect-ratio:4/5;max-height:66vh;min-height:0;object-position:50% 40%}
+  .hero-fig figcaption{padding-inline:var(--gut)}
+  .hero-text{padding:34px 0 0}
+}
+
+/* ---------- section frame: margin heading + body ---------- */
+.sec{padding-block:clamp(84px,10vw,150px)}
+.sec-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:44px}
+.sec-head{grid-column:1/span 3}
+.sec-head .stick{position:sticky;top:calc(var(--head-h) + 36px)}
+.sec-body{grid-column:4/-1;min-width:0}
+h2{font-size:clamp(34px,3.3vw,50px);line-height:1.08}
+.head-note{margin-top:24px;font-size:14.5px;line-height:1.55;color:var(--ink-2);max-width:30ch}
+.head-note + .head-note{margin-top:14px}
+.head-note .link{font-size:14.5px}
+.band{background:var(--wall)}
+@media (max-width:960px){
+  .sec-head,.sec-body{grid-column:1/-1}
+  .sec-head .stick{position:static}
+  .head-note{max-width:52ch}
+}
+
+/* ---------- calm ---------- */
+.statement{font-family:var(--serif);font-size:clamp(25px,2.4vw,36px);line-height:1.32;max-width:24em;text-wrap:pretty}
+.statement + .statement{margin-top:.8em;color:var(--ink-2)}
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px var(--gap);margin-top:clamp(56px,6vw,88px)}
+.principles h3{font-size:22px;margin-bottom:10px}
+.principles p{font-size:15.5px;color:var(--ink-2)}
+@media (max-width:760px){.principles{grid-template-columns:1fr}}
+
+/* ---------- the room ---------- */
+.room{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));column-gap:var(--gap);row-gap:clamp(48px,5vw,72px)}
+.room-a{grid-column:1/span 5}
+.room-a img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.room-b{grid-column:7/span 3;align-self:end}
+.room-b img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.senses{grid-column:1/span 5;list-style:none;margin:0;padding:0;font-family:var(--serif);font-size:clamp(22px,2vw,29px);line-height:1.45}
+.senses li{padding-block:4px}
+.senses .after{margin-top:22px;color:var(--ox);font-size:.8em;line-height:1.5;max-width:22em}
+.room-copy{grid-column:7/span 3;display:grid;gap:16px;align-content:start;font-size:15.5px;color:var(--ink-2)}
+.room-copy a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:4px}
+.room-copy a:hover{text-decoration-color:var(--ox)}
+@media (max-width:760px){
+  .room-a,.senses,.room-copy{grid-column:1/-1}
+  .room-b{grid-column:4/-1}
+}
+
+/* ---------- menu, drawn to time ---------- */
+.menu{--thumb:clamp(86px,13vw,176px)}
+.axis{display:grid;grid-template-columns:minmax(0,1fr) var(--thumb);column-gap:var(--gap)}
+.axis-track{position:relative;height:34px;border-bottom:1px solid var(--ink-3)}
+.axis-track span{position:absolute;bottom:9px;transform:translateX(-50%);font-size:12px;line-height:1;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.axis-track span::after{content:"";position:absolute;left:50%;top:calc(100% + 3px);width:1px;height:6px;background:var(--ink-3)}
+.axis-track span:first-child{transform:none}
+.axis-track span:first-child::after{left:0}
+.axis-track span:last-child{transform:translateX(-100%)}
+.axis-track span:last-child::after{left:auto;right:0}
+.axis-label{font-size:12px;color:var(--ink-3);align-self:end;padding-bottom:9px;line-height:1}
+.svcs{list-style:none;margin:0;padding:0}
+.svc{display:grid;grid-template-columns:minmax(0,1fr) var(--thumb);column-gap:var(--gap);padding-block:34px 38px;border-bottom:1px solid var(--rule)}
+.svc-top{display:flex;align-items:baseline;justify-content:space-between;gap:8px 20px;flex-wrap:wrap}
+.svc h3{font-size:clamp(26px,2.4vw,34px);line-height:1.1}
+.svc-price{font-family:var(--serif);font-size:clamp(22px,2vw,28px);font-variant-numeric:tabular-nums;white-space:nowrap}
+.svc-price small{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin-right:14px}
+.svc-for{margin-top:6px;color:var(--ox);font-size:15.5px}
+.bar{position:relative;height:6px;margin-top:22px;background:linear-gradient(var(--rule),var(--rule)) 0 50%/100% 1px no-repeat}
+.bar::before{content:"";position:absolute;inset:0 auto 0 0;width:calc(var(--m) / 90 * 100%);background:var(--ox);border-radius:3px}
+.svc-steps{margin-top:14px;font-size:13.5px;color:var(--ink);letter-spacing:.01em}
+.svc-steps span + span::before{content:"\00B7";margin-inline:.55em;color:var(--ink-3)}
+.svc-desc{margin-top:14px;font-size:15.5px;color:var(--ink-2);max-width:62ch}
+.svc-act{margin-top:18px}
+.svc-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media (max-width:560px){
+  .svc{padding-block:28px 30px}
+  .svc-desc{font-size:15px}
+  .axis-track span:nth-child(even){display:none}
+}
+
+/* ---------- brianna ---------- */
+.bri{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));column-gap:var(--gap);row-gap:44px}
+.bri-fig{grid-column:1/span 4}
+.bri-fig img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 0}
+.bri-text{grid-column:6/-1;align-self:start}
+.role{font-size:14px;color:var(--ink-2)}
+.quote{margin:18px 0 0;font-family:var(--serif);font-size:clamp(23px,2.1vw,31px);line-height:1.34;text-indent:-.42em}
+.quote q{quotes:"\201C" "\201D"}
+.quote q::before,.quote q::after{color:var(--ox)}
+.bio{margin-top:30px;display:grid;gap:14px;font-size:15.5px;color:var(--ink-2)}
+.creds{margin:34px 0 0;padding:0;border-top:1px solid var(--rule)}
+.creds div{padding:13px 0;border-bottom:1px solid var(--rule)}
+.creds dt{font-size:15px}
+.creds dd{margin:2px 0 0;font-size:13.5px;color:var(--ink-3)}
+@media (max-width:860px){.bri-fig{grid-column:1/span 6}.bri-text{grid-column:1/-1}}
+
+/* ---------- reviews ---------- */
+.words{columns:2;column-gap:var(--gap)}
+.words blockquote{margin:0 0 52px;padding-top:22px;border-top:1px solid var(--rule);break-inside:avoid}
+.words p{font-family:var(--serif);font-size:clamp(20px,1.8vw,25px);line-height:1.42;text-wrap:pretty}
+.words cite{display:block;margin-top:14px;font-style:normal;font-size:13.5px;color:var(--ink-2)}
+@media (max-width:700px){.words{columns:1}.words blockquote{margin-bottom:40px}}
+
+/* ---------- visit ---------- */
+.week{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));column-gap:6px}
+.day{position:relative;padding-top:14px;border-top:1px solid var(--ink-3)}
+.day.open{border-top:4px solid var(--ox);padding-top:11px}
+.day b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(17px,1.9vw,25px);line-height:1.2}
+.day span{display:block;margin-top:2px;font-size:13.5px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.day.closed b,.day.closed span{color:var(--ink-3)}
+.day.today::before{content:"today";position:absolute;bottom:calc(100% + 10px);left:0;font-size:12px;line-height:1;color:var(--ox);letter-spacing:.04em}
+.week-note{margin-top:18px;font-size:14px;color:var(--ink-2)}
+.visit{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:56px var(--gap);margin-top:clamp(56px,6vw,84px)}
+.visit-info{grid-column:1/span 5;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px var(--gap);align-content:start}
+.visit-info h3{font-family:var(--sans);font-size:13px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+.visit-info p{font-size:15.5px;color:var(--ink-2)}
+.visit-info p + p{margin-top:10px}
+.visit-info .addr{font-family:var(--serif);font-size:21px;line-height:1.35;color:var(--ink)}
+.select{user-select:all;color:var(--ink)}
+.visit-fig{grid-column:6/-1}
+.visit-fig img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media (max-width:860px){.visit-info{grid-column:1/-1}.visit-fig{grid-column:1/span 6}}
+@media (max-width:520px){.visit-info{grid-template-columns:1fr}.day span{font-size:12px}}
+
+/* ---------- faq ---------- */
+.faq details{border-top:1px solid var(--rule)}
+.faq details:last-child{border-bottom:1px solid var(--rule)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:22px 0;font-family:var(--serif);font-size:clamp(19px,1.7vw,23px);line-height:1.35}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;font-family:var(--sans);font-size:24px;line-height:1;color:var(--ox);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq-a{padding:0 0 28px;max-width:64ch;font-size:15.5px;color:var(--ink-2)}
+
+/* ---------- request (the one saturated moment) ---------- */
+.book{background:var(--ox);color:var(--on-ox)}
+.book em{color:var(--ox-em)}
+.book .head-note{color:var(--on-ox-2)}
+.book a:focus-visible,.book button:focus-visible{outline-color:var(--on-ox)}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px var(--gap)}
+.field{display:grid;gap:6px;min-width:0}
+.full{grid-column:1/-1}
+.form label,.form legend{font-size:13.5px;color:var(--on-ox-2);letter-spacing:.02em}
+.form fieldset{border:0;margin:0;padding:0;min-width:0}
+.form legend{padding:0;margin-bottom:12px}
+.form legend small{font-size:inherit;opacity:.75}
+.txt{font:inherit;font-size:17px;color:var(--on-ox);background:transparent;border:0;border-bottom:1px solid var(--on-ox-rule);border-radius:0;padding:9px 0 11px;width:100%;transition:border-color .2s}
+.txt:focus{outline:none;border-bottom-color:var(--on-ox)}
+.txt[aria-invalid="true"]{border-bottom:2px solid var(--ox-em)}
+textarea.txt{resize:vertical;min-height:84px;line-height:1.5}
+.picks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.pick{position:relative;display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:15px 16px;border:1px solid var(--on-ox-rule);border-radius:10px;cursor:pointer;font-size:15px;line-height:1.3;transition:background .2s,color .2s,border-color .2s}
+.pick input{position:absolute;opacity:0;pointer-events:none}
+.pick small{font-size:13px;opacity:.78;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pick:hover{border-color:var(--on-ox-2)}
+.pick:has(input:checked){background:var(--on-ox);color:var(--ox);border-color:var(--on-ox)}
+.pick:has(input:focus-visible){outline:2px solid var(--on-ox);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;padding:9px 17px;border:1px solid var(--on-ox-rule);border-radius:999px;font-size:14.5px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.chip span:hover{border-color:var(--on-ox-2)}
+.chip input:checked + span{background:var(--on-ox);color:var(--ox);border-color:var(--on-ox)}
+.chip input:focus-visible + span{outline:2px solid var(--on-ox);outline-offset:2px}
+.hint{font-size:13px;color:var(--on-ox-2);margin-top:8px}
+.send{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+.btn-light{background:var(--on-ox);color:var(--ox)}
+.btn-light:hover{background:#fff;color:var(--ox-deep)}
+.fine{font-size:13.5px;color:var(--on-ox-2);max-width:44ch}
+.sent{padding:28px 0;max-width:34em}
+.sent p{font-family:var(--serif);font-size:clamp(22px,2vw,28px);line-height:1.4}
+.sent small{display:block;margin-top:18px;font-size:13.5px;color:var(--on-ox-2)}
+.sent button{margin-top:26px;background:none;border:0;padding:0;color:var(--on-ox);font:inherit;font-size:15px;text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--on-ox-rule);cursor:pointer}
+@media (max-width:640px){.form,.picks{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+.foot{padding-block:clamp(72px,8vw,112px) 36px}
+.foot-logo{width:min(400px,72%);height:auto}
+.foot-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px var(--gap);margin-top:64px;font-size:14.5px;color:var(--ink-2)}
+.foot-cols h4{font-family:var(--sans);font-weight:400;font-size:12.5px;color:var(--ink-3);letter-spacing:.07em;text-transform:uppercase;margin:0 0 12px}
+.foot-cols p + p{margin-top:4px}
+.foot-cols a{text-decoration:none}
+.foot-cols a:hover{color:var(--ox)}
+.foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 24px;margin-top:64px;padding-top:20px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-3)}
+@media (max-width:760px){.foot-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+
+<header class="top" id="top-bar">
+  <div class="wrap top-in">
+    <a class="brand" href="#top" aria-label="mei skin, back to top"><img src="{{IMG_logo}}" alt="mei skin" width="89" height="44"></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#room">studio</a>
+      <a href="#menu">menu</a>
+      <a href="#brianna">brianna</a>
+      <a href="#visit">visit</a>
+      <a href="#faq">questions</a>
+    </nav>
+    <div class="top-r">
+      <a class="btn btn-sm" href="#book">Request a visit</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <figure class="hero-fig">
+        <img src="{{IMG_hero}}" alt="Brianna, eyes lowered, resting her hands on a client at the start of a facial" width="1300" height="1717">
+        <figcaption>Brianna, in the treatment room.</figcaption>
+      </figure>
+      <div class="hero-text">
+        <span class="status" data-status><i></i><span>Thursday to Sunday, 11 am – 7 pm</span></span>
+        <h1>Your skin,<br><em>well-kept.</em></h1>
+        <p class="hero-where">Boutique facials · Kitsilano, Vancouver</p>
+        <p class="hero-sub">Bespoke skin treatments using Korean medical-grade skincare and advanced devices. Each service blends refined techniques with high-performance technology for visible results, deep relaxation, and a luxury experience.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#book">Request a visit</a>
+          <a class="link" href="#menu">See the menu</a>
+        </div>
+        <dl class="facts">
+          <div><dt>One</dt><dd>face at a time</dd></div>
+          <div><dt>60 min+</dt><dd>never rushed</dd></div>
+          <div><dt>Bespoke</dt><dd>curated for you</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="calm" style="padding-top:0">
+    <div class="wrap sec-grid">
+      <div class="sec-head"><div class="stick">
+        <h2>Beauty rooted<br><em>in calm.</em></h2>
+      </div></div>
+      <div class="sec-body">
+        <p class="statement">We believe beauty flourishes from feeling comfortable and empowered in your own skin.</p>
+        <p class="statement">That starts with calm. Inflammation eased. The barrier supported. Only then do we dive into treatment — for results that show up immediately, and stay.</p>
+        <div class="principles">
+          <div>
+            <h3>Holistic</h3>
+            <p>Barrier repair. Hydration. Long-term wellness — never quick fixes. Every visit builds toward skin that holds up on its own, backed by education that outlasts the treatment.</p>
+          </div>
+          <div>
+            <h3>Personal</h3>
+            <p>No one-size-fits-all. Every facial moves with your skin — its type, its concerns — guided by a method as consistent as it is precise. Results are never a guess.</p>
+          </div>
+          <div>
+            <h3>Restorative</h3>
+            <p>Designed to feel as good as it looks. Comfort. Ambiance. Care. Not afterthoughts — the treatment itself.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="room" style="padding-top:0">
+    <div class="wrap sec-grid">
+      <div class="sec-head"><div class="stick">
+        <h2>Step in, and <em>exhale.</em></h2>
+      </div></div>
+      <div class="sec-body room">
+        <figure class="room-a">
+          <img src="{{IMG_roombw}}" alt="Black-and-white photo of the treatment room: a client resting under a blanket while Brianna prepares products at the counter" width="1000" height="1250">
+          <figcaption>The treatment room, inside We Do Beauty Studio.</figcaption>
+        </figure>
+        <figure class="room-b">
+          <img src="{{IMG_bowl}}" alt="Hands mixing a pale green mask in a small bowl" width="900" height="900">
+          <figcaption>Mixing a modeling mask.</figcaption>
+        </figure>
+        <ul class="senses">
+          <li>Low light.</li>
+          <li>A heated bed on cold days.</li>
+          <li>Products that smell like care, not just clinic.</li>
+          <li>Soft music you can disappear into.</li>
+          <li class="after">Come in and rest. Wake up to the complexion of your dreams.</li>
+        </ul>
+        <div class="room-copy">
+          <p>Step inside to the world of Mei Skin, nestled within <a href="https://www.instagram.com/wedobeautystudio/" target="_blank" rel="noopener">We Do Beauty Studio</a>. In the treatment room, the focus is balance — bringing the skin back to itself, and supporting results that hold over time.</p>
+          <p>We pair a spa experience with the precision of skin clinics in Japan and South Korea, using the same professional-grade Korean formulations and advanced technology, customized to your skin’s needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="menu" style="padding-top:0">
+    <div class="wrap sec-grid menu">
+      <div class="sec-head"><div class="stick">
+        <h2>The menu.</h2>
+        <p class="head-note">All services are bespoke. We professionally assess, listen to your input and preferences, and make recommendations accordingly.</p>
+        <p class="head-note">The price on the menu is the price you pay. We recommend a visit every 4–6 weeks.</p>
+        <p class="head-note"><a class="link" href="#book" data-pick="unsure">Not sure which? Ask Brianna to choose</a></p>
+      </div></div>
+      <div class="sec-body">
+        <div class="axis" aria-hidden="true">
+          <div class="axis-track">
+            <span style="left:0">0</span><span style="left:16.667%">15</span><span style="left:33.333%">30</span><span style="left:50%">45</span><span style="left:66.667%">60</span><span style="left:83.333%">75</span><span style="left:100%">90 min</span>
+          </div>
+          <div class="axis-label">time on the table</div>
+        </div>
+        <ul class="svcs">
+          <li class="svc">
+            <div>
+              <div class="svc-top"><h3>Mei Glow Facial</h3><p class="svc-price"><small>60 min</small>$140</p></div>
+              <p class="svc-for">Skin is left luminous, smoothed, and visibly glowing.</p>
+              <div class="bar" style="--m:60" role="img" aria-label="60 of 90 minutes"></div>
+              <p class="svc-steps"><span>Double cleanse</span><span>Custom light peel</span><span>Extractions</span><span>Micro-current</span><span>Lymphatic sculpting massage</span><span>Modeling mask</span></p>
+              <p class="svc-desc">Begins with a double cleanse to fully reset the skin. A custom light peel lifts dullness and uneven texture, followed by extractions for a deep, thorough clean. Micro-current is used to lift and hydrate from within, paired with a lymphatic sculpting massage across the face, neck, and décolletage to drain tension and sharpen contour. The treatment finishes with a modeling mask, sealed in with a tailored layer of serums and creams.</p>
+              <p class="svc-act"><a class="link" href="#book" data-pick="glow">Request the Mei Glow</a></p>
+            </div>
+            <figure class="svc-img"><img src="{{IMG_glow}}" alt="An LED device held along a client's cheek" width="520" height="650"></figure>
+          </li>
+          <li class="svc">
+            <div>
+              <div class="svc-top"><h3>Mei Reset Facial</h3><p class="svc-price"><small>90 min</small>$200</p></div>
+              <p class="svc-for">For skin that needs more than a refresh.</p>
+              <div class="bar" style="--m:90" role="img" aria-label="90 of 90 minutes"></div>
+              <p class="svc-steps"><span>Chemical peel cocktail</span><span>Ultrasonic extractions</span><span>LED therapy</span><span>RF lifting</span><span>Plasma &amp; high-frequency</span></p>
+              <p class="svc-desc">A full recalibration. Includes a customized chemical peel cocktail to resurface and renew, ultrasonic extractions for a deep clean, and LED therapy to calm and repair. RF lifting is applied around the eyes and face to firm and sculpt, followed by plasma and high-frequency treatment to stimulate collagen production. Skin leaves not just clearer, but visibly rebuilt.</p>
+              <p class="svc-act"><a class="link" href="#book" data-pick="reset">Request the Mei Reset</a></p>
+            </div>
+            <figure class="svc-img"><img src="{{IMG_reset}}" alt="Brianna's fingertips resting on a client's forehead" width="520" height="650"></figure>
+          </li>
+          <li class="svc">
+            <div>
+              <div class="svc-top"><h3>Mei Cica Facial</h3><p class="svc-price"><small>60 min</small>$175</p></div>
+              <p class="svc-for">No downtime, no residual redness.</p>
+              <div class="bar" style="--m:60" role="img" aria-label="60 of 90 minutes"></div>
+              <p class="svc-steps"><span>CICA + PHA exfoliating mask</span><span>Custom ampoule via HIFU</span><span>CICA B5 modeling mask</span></p>
+              <p class="svc-desc">Centered on Centella Asiatica, known for its healing and soothing properties. Begins with a CICA and PHA exfoliating mask to clear congestion without stripping the skin’s moisture barrier. A custom ampoule is driven deep into the skin using High-Intensity Focused Ultrasound (HIFU), then sealed in with a CICA B5 modeling mask to lock in hydration. Just an even, settled complexion.</p>
+              <p class="svc-act"><a class="link" href="#book" data-pick="cica">Request the Mei Cica</a></p>
+            </div>
+            <figure class="svc-img"><img src="{{IMG_cica}}" alt="Two hands cradling a client's jaw" width="520" height="650"></figure>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="brianna" style="padding-top:0">
+    <div class="wrap sec-grid">
+      <div class="sec-head"><div class="stick">
+        <h2>Meet Brianna</h2>
+        <p class="head-note">Esthetician and founder of Mei Skin.</p>
+      </div></div>
+      <div class="sec-body bri">
+        <figure class="bri-fig">
+          <img src="{{IMG_portrait}}" alt="Portrait of Brianna" width="1000" height="1250">
+        </figure>
+        <div class="bri-text">
+          <blockquote class="quote"><q>Good skincare should be bespoke — your skin changes, and your skin is unique to you.</q></blockquote>
+          <div class="bio">
+            <p>Brianna’s education shapes how she reads skin concerns, listens to client needs, and creates a nurturing environment in the treatment room. She brings over five years of experience at Vancouver’s top luxury spas, alongside in-house education with BABOR, Éminence Organic Skin Care, Knesko Skin, Dr.esthé, Éclat du teint, and Dermabell. Her curiosity about ingredients and formulation is insatiable — she’s always studying what works, and what’s next.</p>
+            <p>Outside the treatment room, Brianna practices yoga, and has interests in health and wellness, informing the calm, considered energy of Mei Skin.</p>
+          </div>
+          <dl class="creds">
+            <div><dt>Certificate, Korean Skincare Management</dt><dd>We Do Beauty Academy, Vancouver</dd></div>
+            <div><dt>Treating Melanin-Rich Skin Certification</dt><dd>dermalogica</dd></div>
+            <div><dt>Clean Touch Certification</dt><dd>dermalogica</dd></div>
+            <div><dt>Bachelor of Arts, Psychology</dt><dd>The University of British Columbia</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="words" style="padding-top:0">
+    <div class="wrap sec-grid">
+      <div class="sec-head"><div class="stick">
+        <h2>Client reviews.</h2>
+      </div></div>
+      <div class="sec-body words">
+        <blockquote><p>“The whole experience felt really high quality and relaxing.”</p><cite>Natalie</cite></blockquote>
+        <blockquote><p>“Gentle, expert skincare guidance that left my skin glowing, dewy and hydrated with a visible instant glow thanks to Brianna.”</p><cite>Gem</cite></blockquote>
+        <blockquote><p>“I could actually see visible results after just one session — my skin looked lifted, sculpted, and refreshed.”</p><cite>Joean</cite></blockquote>
+        <blockquote><p>“I’d definitely recommend coming here if you’re looking for personalized, attentive care as well as feeling luxurious and comfortable.”</p><cite>Amberly</cite></blockquote>
+        <blockquote><p>“Brianna takes extremely good care of her clients, making sure they feel welcome and comfortable.”</p><cite>Tier</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec band" id="visit">
+    <div class="wrap sec-grid">
+      <div class="sec-head"><div class="stick">
+        <h2>Come find us.</h2>
+        <p class="head-note">By appointment only.</p>
+      </div></div>
+      <div class="sec-body">
+        <ol class="week" aria-label="Studio hours">
+          <li class="day closed" data-d="1"><b>Mon</b><span>closed</span></li>
+          <li class="day closed" data-d="2"><b>Tue</b><span>closed</span></li>
+          <li class="day closed" data-d="3"><b>Wed</b><span>closed</span></li>
+          <li class="day open" data-d="4"><b>Thu</b><span>11–7</span></li>
+          <li class="day open" data-d="5"><b>Fri</b><span>11–7</span></li>
+          <li class="day open" data-d="6"><b>Sat</b><span>11–7</span></li>
+          <li class="day open" data-d="0"><b>Sun</b><span>11–7</span></li>
+        </ol>
+        <p class="week-note"><span class="status" data-status><i></i><span>Thursday to Sunday, 11 am – 7 pm</span></span></p>
+        <div class="visit">
+          <div class="visit-info">
+            <div>
+              <h3>The studio</h3>
+              <p class="addr">2078 W Broadway<br>Vancouver, BC V6J 1Z4</p>
+              <p>Inside We Do Beauty Studio.</p>
+              <p><a class="link" href="https://maps.app.goo.gl/4DXHSwo4acYhCtqt6" target="_blank" rel="noopener">Get directions</a></p>
+            </div>
+            <div>
+              <h3>Parking</h3>
+              <p>Paid underground parking directly below the studio at 2080 West Broadway. Free street parking along Maple St, Cypress St, and W 10th, 11th, and 12th.</p>
+            </div>
+            <div>
+              <h3>Questions before booking</h3>
+              <p class="select">contact@meiskinstudio.co</p>
+              <p><a class="link" href="https://www.instagram.com/meiskinstudio/" target="_blank" rel="noopener">@meiskinstudio on Instagram</a></p>
+            </div>
+            <div>
+              <h3>Gift cards</h3>
+              <p>Any amount from $25 to $1,000. They never expire.</p>
+              <p><a class="link" href="https://app.squareup.com/gift/MLD0EGXPTY50P/order" target="_blank" rel="noopener">Buy a gift card</a></p>
+            </div>
+          </div>
+          <figure class="visit-fig">
+            <img src="{{IMG_shelves}}" alt="Brianna choosing a product from the retail shelves" width="800" height="1000">
+            <figcaption>Dermabell, Éclat du Teint, Dr. esthé and more, on the shelves.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec faq" id="faq">
+    <div class="wrap sec-grid">
+      <div class="sec-head"><div class="stick">
+        <h2>Commonly <em>asked.</em></h2>
+      </div></div>
+      <div class="sec-body">
+        <details open>
+          <summary>What should I expect on my first visit?</summary>
+          <p class="faq-a">Your first visit begins with a cleanse, followed by a skin reading — a conversation to understand your skin’s history, habits, and what it needs right now. From there, we build a treatment around you.</p>
+        </details>
+        <details>
+          <summary>What’s included in a facial?</summary>
+          <p class="faq-a">No two facials at Mei Skin look the same. Each is built around your skin, in the moment — drawing from deep-cleansing bubble packs for effortless extractions, ultrasonic and manual extraction techniques, a range of AHA/BHA/PHA peels suited to your skin’s needs, and LED and micro-current for repair and lift. We layer in sculpting and pressure-point massage to release tension and support lymphatic drainage, RF lifting around the eyes and face, and high-frequency plasma treatment to stimulate collagen — finished with layered, modeling masks and products chosen to work in tandem with each device, not just alongside it. A 60-minute visit (The Mei Glow) gives us time to cover the essentials with intention. A 90-minute visit (The Mei Reset) opens up space to move deeper — addressing more than one concern in a single session, without ever feeling rushed.</p>
+        </details>
+        <details>
+          <summary>How long are appointments, and how often should I come?</summary>
+          <p class="faq-a">Sessions currently run either 60 to 90 minutes, depending on how much time you want to give your skin that day. We recommend a treatment every 4–6 weeks to achieve and maintain results.</p>
+        </details>
+        <details>
+          <summary>Do I need to do anything to prepare for my visit?</summary>
+          <p class="faq-a">We recommend arriving without makeup if you can — every visit starts with a double cleanse, so it will come off either way, but skipping it beforehand means we can start reading your skin right away. And if you’re wearing sunscreen when you walk in, even better — we love that. In the week leading up to your visit, please avoid retinol and exfoliating products, and please book at least a month after a chemical peel, microneedling, or facial laser treatment.</p>
+        </details>
+        <details>
+          <summary>What should I do after my visit?</summary>
+          <p class="faq-a">You’re welcome to cleanse as usual at the end of the day. The one habit we’ll always encourage: wear sunscreen every day, rain or shine. Even on cloudy days, UV rays still reach your skin, so keeping that protection consistent is one of the best things you can do for your results.</p>
+        </details>
+        <details>
+          <summary>Do you sell products?</summary>
+          <p class="faq-a">Absolutely. We have retail products from Dermabell, Éclat du Teint, Dr. esthé, and more available to purchase on-site. We would be delighted to recommend products for your home care routine should you be interested.</p>
+        </details>
+        <details>
+          <summary>Where do I park?</summary>
+          <p class="faq-a">There’s paid underground parking directly below the studio at 2080 West Broadway. Free street parking is also available along Maple St, Cypress St, and W 10th, 11th, and 12th.</p>
+        </details>
+        <details>
+          <summary>What’s your cancellation policy?</summary>
+          <p class="faq-a">We ask for at least 48 hours’ notice for cancellations or rescheduling. Cancellations within 48 hours are subject to a 50% fee, and cancellations within 24 hours are subject to a 100% fee.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec book" id="book">
+    <div class="wrap sec-grid">
+      <div class="sec-head"><div class="stick">
+        <h2>Request an <em>appointment.</em></h2>
+        <p class="head-note">Tell us a little about what you are after and when suits you. We read every inquiry.</p>
+        <p class="head-note">This is a request, not a confirmed booking — your time is held once we reply to confirm it.</p>
+      </div></div>
+      <div class="sec-body">
+        <form class="form" id="req" novalidate>
+          <div class="field"><label for="f-name">Name</label><input class="txt" id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Email</label><input class="txt" id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-phone">Phone <small>(optional)</small></label><input class="txt" id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field" aria-hidden="true"></div>
+          <fieldset class="full">
+            <legend>Which treatment?</legend>
+            <div class="picks">
+              <label class="pick"><input type="radio" name="service" id="t-glow" value="Mei Glow Facial"><span>Mei Glow Facial</span><small>60 min · $140</small></label>
+              <label class="pick"><input type="radio" name="service" id="t-reset" value="Mei Reset Facial"><span>Mei Reset Facial</span><small>90 min · $200</small></label>
+              <label class="pick"><input type="radio" name="service" id="t-cica" value="Mei Cica Facial"><span>Mei Cica Facial</span><small>60 min · $175</small></label>
+              <label class="pick"><input type="radio" name="service" id="t-unsure" value="Not sure yet"><span>Not sure yet — help me choose</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="full">
+            <legend>Preferred days <small>— select all that apply</small></legend>
+            <div class="chips">
+                                                        <label class="chip"><input type="checkbox" name="days" id="d-thu" value="Thursday"><span>Thursday</span></label>
+              <label class="chip"><input type="checkbox" name="days" id="d-fri" value="Friday"><span>Friday</span></label>
+              <label class="chip"><input type="checkbox" name="days" id="d-sat" value="Saturday"><span>Saturday</span></label>
+              <label class="chip"><input type="checkbox" name="days" id="d-sun" value="Sunday"><span>Sunday</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="full">
+            <legend>Preferred time of day</legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="timing" id="m-am" value="Mornings"><span>Mornings</span></label>
+              <label class="chip"><input type="checkbox" name="timing" id="m-mid" value="Afternoons"><span>Afternoons</span></label>
+              <label class="chip"><input type="checkbox" name="timing" id="m-pm" value="Evenings"><span>Evenings</span></label>
+            </div>
+          </fieldset>
+          <div class="field full">
+            <label for="f-msg">Anything else we should know? <small>(optional)</small></label>
+            <textarea class="txt" id="f-msg" name="message" rows="3"></textarea>
+            <p class="hint">Please leave out health details — we go through your skin history together, in person.</p>
+          </div>
+          <div class="full send">
+            <button class="btn btn-light" type="submit">Send request</button>
+            <p class="fine">We reply by email to confirm a time.</p>
+          </div>
+        </form>
+        <div class="sent" id="sent" tabindex="-1" hidden>
+          <p>Thank you, <span data-name>there</span> — your request is in. Due to the high number of inquiries we may take a moment to reply, and we appreciate your patience.</p>
+          <small>Design preview: nothing was sent from this page.</small>
+          <button type="button" id="again">Send another request</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img class="foot-logo" src="{{IMG_logo}}" alt="mei skin" width="976" height="481">
+    <div class="foot-cols">
+      <div><h4>Studio</h4><p>2078 W Broadway, Vancouver</p><p>Inside We Do Beauty Studio</p></div>
+      <div><h4>Hours</h4><p>Thursday – Sunday, 11 am – 7 pm</p><p>Monday – Wednesday, closed</p></div>
+      <div><h4>Contact</h4><p class="select">contact@meiskinstudio.co</p><p><a href="https://www.instagram.com/meiskinstudio/" target="_blank" rel="noopener">Instagram</a></p><p><a href="https://www.linkedin.com/company/mei-skin" target="_blank" rel="noopener">LinkedIn</a></p></div>
+      <div><h4>More</h4><p><a href="https://app.squareup.com/gift/MLD0EGXPTY50P/order" target="_blank" rel="noopener">Gift cards</a></p><p><a href="https://meiskinstudio.co/privacy" target="_blank" rel="noopener">Privacy</a></p><p><a href="https://meiskinstudio.co/terms" target="_blank" rel="noopener">Terms</a></p></div>
+    </div>
+    <div class="foot-base"><span>© 2026 mei skin · boutique skincare</span><span>Design preview, v4 · not the live site</span></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Studio hours by weekday (0 = Sunday). Appointments only, so "open" means bookable hours.
+  var HOURS = {0: [11, 19], 1: null, 2: null, 3: null, 4: [11, 19], 5: [11, 19], 6: [11, 19]};
+  var NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  function vancouverNow() {
+    var o = {};
+    new Intl.DateTimeFormat('en-US', {timeZone: 'America/Vancouver', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'})
+      .formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; });
+    return {day: SHORT.indexOf(o.weekday), h: (+o.hour % 24) + (+o.minute) / 60};
+  }
+  function clock(h) { return (h % 12 || 12) + (h < 12 ? ' am' : ' pm'); }
+  function studioStatus(n) {
+    var t = HOURS[n.day];
+    if (t && n.h < t[0]) return {open: false, text: 'Opens today at ' + clock(t[0])};
+    if (t && n.h < t[1]) return {open: true, text: 'Open today until ' + clock(t[1])};
+    for (var i = 1; i <= 7; i++) {
+      var d = (n.day + i) % 7;
+      if (HOURS[d]) return {open: false, text: (t ? 'Closed now' : 'Closed today') + ' \u00b7 opens ' + (i === 1 ? 'tomorrow' : NAMES[d]) + ' at ' + clock(HOURS[d][0])};
+    }
+  }
+
+  try {
+    var now = vancouverNow(), s = studioStatus(now);
+    document.querySelectorAll('[data-status]').forEach(function (el) {
+      el.classList.toggle('is-open', s.open);
+      el.querySelector('span').textContent = s.text;
+    });
+    var today = document.querySelector('.day[data-d="' + now.day + '"]');
+    if (today) today.classList.add('today');
+  } catch (e) { /* falls back to the static hours line */ }
+
+  // Header rule appears once the page moves.
+  var bar = document.getElementById('top-bar');
+  function onScroll() { bar.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  // "Request the Mei Glow" etc. preselect the treatment in the form.
+  document.querySelectorAll('[data-pick]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var r = document.getElementById('t-' + a.getAttribute('data-pick'));
+      if (r) r.checked = true;
+    });
+  });
+
+  var form = document.getElementById('req'), sent = document.getElementById('sent');
+  form.addEventListener('input', function (e) { e.target.removeAttribute('aria-invalid'); });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('f-name'), email = document.getElementById('f-email');
+    if (!name.value.trim()) { name.focus(); name.setAttribute('aria-invalid', 'true'); return; }
+    if (!email.value.trim() || !email.checkValidity()) { email.focus(); email.setAttribute('aria-invalid', 'true'); return; }
+    sent.querySelector('[data-name]').textContent = name.value.trim().split(' ')[0];
+    form.hidden = true; sent.hidden = false; sent.focus();
+  });
+  document.getElementById('again').addEventListener('click', function () {
+    form.reset(); sent.hidden = true; form.hidden = false; document.getElementById('f-name').focus();
+  });
+})();
+</script>
