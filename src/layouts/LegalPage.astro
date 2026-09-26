@@ -3,7 +3,7 @@ import site from '../content/site.json';
 
 const { page, slug } = Astro.props;
 
-const cssVer = 'legal-1';
+const cssVer = 'legal-type-1';
 
 // inline markdown: **bold** first so it doesn't get eaten by the *italic* pass
 const md = (s) => (s || '')
@@ -40,7 +40,7 @@ const siteUrl = site.seo?.site_url || 'https://meiskinstudio.co';
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Gothic+A1:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="icon" type="image/png" href="/assets/mei-logo.png" />
   <link rel="stylesheet" href={`/styles/main.css?v=${cssVer}`} />

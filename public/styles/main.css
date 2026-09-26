@@ -1,7 +1,7 @@
 /* mei skin studio — main stylesheet (redesign port)
    ───────────────────────────────────────────────────────────
    Warm cream paper, dark warm brown wordmark, soft sage from the
-   single-line leaf in the logo. Fraunces display + DM Sans body.
+   single-line leaf in the logo. Diphylleia display + Gothic A1 body (both Korean-designed).
    Section 1: base tokens, type, header, footer, frames, marquee, gate.
    Section 2: per-section CSS (hero, philosophy, studio, menu, etc.)
    ─────────────────────────────────────────────────────────── */
@@ -26,8 +26,8 @@
   --blush:     #ecdccb;      /* warm blush — placeholder tint */
 
   /* type */
-  --font-serif: "Fraunces", "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --font-sans:  "DM Sans", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Diphylleia", Georgia, "Times New Roman", serif;
+  --font-sans:  "Gothic A1", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   /* layout */
   --maxw:  1360px;
@@ -45,7 +45,7 @@
 
 /* reset ─────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; font-synthesis: none; }
 body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul, fieldset {
   margin: 0; padding: 0;
 }
@@ -138,7 +138,6 @@ body::after {
   color: var(--fg);
   margin-top: .5em;
   max-width: 20ch;
-  font-variation-settings: "opsz" 144, "SOFT" 40;
 }
 .section-title em,
 .atmosphere-title em,
@@ -453,7 +452,6 @@ body::after {
   color: var(--fg);
   padding: 6px 0;
   transition: color .3s var(--ease), transform .5s var(--ease-out), opacity .5s var(--ease-out);
-  font-variation-settings: "opsz" 144, "SOFT" 40;
   transform: translateY(24px);
   opacity: 0;
 }
@@ -688,7 +686,6 @@ html.js .line-mask.in > span { transform: translateY(0); }
   color: var(--fg);
   margin: .3em 0 .5em;
   max-width: 11ch;
-  font-variation-settings: "opsz" 144, "SOFT" 40;
 }
 .hero-title em { font-style: italic; color: var(--accent-deep); }
 .hero-sub { font-size: 17px; line-height: 1.7; color: var(--fg-2); max-width: 42ch; }
@@ -973,7 +970,6 @@ html.js .line-mask.in > span { transform: translateY(0); }
   letter-spacing: -.028em;
   margin-bottom: .55em;
   color: var(--fg);
-  font-variation-settings: "opsz" 144, "SOFT" 40;
 }
 .atmosphere-title em { font-style: italic; color: var(--accent-deep); }
 .atmosphere-inner p { font-size: 18px; line-height: 1.7; color: var(--fg-2); max-width: 54ch; margin: 0 auto; }
@@ -1261,7 +1257,7 @@ html:not(.unlocked) body { overflow: hidden; }
 .cs-inner { text-align: center; max-width: 460px; width: 100%; }
 .cs-logo { height: 78px; width: auto; margin: 0 auto 32px; display: block; }
 .cs-eyebrow { font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--accent-deep); font-weight: 600; margin-bottom: 14px; }
-.cs-title { font-family: var(--font-serif); font-weight: 300; font-size: clamp(48px, 9vw, 80px); line-height: 1.02; letter-spacing: -.025em; color: var(--fg); margin-bottom: 20px; font-variation-settings: "opsz" 144, "SOFT" 40; }
+.cs-title { font-family: var(--font-serif); font-weight: 300; font-size: clamp(48px, 9vw, 80px); line-height: 1.02; letter-spacing: -.025em; color: var(--fg); margin-bottom: 20px; }
 .cs-title em { font-style: italic; color: var(--accent-deep); }
 .cs-sub { font-size: 15px; line-height: 1.55; color: var(--fg-2); margin-bottom: 38px; max-width: 34ch; margin-left: auto; margin-right: auto; }
 .cs-form { display: flex; flex-direction: column; gap: 14px; align-items: stretch; }
